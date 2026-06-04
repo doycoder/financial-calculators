@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="pages.disclaimer.docTitle">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disclaimer - Compound Interest Calculator</title>
+  <meta name="description" content="Disclaimer: the Compound Interest Calculator is for educational purposes only and does not constitute financial advice." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://YOUR_DOMAIN.com/disclaimer" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E%24%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Pre-paint locale: avoids English-flash before i18n.js runs -->
+  <script>
+    (function () {
+      try {
+        var v = localStorage.getItem('locale');
+        var valid = ['en','es','de','fr','ru','pt','it','zh-Hans','zh-Hant','th','ar','ja','vi','my','id','tr'];
+        if (valid.indexOf(v) === -1) v = 'en';
+        document.documentElement.lang = v;
+        document.documentElement.dir = (v === 'ar') ? 'rtl' : 'ltr';
+      } catch (_) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" data-i18n-attr="aria-label:nav.brandAria">
+        <span class="brand-mark">$</span>
+        <span class="brand-name">Compound<span>Calc</span></span>
+      </a>
+      <nav class="site-nav" data-i18n-attr="aria-label:nav.primaryAria" aria-label="Primary">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            <span data-i18n="nav.calculators">Calculators</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="index.html" role="menuitem"><strong data-i18n="nav.items.compound">Compound Interest</strong><span data-i18n="nav.items.compoundDesc">Investment growth with SIP</span></a>
+            <a href="simple-interest-calculator.html" role="menuitem"><strong data-i18n="nav.items.simple">Simple Interest</strong><span data-i18n="nav.items.simpleDesc">Flat-rate interest math</span></a>
+            <a href="loan-calculator.html" role="menuitem"><strong data-i18n="nav.items.loan">Loan / Mortgage</strong><span data-i18n="nav.items.loanDesc">Monthly payment &amp; schedule</span></a>
+            <a href="savings-goal-calculator.html" role="menuitem"><strong data-i18n="nav.items.savings">Savings Goal</strong><span data-i18n="nav.items.savingsDesc">Plan to hit a target</span></a>
+            <a href="calculators.html" role="menuitem"><strong data-i18n="nav.items.all">All calculators →</strong><span data-i18n="nav.items.allDesc">Browse the full toolkit</span></a>
+          </div>
+        </div>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <div class="nav-dropdown lang-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" data-i18n-attr="aria-label:nav.languageAria" aria-label="Select language">
+            <span class="lang-current" data-lang-current>🇬🇧 EN</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu lang-menu" role="menu" data-lang-menu></div>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" data-i18n-attr="aria-label:nav.toggleMenuAria" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <button id="themeToggle" class="icon-btn" data-i18n-attr="aria-label:nav.themeToggleAria;title:nav.themeToggleAria" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal-page">
+    <div class="container narrow">
+      <h1 data-i18n="pages.disclaimer.h1">Disclaimer</h1>
+      <p class="updated" data-i18n="pages.disclaimer.updated">Last updated: 2026-05-23</p>
+
+      <h2 data-i18n="pages.disclaimer.h2Edu">1. Educational Purpose Only</h2>
+      <p data-i18n-html="pages.disclaimer.pEdu">The information, calculator, and content on this Site are provided strictly for <strong>general informational and educational purposes</strong>. They do not constitute, and should not be interpreted as, financial advice, investment advice, tax advice, legal advice, accounting advice, or a recommendation of any kind.</p>
+
+      <h2 data-i18n="pages.disclaimer.h2Sub">2. Not a Substitute for Professional Advice</h2>
+      <p data-i18n="pages.disclaimer.pSub">Personal finance decisions depend on your individual circumstances, including income, expenses, risk tolerance, time horizon, tax situation, and goals. Before making any investment, retirement, or savings decision, please consult a licensed financial advisor, accountant, attorney, or other qualified professional.</p>
+
+      <h2 data-i18n="pages.disclaimer.h2Lim">3. Calculator Limitations</h2>
+      <p data-i18n="pages.disclaimer.pLimIntro">The compound interest calculator is a simplified model. In particular, it:</p>
+      <ul>
+        <li data-i18n-html="pages.disclaimer.liLimRate"><strong>Assumes a constant rate of return</strong>. Real markets fluctuate and returns vary widely year to year.</li>
+        <li data-i18n-html="pages.disclaimer.liLimInf"><strong>Does not adjust for inflation</strong>. The "Final Value" is in nominal dollars, not real purchasing power.</li>
+        <li data-i18n-html="pages.disclaimer.liLimTax"><strong>Does not account for taxes</strong>. Capital gains, dividends, and interest income are typically taxable.</li>
+        <li data-i18n-html="pages.disclaimer.liLimFee"><strong>Does not account for fees</strong>. Fund expense ratios, advisory fees, and trading costs reduce real returns.</li>
+        <li data-i18n-html="pages.disclaimer.liLimRisk"><strong>Does not model market risk</strong>. There is no guarantee that any given asset class will deliver the rate of return you input.</li>
+      </ul>
+
+      <h2 data-i18n="pages.disclaimer.h2Guar">4. No Guarantee of Results</h2>
+      <p data-i18n="pages.disclaimer.pGuar">Past performance does not guarantee future results. Any historical return figures referenced in our content (for example, the long-run average return of the U.S. stock market) are statistical observations, not predictions. Your actual investment outcomes may be substantially higher or lower than the calculator's projections.</p>
+
+      <h2 data-i18n="pages.disclaimer.h2Risk">5. Investment Risk</h2>
+      <p data-i18n="pages.disclaimer.pRisk">All investments carry risk, including the possible loss of principal. Higher-return assets generally carry higher risk. You alone are responsible for evaluating the merits and risks associated with any investment decision.</p>
+
+      <h2 data-i18n="pages.disclaimer.h2Third">6. Third-Party Content</h2>
+      <p data-i18n="pages.disclaimer.pThird">References to third-party financial products, services, or sources are for illustrative purposes only and do not constitute an endorsement. We are not responsible for the accuracy, completeness, or availability of third-party information.</p>
+
+      <h2 data-i18n="pages.disclaimer.h2Liab">7. Limitation of Liability</h2>
+      <p data-i18n-html="pages.disclaimer.pLiab">To the fullest extent permitted by law, the operators of this Site disclaim all liability for any loss or damage arising from your use of, or reliance on, the calculator or any information presented on the Site. See our <a href="terms.html">Terms of Service</a> for the full liability framework.</p>
+
+      <h2 data-i18n="pages.disclaimer.h2Fid">8. No Fiduciary Relationship</h2>
+      <p data-i18n="pages.disclaimer.pFid">Use of this Site does not create a client, fiduciary, advisory, or professional relationship between you and the operators of CompoundCalc.</p>
+
+      <p style="margin-top:36px; padding:16px 20px; background:var(--surface-2); border-left:4px solid var(--primary); border-radius:8px;" data-i18n-html="pages.disclaimer.short"><strong>In short:</strong> we built a math tool. Use it to learn, sketch scenarios, and make better decisions, but treat the numbers as illustrations rather than promises, and talk to a qualified professional before acting.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="brand-mark small">$</span>
+        <span data-i18n="brand">CompoundCalc</span>
+      </div>
+      <p class="footer-note" data-i18n="footer.note">For educational purposes only. Not financial advice.</p>
+      <nav data-i18n-attr="aria-label:footer.ariaLabel" aria-label="Footer">
+        <a href="calculators.html" data-i18n="footer.calculators">Calculators</a>
+        <a href="blog.html" data-i18n="footer.blog">Blog</a>
+        <a href="about.html" data-i18n="footer.about">About</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms</a>
+        <a href="disclaimer.html" data-i18n="footer.disclaimer">Disclaimer</a>
+        <a href="contact.html" data-i18n="footer.contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+  <script src="js/i18n.js"></script>
+</body>
+</html>

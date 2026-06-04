@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="pages.simple.docTitle">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Interest Calculator - Calculate Flat-Rate Interest Online</title>
+  <meta name="description" content="Free simple interest calculator. Compute interest, total amount, and accrued earnings using the I = P × r × t formula. Instant results with an interactive chart." />
+  <meta name="keywords" content="simple interest calculator, flat interest calculator, principal interest calculator, I=Prt calculator" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://YOUR_DOMAIN.com/simple-interest-calculator" />
+  <meta property="og:title" content="Simple Interest Calculator" />
+  <meta property="og:description" content="Free online simple interest calculator with interactive chart." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/simple-interest-calculator" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E%24%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Pre-paint locale: avoids English-flash before i18n.js runs -->
+  <script>
+    (function () {
+      try {
+        var v = localStorage.getItem('locale');
+        var valid = ['en','es','de','fr','ru','pt','it','zh-Hans','zh-Hant','th','ar','ja','vi','my','id','tr'];
+        if (valid.indexOf(v) === -1) v = 'en';
+        document.documentElement.lang = v;
+        document.documentElement.dir = (v === 'ar') ? 'rtl' : 'ltr';
+      } catch (_) {}
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Simple Interest Calculator",
+    "url": "https://YOUR_DOMAIN.com/simple-interest-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Free simple interest calculator using I = P × r × t."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"What is simple interest?","acceptedAnswer":{"@type":"Answer","text":"Simple interest is interest calculated only on the original principal, never on accumulated interest. The formula is I = P × r × t, where P is principal, r is the annual rate as a decimal, and t is time in years."}},
+      {"@type":"Question","name":"When is simple interest used?","acceptedAnswer":{"@type":"Answer","text":"Simple interest is common for short-term loans, auto loans (in some jurisdictions), Treasury bills, and informal personal loans. Most savings accounts and investments use compound interest instead."}},
+      {"@type":"Question","name":"What is the difference between simple and compound interest?","acceptedAnswer":{"@type":"Answer","text":"Simple interest grows linearly because interest is paid out and never earns interest itself. Compound interest grows exponentially because earnings are reinvested and themselves earn interest. Over long periods compound interest produces dramatically larger totals."}},
+      {"@type":"Question","name":"How do I calculate simple interest manually?","acceptedAnswer":{"@type":"Answer","text":"Multiply principal by annual rate (as a decimal) by time in years. Example: $5,000 at 6% for 3 years gives I = 5000 × 0.06 × 3 = $900. Total amount = principal + interest = $5,900."}},
+      {"@type":"Question","name":"Can I use this for monthly or daily interest?","acceptedAnswer":{"@type":"Answer","text":"Yes. Convert your time horizon to years (months ÷ 12, days ÷ 365) and the annual rate stays the same. The calculator above accepts time in years directly."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" data-i18n-attr="aria-label:nav.brandAria">
+        <span class="brand-mark">$</span>
+        <span class="brand-name">Compound<span>Calc</span></span>
+      </a>
+      <nav class="site-nav" data-i18n-attr="aria-label:nav.primaryAria" aria-label="Primary">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            <span data-i18n="nav.calculators">Calculators</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="index.html" role="menuitem"><strong data-i18n="nav.items.compound">Compound Interest</strong><span data-i18n="nav.items.compoundDesc">Investment growth with SIP</span></a>
+            <a href="simple-interest-calculator.html" role="menuitem" aria-current="page"><strong data-i18n="nav.items.simple">Simple Interest</strong><span data-i18n="nav.items.simpleDesc">Flat-rate interest math</span></a>
+            <a href="loan-calculator.html" role="menuitem"><strong data-i18n="nav.items.loan">Loan / Mortgage</strong><span data-i18n="nav.items.loanDesc">Monthly payment &amp; schedule</span></a>
+            <a href="savings-goal-calculator.html" role="menuitem"><strong data-i18n="nav.items.savings">Savings Goal</strong><span data-i18n="nav.items.savingsDesc">Plan to hit a target</span></a>
+            <a href="calculators.html" role="menuitem"><strong data-i18n="nav.items.all">All calculators →</strong><span data-i18n="nav.items.allDesc">Browse the full toolkit</span></a>
+          </div>
+        </div>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <div class="nav-dropdown lang-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" data-i18n-attr="aria-label:nav.languageAria" aria-label="Select language">
+            <span class="lang-current" data-lang-current>🇬🇧 EN</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu lang-menu" role="menu" data-lang-menu></div>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" data-i18n-attr="aria-label:nav.toggleMenuAria" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <button id="themeToggle" class="icon-btn" data-i18n-attr="aria-label:nav.themeToggleAria;title:nav.themeToggleAria" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="calculator">
+      <div class="container">
+        <div class="hero-text">
+          <h1 data-i18n="pages.simple.hero.h1">Simple Interest Calculator</h1>
+          <p class="lede" data-i18n-html="pages.simple.hero.lede">Compute flat-rate interest using the classic <code>I = P × r × t</code> formula. Instant, accurate, and free.</p>
+        </div>
+
+        <div class="calc-grid">
+          <div class="card input-card">
+            <h2 class="card-title" data-i18n="pages.simple.input.cardTitle">Your Inputs</h2>
+
+            <div class="field">
+              <label for="si-principal" data-i18n="pages.simple.input.principal">Principal Amount</label>
+              <div class="input-affix">
+                <span class="affix">$</span>
+                <input type="number" id="si-principal" min="0" step="100" value="5000" inputmode="decimal" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="si-rate">
+                <span data-i18n="pages.simple.input.rate">Annual Interest Rate</span>
+                <span class="value-badge"><span id="si-rateValue">6</span>%</span>
+              </label>
+              <input type="range" id="si-rate" min="0" max="30" step="0.1" value="6" />
+              <input type="number" id="si-rateNumber" min="0" max="100" step="0.01" value="6" inputmode="decimal" />
+            </div>
+
+            <div class="field">
+              <label for="si-years">
+                <span data-i18n="pages.simple.input.years">Time Period</span>
+                <span class="value-badge"><span id="si-yearsValue">3</span> <span data-i18n="pages.simple.input.yearsBadge">yrs</span></span>
+              </label>
+              <input type="range" id="si-years" min="0.25" max="30" step="0.25" value="3" />
+              <input type="number" id="si-yearsNumber" min="0.01" max="100" step="0.25" value="3" inputmode="decimal" />
+            </div>
+
+            <div class="actions-row">
+              <button id="si-resetBtn" class="btn btn-ghost" type="button" data-i18n="buttons.reset">Reset</button>
+            </div>
+          </div>
+
+          <div class="card result-card">
+            <h2 class="card-title" data-i18n="pages.simple.results.cardTitle">Results</h2>
+
+            <div class="result-grid">
+              <div class="result-item highlight">
+                <div class="result-label" data-i18n="pages.simple.results.total">Total Amount</div>
+                <div class="result-value"><span id="si-total">0</span></div>
+              </div>
+              <div class="result-item">
+                <div class="result-label" data-i18n="pages.simple.results.principal">Principal</div>
+                <div class="result-value"><span id="si-principalOut">0</span></div>
+              </div>
+              <div class="result-item">
+                <div class="result-label" data-i18n="pages.simple.results.interest">Interest Earned</div>
+                <div class="result-value gain"><span id="si-interest">0</span></div>
+              </div>
+              <div class="result-item">
+                <div class="result-label" data-i18n="pages.simple.results.effective">Effective Annual</div>
+                <div class="result-value"><span id="si-effective">0</span>%</div>
+              </div>
+            </div>
+
+            <div class="chart-wrap">
+              <canvas id="si-chart" data-i18n-attr="aria-label:pages.simple.results.chartAria" aria-label="Simple interest growth chart" role="img"></canvas>
+            </div>
+
+            <div class="legend-row">
+              <span class="legend-dot legend-contrib"></span><span data-i18n="pages.simple.results.legendPrincipal">Principal</span>
+              <span class="legend-dot legend-interest"></span><span data-i18n="pages.simple.results.legendInterest">Interest</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container narrow">
+        <article class="prose">
+          <h2 data-i18n="pages.simple.prose.h2">Understanding Simple Interest</h2>
+          <p data-i18n="pages.simple.prose.pIntro">Simple interest is the most basic form of interest. It's computed only on the original principal — never on accumulated interest — which makes it predictable, easy to calculate, and very different in long-term outcome from compound interest. Whenever you see a flat percentage attached to a loan or fixed-income product, there's a good chance simple interest is at work.</p>
+
+          <h3 data-i18n="pages.simple.prose.h3Formula">The Simple Interest Formula</h3>
+          <p data-i18n="pages.simple.prose.pFormulaIntro">The formula is short and memorable:</p>
+          <p class="formula" data-i18n-html="pages.simple.prose.pFormula"><strong>I = P × r × t</strong></p>
+          <ul>
+            <li data-i18n-html="pages.simple.prose.liI"><strong>I</strong> — interest earned (or owed)</li>
+            <li data-i18n-html="pages.simple.prose.liP"><strong>P</strong> — principal (the starting amount)</li>
+            <li data-i18n-html="pages.simple.prose.liR"><strong>r</strong> — annual interest rate, as a decimal (so 6% becomes 0.06)</li>
+            <li data-i18n-html="pages.simple.prose.liT"><strong>t</strong> — time in years</li>
+          </ul>
+          <p data-i18n-html="pages.simple.prose.pFormulaOutro">The total amount you'll have at the end of the term is simply <code>A = P + I = P(1 + rt)</code>.</p>
+
+          <h3 data-i18n="pages.simple.prose.h3Example">A Worked Example</h3>
+          <p data-i18n="pages.simple.prose.pExample1">Suppose you lend a friend $5,000 for 3 years at a flat annual rate of 6%. Plugging into the formula:</p>
+          <p class="formula" data-i18n="pages.simple.prose.pExampleFormula">I = 5000 × 0.06 × 3 = $900</p>
+          <p data-i18n="pages.simple.prose.pExample2">Your friend pays you back $5,000 (the principal) plus $900 in interest, for a total of $5,900. The interest is the same in year 1, year 2, and year 3 — that's the defining feature of simple interest.</p>
+
+          <h3 data-i18n="pages.simple.prose.h3Where">Where Simple Interest Shows Up</h3>
+          <p data-i18n="pages.simple.prose.pWhereIntro">Despite the name, simple interest isn't always the more common choice. You'll typically encounter it in:</p>
+          <ul>
+            <li data-i18n-html="pages.simple.prose.liShortLoans"><strong>Short-term personal loans</strong> — peer lending and informal arrangements often use simple interest because it's easy to compute and verify.</li>
+            <li data-i18n-html="pages.simple.prose.liAuto"><strong>Auto loans (in some jurisdictions)</strong> — many car loans technically use simple interest with a daily accrual, though the practical effect resembles a simplified amortization schedule.</li>
+            <li data-i18n-html="pages.simple.prose.liTbills"><strong>Treasury bills and short-dated bonds</strong> — most discount instruments quote yields using simple interest because the holding period is under a year.</li>
+            <li data-i18n-html="pages.simple.prose.liCds"><strong>Some certificates of deposit</strong> — CDs that pay out interest periodically (rather than reinvesting) are effectively simple interest from the depositor's perspective.</li>
+          </ul>
+
+          <h3 data-i18n="pages.simple.prose.h3VsCompound">Simple vs. Compound: Why It Matters</h3>
+          <p data-i18n="pages.simple.prose.pVsIntro">Over a single year there's no difference between simple and compound interest. The gap appears as time stretches out. At 8% per year on $10,000:</p>
+          <ul>
+            <li data-i18n-html="pages.simple.prose.li5y">After <strong>5 years</strong>: simple = $14,000, compound = $14,693 (gap = $693)</li>
+            <li data-i18n-html="pages.simple.prose.li15y">After <strong>15 years</strong>: simple = $22,000, compound = $31,722 (gap = $9,722)</li>
+            <li data-i18n-html="pages.simple.prose.li30y">After <strong>30 years</strong>: simple = $34,000, compound = $100,627 (gap = $66,627)</li>
+          </ul>
+          <p data-i18n-html="pages.simple.prose.pVsOutro">This is why long-term savers always prefer compound interest, and why borrowers should be cautious about long-dated compound-interest debt. For a side-by-side, see our <a href="blog/simple-vs-compound-interest.html">simple vs. compound interest deep-dive</a>.</p>
+
+          <h3 data-i18n="pages.simple.prose.h3Tips">Tips for Using This Calculator</h3>
+          <ul>
+            <li data-i18n="pages.simple.prose.liTipPct">Enter the rate as a percentage (e.g. 6 for 6%), not a decimal — the calculator does the conversion.</li>
+            <li data-i18n="pages.simple.prose.liTipFraction">For sub-year periods, use a fractional year. 6 months is 0.5, 90 days is roughly 0.247.</li>
+            <li data-i18n="pages.simple.prose.liTipEff">The "Effective Annual" output shows what equivalent compound rate would have produced the same total — useful for comparing simple-interest products against compound-interest alternatives.</li>
+          </ul>
+        </article>
+
+        <section class="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title" data-i18n="pages.simple.faq.title">Frequently Asked Questions</h2>
+
+          <details>
+            <summary data-i18n="pages.simple.faq.q1">What is simple interest?</summary>
+            <p data-i18n-html="pages.simple.faq.a1">Simple interest is interest calculated only on the original principal. It does not earn interest on its own. The formula is <code>I = P × r × t</code>.</p>
+          </details>
+
+          <details>
+            <summary data-i18n="pages.simple.faq.q2">When is simple interest used?</summary>
+            <p data-i18n="pages.simple.faq.a2">It's common for short-term loans, Treasury bills, some auto loans, and informal personal loans. Most savings products and long-term investments use compound interest instead.</p>
+          </details>
+
+          <details>
+            <summary data-i18n="pages.simple.faq.q3">What is the difference between simple and compound interest?</summary>
+            <p data-i18n="pages.simple.faq.a3">Simple interest grows linearly. Compound interest grows exponentially because previously earned interest is reinvested and itself earns interest. Over decades the gap between the two becomes enormous.</p>
+          </details>
+
+          <details>
+            <summary data-i18n="pages.simple.faq.q4">How do I calculate simple interest manually?</summary>
+            <p data-i18n="pages.simple.faq.a4">Multiply principal × annual rate (as a decimal) × years. For example, $5,000 × 0.06 × 3 = $900 of interest.</p>
+          </details>
+
+          <details>
+            <summary data-i18n="pages.simple.faq.q5">Can I use this for monthly or daily interest?</summary>
+            <p data-i18n="pages.simple.faq.a5">Yes — convert your time period to years. Six months is 0.5; 90 days is ~0.247. The annual rate stays as you'd quote it.</p>
+          </details>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="brand-mark small">$</span>
+        <span data-i18n="brand">CompoundCalc</span>
+      </div>
+      <p class="footer-note" data-i18n="footer.note">For educational purposes only. Not financial advice.</p>
+      <nav data-i18n-attr="aria-label:footer.ariaLabel" aria-label="Footer">
+        <a href="calculators.html" data-i18n="footer.calculators">Calculators</a>
+        <a href="blog.html" data-i18n="footer.blog">Blog</a>
+        <a href="about.html" data-i18n="footer.about">About</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms</a>
+        <a href="disclaimer.html" data-i18n="footer.disclaimer">Disclaimer</a>
+        <a href="contact.html" data-i18n="footer.contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/simple-interest.js"></script>
+</body>
+</html>

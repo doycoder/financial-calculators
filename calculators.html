@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="pages.calculators.docTitle">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Financial Calculators - CompoundCalc</title>
+  <meta name="description" content="A collection of free, accurate financial calculators: compound interest, simple interest, loan/mortgage payments, and savings goals. No signup required." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://YOUR_DOMAIN.com/calculators" />
+  <meta property="og:title" content="Free Financial Calculators" />
+  <meta property="og:description" content="Compound interest, simple interest, loan, and savings goal calculators — free and instant." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/calculators" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E%24%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Pre-paint locale: avoids English-flash before i18n.js runs -->
+  <script>
+    (function () {
+      try {
+        var v = localStorage.getItem('locale');
+        var valid = ['en','es','de','fr','ru','pt','it','zh-Hans','zh-Hant','th','ar','ja','vi','my','id','tr'];
+        if (valid.indexOf(v) === -1) v = 'en';
+        document.documentElement.lang = v;
+        document.documentElement.dir = (v === 'ar') ? 'rtl' : 'ltr';
+      } catch (_) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" data-i18n-attr="aria-label:nav.brandAria">
+        <span class="brand-mark">$</span>
+        <span class="brand-name">Compound<span>Calc</span></span>
+      </a>
+      <nav class="site-nav" data-i18n-attr="aria-label:nav.primaryAria" aria-label="Primary">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            <span data-i18n="nav.calculators">Calculators</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="index.html" role="menuitem"><strong data-i18n="nav.items.compound">Compound Interest</strong><span data-i18n="nav.items.compoundDesc">Investment growth with SIP</span></a>
+            <a href="simple-interest-calculator.html" role="menuitem"><strong data-i18n="nav.items.simple">Simple Interest</strong><span data-i18n="nav.items.simpleDesc">Flat-rate interest math</span></a>
+            <a href="loan-calculator.html" role="menuitem"><strong data-i18n="nav.items.loan">Loan / Mortgage</strong><span data-i18n="nav.items.loanDesc">Monthly payment &amp; schedule</span></a>
+            <a href="savings-goal-calculator.html" role="menuitem"><strong data-i18n="nav.items.savings">Savings Goal</strong><span data-i18n="nav.items.savingsDesc">Plan to hit a target</span></a>
+            <a href="calculators.html" role="menuitem" aria-current="page"><strong data-i18n="nav.items.all">All calculators →</strong><span data-i18n="nav.items.allDesc">Browse the full toolkit</span></a>
+          </div>
+        </div>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <div class="nav-dropdown lang-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" data-i18n-attr="aria-label:nav.languageAria" aria-label="Select language">
+            <span class="lang-current" data-lang-current>🇬🇧 EN</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu lang-menu" role="menu" data-lang-menu></div>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" data-i18n-attr="aria-label:nav.toggleMenuAria" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <button id="themeToggle" class="icon-btn" data-i18n-attr="aria-label:nav.themeToggleAria;title:nav.themeToggleAria" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="hub-page">
+    <div class="container">
+      <div class="hub-header">
+        <h1 data-i18n="pages.calculators.h1">Free Financial Calculators</h1>
+        <p data-i18n="pages.calculators.lede">A growing collection of accurate, no-signup calculators that run entirely in your browser. Pick the one that fits your question.</p>
+      </div>
+
+      <div class="tile-grid">
+        <a class="tile" href="index.html">
+          <div class="tile-icon">%</div>
+          <h3 data-i18n="pages.calculators.tiles.compoundTitle">Compound Interest Calculator</h3>
+          <p data-i18n="pages.calculators.tiles.compoundDesc">Project investment growth with an initial deposit, monthly contributions (SIP), and adjustable compounding frequency. Includes interactive chart and shareable results.</p>
+          <span class="tile-cta" data-i18n="pages.calculators.tiles.cta">Open calculator →</span>
+        </a>
+
+        <a class="tile" href="simple-interest-calculator.html">
+          <div class="tile-icon">I</div>
+          <h3 data-i18n="pages.calculators.tiles.simpleTitle">Simple Interest Calculator</h3>
+          <p data-i18n-html="pages.calculators.tiles.simpleDesc">Calculate interest using the classic <code>I = P × r × t</code> formula. Useful for short-term loans, T-bills, and bonds where interest doesn't compound.</p>
+          <span class="tile-cta" data-i18n="pages.calculators.tiles.cta">Open calculator →</span>
+        </a>
+
+        <a class="tile" href="loan-calculator.html">
+          <div class="tile-icon">$</div>
+          <h3 data-i18n="pages.calculators.tiles.loanTitle">Loan / Mortgage Calculator</h3>
+          <p data-i18n="pages.calculators.tiles.loanDesc">Find your monthly payment, total interest paid, and full amortization schedule for any fixed-rate loan or mortgage. See exactly where each dollar goes.</p>
+          <span class="tile-cta" data-i18n="pages.calculators.tiles.cta">Open calculator →</span>
+        </a>
+
+        <a class="tile" href="savings-goal-calculator.html">
+          <div class="tile-icon">★</div>
+          <h3 data-i18n="pages.calculators.tiles.savingsTitle">Savings Goal Calculator</h3>
+          <p data-i18n="pages.calculators.tiles.savingsDesc">You have a target — how much do you need to save each month to hit it? Solve for monthly contribution given goal, time horizon, and expected return.</p>
+          <span class="tile-cta" data-i18n="pages.calculators.tiles.cta">Open calculator →</span>
+        </a>
+      </div>
+
+      <section class="prose" style="margin-top: 64px; max-width: 720px;">
+        <h2 data-i18n="pages.calculators.choose.h2">How to choose the right calculator</h2>
+        <p data-i18n-html="pages.calculators.choose.p1">If you're saving or investing money <strong>and earning interest on top of interest</strong>, use the <a href="index.html">Compound Interest Calculator</a>. This is the right tool for retirement accounts, index funds, dividend reinvestment, or any long-term savings plan.</p>
+        <p data-i18n-html="pages.calculators.choose.p2">If interest is paid out instead of being added back to the principal — for example a short-term bond, certificate of deposit with simple-interest terms, or a friendly personal loan — use the <a href="simple-interest-calculator.html">Simple Interest Calculator</a>.</p>
+        <p data-i18n-html="pages.calculators.choose.p3">If you're <strong>borrowing</strong> money instead of investing it, use the <a href="loan-calculator.html">Loan Calculator</a>. It produces the standard monthly payment and a full amortization table showing how much of each payment is interest versus principal.</p>
+        <p data-i18n-html="pages.calculators.choose.p4">If you have a fixed dollar target (a down payment, an emergency fund, your child's college) and want to <strong>back-solve</strong> for the monthly contribution that gets you there, use the <a href="savings-goal-calculator.html">Savings Goal Calculator</a>.</p>
+
+        <h2 data-i18n="pages.calculators.coming.h2">What's coming next</h2>
+        <p data-i18n-html="pages.calculators.coming.p">We're working on a retirement calculator, an inflation-adjusted return calculator, and an ROI calculator. Check back, or <a href="contact.html">drop us a line</a> if you have a specific request.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="brand-mark small">$</span>
+        <span data-i18n="brand">CompoundCalc</span>
+      </div>
+      <p class="footer-note" data-i18n="footer.note">For educational purposes only. Not financial advice.</p>
+      <nav data-i18n-attr="aria-label:footer.ariaLabel" aria-label="Footer">
+        <a href="calculators.html" data-i18n="footer.calculators">Calculators</a>
+        <a href="blog.html" data-i18n="footer.blog">Blog</a>
+        <a href="about.html" data-i18n="footer.about">About</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms</a>
+        <a href="disclaimer.html" data-i18n="footer.disclaimer">Disclaimer</a>
+        <a href="contact.html" data-i18n="footer.contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+  <script src="js/i18n.js"></script>
+</body>
+</html>

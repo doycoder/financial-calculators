@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="pages.privacy.docTitle">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - Compound Interest Calculator</title>
+  <meta name="description" content="Privacy policy for the Compound Interest Calculator: what data we collect, how cookies are used, and your rights." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://YOUR_DOMAIN.com/privacy" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E%24%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Pre-paint locale: avoids English-flash before i18n.js runs -->
+  <script>
+    (function () {
+      try {
+        var v = localStorage.getItem('locale');
+        var valid = ['en','es','de','fr','ru','pt','it','zh-Hans','zh-Hant','th','ar','ja','vi','my','id','tr'];
+        if (valid.indexOf(v) === -1) v = 'en';
+        document.documentElement.lang = v;
+        document.documentElement.dir = (v === 'ar') ? 'rtl' : 'ltr';
+      } catch (_) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" data-i18n-attr="aria-label:nav.brandAria">
+        <span class="brand-mark">$</span>
+        <span class="brand-name">Compound<span>Calc</span></span>
+      </a>
+      <nav class="site-nav" data-i18n-attr="aria-label:nav.primaryAria" aria-label="Primary">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            <span data-i18n="nav.calculators">Calculators</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="index.html" role="menuitem"><strong data-i18n="nav.items.compound">Compound Interest</strong><span data-i18n="nav.items.compoundDesc">Investment growth with SIP</span></a>
+            <a href="simple-interest-calculator.html" role="menuitem"><strong data-i18n="nav.items.simple">Simple Interest</strong><span data-i18n="nav.items.simpleDesc">Flat-rate interest math</span></a>
+            <a href="loan-calculator.html" role="menuitem"><strong data-i18n="nav.items.loan">Loan / Mortgage</strong><span data-i18n="nav.items.loanDesc">Monthly payment &amp; schedule</span></a>
+            <a href="savings-goal-calculator.html" role="menuitem"><strong data-i18n="nav.items.savings">Savings Goal</strong><span data-i18n="nav.items.savingsDesc">Plan to hit a target</span></a>
+            <a href="calculators.html" role="menuitem"><strong data-i18n="nav.items.all">All calculators →</strong><span data-i18n="nav.items.allDesc">Browse the full toolkit</span></a>
+          </div>
+        </div>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <div class="nav-dropdown lang-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" data-i18n-attr="aria-label:nav.languageAria" aria-label="Select language">
+            <span class="lang-current" data-lang-current>🇬🇧 EN</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu lang-menu" role="menu" data-lang-menu></div>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" data-i18n-attr="aria-label:nav.toggleMenuAria" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <button id="themeToggle" class="icon-btn" data-i18n-attr="aria-label:nav.themeToggleAria;title:nav.themeToggleAria" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal-page">
+    <div class="container narrow">
+      <h1 data-i18n="pages.privacy.h1">Privacy Policy</h1>
+      <p class="updated" data-i18n="pages.privacy.updated">Last updated: 2026-05-23</p>
+
+      <p data-i18n-html="pages.privacy.intro">This Privacy Policy explains how CompoundCalc ("we", "us", "our") collects, uses, and shares information when you visit our website at <strong>YOUR_DOMAIN.com</strong> ("the Site"). By using the Site you agree to the practices described here.</p>
+
+      <h2 data-i18n="pages.privacy.h2Collect">1. Information We Collect</h2>
+
+      <h3 data-i18n="pages.privacy.h3Provide">1.1 Information you provide</h3>
+      <p data-i18n-html="pages.privacy.pProvide">The calculator runs entirely in your browser. The numbers you enter (initial investment, rate, years, contribution) are <strong>never transmitted to our servers</strong>. They live in the browser's memory and disappear when you close the tab. If you choose to share a link generated by the "Share" button, those values are encoded into the URL you share.</p>
+
+      <h3 data-i18n="pages.privacy.h3Auto">1.2 Automatically collected information</h3>
+      <p data-i18n="pages.privacy.pAutoIntro">When you visit the Site, our hosting provider and analytics tools may automatically collect:</p>
+      <ul>
+        <li data-i18n="pages.privacy.liAutoIp">Your IP address (truncated where possible)</li>
+        <li data-i18n="pages.privacy.liAutoBrowser">Browser type, operating system, and device category</li>
+        <li data-i18n="pages.privacy.liAutoPages">The pages you visit and the time spent on each page</li>
+        <li data-i18n="pages.privacy.liAutoRef">Referring URL (the site you came from)</li>
+      </ul>
+
+      <h3 data-i18n="pages.privacy.h3Cookies">1.3 Cookies and local storage</h3>
+      <p data-i18n="pages.privacy.pCookiesIntro">We use the following:</p>
+      <ul>
+        <li data-i18n-html="pages.privacy.liCookiesNec"><strong>Strictly necessary local storage</strong> — to remember your dark / light theme preference and your cookie consent choice. This works without your consent because it is essential to the Site's basic function.</li>
+        <li data-i18n-html="pages.privacy.liCookiesAna"><strong>Analytics cookies</strong> — only loaded if you click "Accept" on the cookie banner. We use these to understand aggregate traffic patterns. Data is anonymized.</li>
+        <li data-i18n-html="pages.privacy.liCookiesAds"><strong>Advertising cookies</strong> — if and when we display ads (for example via Google AdSense), Google and its partners may set cookies to serve relevant ads and measure performance. These only load after you accept on the banner.</li>
+      </ul>
+      <p data-i18n="pages.privacy.pCookiesOutro">You can withdraw consent at any time by clearing your browser's local storage for this Site, which will cause the consent banner to reappear.</p>
+
+      <h2 data-i18n="pages.privacy.h2Use">2. How We Use Information</h2>
+      <ul>
+        <li data-i18n="pages.privacy.liUseOp">To operate and maintain the Site</li>
+        <li data-i18n="pages.privacy.liUseImprove">To understand how visitors use the Site so we can improve it</li>
+        <li data-i18n="pages.privacy.liUseTech">To detect, prevent, and address technical issues or abuse</li>
+        <li data-i18n="pages.privacy.liUseAds">To serve advertisements (only with your consent)</li>
+        <li data-i18n="pages.privacy.liUseLegal">To comply with legal obligations</li>
+      </ul>
+
+      <h2 data-i18n="pages.privacy.h2Third">3. Third-Party Services</h2>
+      <p data-i18n="pages.privacy.pThird">We rely on the following third parties; please review their privacy policies:</p>
+      <ul>
+        <li data-i18n-html="pages.privacy.liThirdHost"><strong>Hosting provider</strong> — serves the static files. Receives standard server logs.</li>
+        <li data-i18n-html="pages.privacy.liThirdGa"><strong>Google Analytics</strong> (with consent) — usage analytics. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+        <li data-i18n-html="pages.privacy.liThirdAds"><strong>Google AdSense</strong> (with consent, when ads are enabled) — Google and its partners may use cookies to serve ads based on your visits to this and other websites. You can opt out of personalized advertising at <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a> or via <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">aboutads.info</a> (US) and <a href="https://www.youronlinechoices.com/" target="_blank" rel="noopener">youronlinechoices.com</a> (EU).</li>
+        <li data-i18n-html="pages.privacy.liThirdChart"><strong>Chart.js CDN (jsDelivr)</strong> — serves the charting library. May log standard CDN access information.</li>
+      </ul>
+
+      <h2 data-i18n="pages.privacy.h2Rights">4. Your Rights</h2>
+      <p data-i18n="pages.privacy.pRights">Depending on your jurisdiction (GDPR for the EU/UK, CCPA for California, and similar laws elsewhere) you may have the right to:</p>
+      <ul>
+        <li data-i18n="pages.privacy.liRightsAccess">Access the personal information we hold about you</li>
+        <li data-i18n="pages.privacy.liRightsCorrect">Request correction or deletion</li>
+        <li data-i18n="pages.privacy.liRightsObject">Object to or restrict certain processing</li>
+        <li data-i18n="pages.privacy.liRightsConsent">Withdraw consent at any time</li>
+        <li data-i18n="pages.privacy.liRightsComplaint">Lodge a complaint with your local data protection authority</li>
+      </ul>
+      <p data-i18n-html="pages.privacy.pRightsContact">To exercise any of these rights, contact us at the address on the <a href="contact.html">Contact</a> page.</p>
+
+      <h2 data-i18n="pages.privacy.h2Retention">5. Data Retention</h2>
+      <p data-i18n="pages.privacy.pRetention">We retain server log data for up to 30 days for security and debugging. Aggregated, anonymized analytics data may be retained longer. Calculator inputs are never stored on our servers and have no retention period.</p>
+
+      <h2 data-i18n="pages.privacy.h2Children">6. Children's Privacy</h2>
+      <p data-i18n="pages.privacy.pChildren">The Site is not directed to children under 13 (or under 16 in the EU). We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we will delete it.</p>
+
+      <h2 data-i18n="pages.privacy.h2Intl">7. International Transfers</h2>
+      <p data-i18n="pages.privacy.pIntl">Our hosting and analytics providers may process data in countries outside your own, including the United States. Where required, we rely on standard contractual clauses or equivalent safeguards.</p>
+
+      <h2 data-i18n="pages.privacy.h2Changes">8. Changes to This Policy</h2>
+      <p data-i18n="pages.privacy.pChanges">We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page reflects the most recent revision. Material changes will be highlighted on the Site.</p>
+
+      <h2 data-i18n="pages.privacy.h2Contact">9. Contact</h2>
+      <p data-i18n-html="pages.privacy.pContact">Questions about this Privacy Policy? See the <a href="contact.html">Contact</a> page.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="brand-mark small">$</span>
+        <span data-i18n="brand">CompoundCalc</span>
+      </div>
+      <p class="footer-note" data-i18n="footer.note">For educational purposes only. Not financial advice.</p>
+      <nav data-i18n-attr="aria-label:footer.ariaLabel" aria-label="Footer">
+        <a href="calculators.html" data-i18n="footer.calculators">Calculators</a>
+        <a href="blog.html" data-i18n="footer.blog">Blog</a>
+        <a href="about.html" data-i18n="footer.about">About</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms</a>
+        <a href="disclaimer.html" data-i18n="footer.disclaimer">Disclaimer</a>
+        <a href="contact.html" data-i18n="footer.contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+  <script src="js/i18n.js"></script>
+</body>
+</html>

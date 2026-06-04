@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="pages.savings.docTitle">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Savings Goal Calculator - How Much to Save Per Month</title>
+  <meta name="description" content="Free savings goal calculator. Enter your target amount, time horizon, and expected return — we'll tell you the monthly contribution needed to reach your goal." />
+  <meta name="keywords" content="savings goal calculator, monthly savings calculator, target savings calculator, how much to save calculator" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://YOUR_DOMAIN.com/savings-goal-calculator" />
+  <meta property="og:title" content="Savings Goal Calculator" />
+  <meta property="og:description" content="Find out exactly how much to save each month to hit a financial goal." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/savings-goal-calculator" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E%24%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Pre-paint locale: avoids English-flash before i18n.js runs -->
+  <script>
+    (function () {
+      try {
+        var v = localStorage.getItem('locale');
+        var valid = ['en','es','de','fr','ru','pt','it','zh-Hans','zh-Hant','th','ar','ja','vi','my','id','tr'];
+        if (valid.indexOf(v) === -1) v = 'en';
+        document.documentElement.lang = v;
+        document.documentElement.dir = (v === 'ar') ? 'rtl' : 'ltr';
+      } catch (_) {}
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Savings Goal Calculator",
+    "url": "https://YOUR_DOMAIN.com/savings-goal-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Calculate the monthly contribution needed to reach a savings goal."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"How is the required monthly savings calculated?","acceptedAnswer":{"@type":"Answer","text":"We use the future-value-of-an-annuity formula solved for the periodic payment: M = (FV − P(1+i)^n) × i / ((1+i)^n − 1), where FV is your goal, P is current savings, i is the monthly rate, and n is months. The result is the monthly contribution that reaches the goal exactly."}},
+      {"@type":"Question","name":"What rate of return should I assume?","acceptedAnswer":{"@type":"Answer","text":"For high-yield savings accounts, 4% is reasonable in 2025. For long-term stock investments, 7% (after inflation) is a common assumption. For mixed portfolios, 5% to 6% is conservative. Higher returns mean lower required contributions but also higher risk."}},
+      {"@type":"Question","name":"What if I already have some money saved?","acceptedAnswer":{"@type":"Answer","text":"Enter it as 'current savings'. The calculator subtracts the future value of your existing balance from your goal, then computes the monthly contribution needed to cover the gap."}},
+      {"@type":"Question","name":"Does this account for inflation?","acceptedAnswer":{"@type":"Answer","text":"No — it works in nominal dollars. To target purchasing power instead, increase your goal by expected inflation (e.g. multiply by 1.03 per year), or use a real (inflation-adjusted) rate of return such as 4% to 5% instead of 7%."}},
+      {"@type":"Question","name":"Can I save for any goal with this?","acceptedAnswer":{"@type":"Answer","text":"Yes — emergency funds, down payments, college, weddings, retirement supplements. Whenever you have a fixed dollar target and a timeline, this is the right calculator."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" data-i18n-attr="aria-label:nav.brandAria">
+        <span class="brand-mark">$</span>
+        <span class="brand-name">Compound<span>Calc</span></span>
+      </a>
+      <nav class="site-nav" data-i18n-attr="aria-label:nav.primaryAria" aria-label="Primary">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            <span data-i18n="nav.calculators">Calculators</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="index.html" role="menuitem"><strong data-i18n="nav.items.compound">Compound Interest</strong><span data-i18n="nav.items.compoundDesc">Investment growth with SIP</span></a>
+            <a href="simple-interest-calculator.html" role="menuitem"><strong data-i18n="nav.items.simple">Simple Interest</strong><span data-i18n="nav.items.simpleDesc">Flat-rate interest math</span></a>
+            <a href="loan-calculator.html" role="menuitem"><strong data-i18n="nav.items.loan">Loan / Mortgage</strong><span data-i18n="nav.items.loanDesc">Monthly payment &amp; schedule</span></a>
+            <a href="savings-goal-calculator.html" role="menuitem" aria-current="page"><strong data-i18n="nav.items.savings">Savings Goal</strong><span data-i18n="nav.items.savingsDesc">Plan to hit a target</span></a>
+            <a href="calculators.html" role="menuitem"><strong data-i18n="nav.items.all">All calculators →</strong><span data-i18n="nav.items.allDesc">Browse the full toolkit</span></a>
+          </div>
+        </div>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <div class="nav-dropdown lang-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" data-i18n-attr="aria-label:nav.languageAria" aria-label="Select language">
+            <span class="lang-current" data-lang-current>🇬🇧 EN</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu lang-menu" role="menu" data-lang-menu></div>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" data-i18n-attr="aria-label:nav.toggleMenuAria" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <button id="themeToggle" class="icon-btn" data-i18n-attr="aria-label:nav.themeToggleAria;title:nav.themeToggleAria" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="calculator">
+      <div class="container">
+        <div class="hero-text">
+          <h1 data-i18n="pages.savings.hero.h1">Savings Goal Calculator</h1>
+          <p class="lede" data-i18n="pages.savings.hero.lede">How much do you need to save each month to hit your target? Enter your goal — we'll do the math.</p>
+        </div>
+
+        <div class="calc-grid">
+          <div class="card input-card">
+            <h2 class="card-title" data-i18n="pages.savings.input.cardTitle">Your Goal</h2>
+
+            <div class="field">
+              <label for="sg-goal" data-i18n="pages.savings.input.goal">Savings Goal</label>
+              <div class="input-affix">
+                <span class="affix">$</span>
+                <input type="number" id="sg-goal" min="0" step="1000" value="50000" inputmode="decimal" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="sg-current" data-i18n="pages.savings.input.current">Current Savings</label>
+              <div class="input-affix">
+                <span class="affix">$</span>
+                <input type="number" id="sg-current" min="0" step="100" value="5000" inputmode="decimal" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="sg-years">
+                <span data-i18n="pages.savings.input.years">Time Horizon</span>
+                <span class="value-badge"><span id="sg-yearsValue">5</span> <span data-i18n="pages.savings.input.yearsBadge">yrs</span></span>
+              </label>
+              <input type="range" id="sg-years" min="1" max="40" step="1" value="5" />
+              <input type="number" id="sg-yearsNumber" min="1" max="50" step="1" value="5" inputmode="numeric" />
+            </div>
+
+            <div class="field">
+              <label for="sg-rate">
+                <span data-i18n="pages.savings.input.rate">Expected Annual Return</span>
+                <span class="value-badge"><span id="sg-rateValue">5</span>%</span>
+              </label>
+              <input type="range" id="sg-rate" min="0" max="20" step="0.1" value="5" />
+              <input type="number" id="sg-rateNumber" min="0" max="100" step="0.01" value="5" inputmode="decimal" />
+            </div>
+
+            <div class="actions-row">
+              <button id="sg-resetBtn" class="btn btn-ghost" type="button" data-i18n="buttons.reset">Reset</button>
+            </div>
+          </div>
+
+          <div class="card result-card">
+            <h2 class="card-title" data-i18n="pages.savings.results.cardTitle">Your Plan</h2>
+
+            <div class="result-grid">
+              <div class="result-item highlight">
+                <div class="result-label" data-i18n="pages.savings.results.monthly">Save Per Month</div>
+                <div class="result-value"><span id="sg-monthly">0</span></div>
+              </div>
+              <div class="result-item">
+                <div class="result-label" data-i18n="pages.savings.results.contributed">Total Contributed</div>
+                <div class="result-value"><span id="sg-contributed">0</span></div>
+              </div>
+              <div class="result-item">
+                <div class="result-label" data-i18n="pages.savings.results.interest">Interest Earned</div>
+                <div class="result-value gain"><span id="sg-interest">0</span></div>
+              </div>
+              <div class="result-item">
+                <div class="result-label" data-i18n="pages.savings.results.reached">Goal Reached</div>
+                <div class="result-value" id="sg-reached" style="font-size:18px;">—</div>
+              </div>
+            </div>
+
+            <div id="sg-warn" style="display:none; padding:12px 14px; margin-bottom:14px; background:rgba(239, 68, 68, 0.08); border:1px solid rgba(239, 68, 68, 0.3); color:#dc2626; border-radius:10px; font-size:13.5px;"></div>
+
+            <div class="chart-wrap">
+              <canvas id="sg-chart" data-i18n-attr="aria-label:pages.savings.results.chartAria" aria-label="Savings progress chart" role="img"></canvas>
+            </div>
+
+            <div class="legend-row">
+              <span class="legend-dot legend-contrib"></span><span data-i18n="pages.savings.results.legendContrib">Total Contributions</span>
+              <span class="legend-dot legend-interest"></span><span data-i18n="pages.savings.results.legendBalance">Account Balance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container narrow">
+        <article class="prose">
+          <h2 data-i18n="pages.savings.prose.h2">How a Savings Goal Calculator Works</h2>
+          <p data-i18n="pages.savings.prose.pIntro">Most online savings calculators ask "how much will I have?" — this one inverts the question and answers "how much should I save?" That's the more practical question for almost everyone. You know roughly when you want the money (a down payment in 5 years, college in 18 years, retirement in 30) and you know roughly how much you need. The unknown is the monthly contribution. This tool solves for it instantly.</p>
+
+          <h3 data-i18n="pages.savings.prose.h3Math">The Math Behind It</h3>
+          <p data-i18n-html="pages.savings.prose.pMath1">Saving toward a goal combines two streams of growth. First, your <strong>existing balance</strong> compounds on its own:</p>
+          <p class="formula" data-i18n-html="pages.savings.prose.pFormula1">FV<sub>existing</sub> = P × (1 + i)<sup>n</sup></p>
+          <p data-i18n-html="pages.savings.prose.pMath2">Second, each <strong>monthly contribution</strong> earns compound interest for the months remaining. Adding them up gives the future value of an annuity:</p>
+          <p class="formula" data-i18n-html="pages.savings.prose.pFormula2">FV<sub>contributions</sub> = M × ((1 + i)<sup>n</sup> − 1) / i</p>
+          <p data-i18n="pages.savings.prose.pMath3">Setting the sum equal to your goal and solving for M (monthly contribution):</p>
+          <p class="formula" data-i18n-html="pages.savings.prose.pFormula3">M = (Goal − P(1 + i)<sup>n</sup>) × i / ((1 + i)<sup>n</sup> − 1)</p>
+          <p data-i18n-html="pages.savings.prose.pMathOutro">Where <code>i</code> is the monthly rate (annual ÷ 12) and <code>n</code> is total months. The calculator does this in milliseconds for any combination of inputs.</p>
+
+          <h3 data-i18n="pages.savings.prose.h3Rate">Choosing a Realistic Return Rate</h3>
+          <p data-i18n="pages.savings.prose.pRateIntro">The expected return assumption is the single biggest lever in this calculation, so it's worth thinking about carefully. Some sensible defaults for 2025:</p>
+          <ul>
+            <li data-i18n-html="pages.savings.prose.liRateShort"><strong>1–3 years (short-term goals):</strong> Use a high-yield savings account or T-bill rate, currently around 4–5%. Don't put short-term money in stocks.</li>
+            <li data-i18n-html="pages.savings.prose.liRateMid"><strong>3–10 years (medium-term goals):</strong> A balanced portfolio of stocks and bonds typically targets 5–7%. The shorter the horizon, the more conservative you should be.</li>
+            <li data-i18n-html="pages.savings.prose.liRateLong"><strong>10+ years (long-term goals):</strong> A diversified stock portfolio has historically returned 7–10% annually before inflation. Many planners use 7% as a "safe" long-term assumption.</li>
+          </ul>
+          <p data-i18n="pages.savings.prose.pRateOutro">If in doubt, model it twice — once with an optimistic rate and once with a conservative one — and aim for the higher monthly contribution. Saving more than necessary is a much better failure mode than coming up short.</p>
+
+          <h3 data-i18n="pages.savings.prose.h3Examples">Practical Examples</h3>
+          <p data-i18n-html="pages.savings.prose.pEx1"><strong>Down payment in 5 years.</strong> You want $50,000 for a house, you have $5,000 saved, and you'll keep it in a 4% high-yield savings account. The calculator shows you'll need to save about $677 per month. Total contributions: $40,620. Interest: $4,300.</p>
+          <p data-i18n-html="pages.savings.prose.pEx2"><strong>Emergency fund in 2 years.</strong> Target $15,000 starting from zero, in a 4.5% account. Required monthly contribution: about $599. Most of your $15,000 is principal, with only $623 from interest — that's normal for short horizons.</p>
+          <p data-i18n-html="pages.savings.prose.pEx3"><strong>College in 18 years.</strong> You want $100,000 for a child's education, starting with $2,000 in a 529 plan invested at 6%. Required monthly contribution: about $233. Of the $100,000 you'll end up with, you'll have contributed only $52,300 — interest does almost half the work.</p>
+
+          <h3 data-i18n="pages.savings.prose.h3High">What If the Required Amount Is Too High?</h3>
+          <p data-i18n="pages.savings.prose.pHighIntro">If the calculator demands more than you can realistically save, you have four levers to pull:</p>
+          <ul>
+            <li data-i18n-html="pages.savings.prose.liLower"><strong>Lower the goal.</strong> Maybe you need a $30,000 down payment instead of $50,000.</li>
+            <li data-i18n-html="pages.savings.prose.liExtend"><strong>Extend the timeline.</strong> Going from 5 years to 7 years can dramatically reduce the monthly burden, both because the goal is spread across more payments and because compound growth gets more time to work.</li>
+            <li data-i18n-html="pages.savings.prose.liIncrease"><strong>Increase the assumed return.</strong> Only do this if it matches your actual investment plan. Dialing the rate up on a calculator without changing your portfolio doesn't change your actual outcome.</li>
+            <li data-i18n-html="pages.savings.prose.liUpfront"><strong>Save more upfront.</strong> If you can put a windfall (bonus, tax refund) into the "current savings" field, the required monthly drops noticeably.</li>
+          </ul>
+
+          <h3 data-i18n="pages.savings.prose.h3Tip">Tip: Start with Whatever You Can</h3>
+          <p data-i18n="pages.savings.prose.pTip">If the required monthly amount feels impossible, save what you can right now anyway. Even $50/month builds the habit, the dollars start compounding, and the goal feels less abstract. You can ratchet up the contribution as your income grows or expenses shrink. Compound interest is patient; the only mistake is not starting.</p>
+        </article>
+
+        <section class="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title" data-i18n="pages.savings.faq.title">Frequently Asked Questions</h2>
+          <details>
+            <summary data-i18n="pages.savings.faq.q1">How is the required monthly savings calculated?</summary>
+            <p data-i18n-html="pages.savings.faq.a1">We solve the future-value-of-an-annuity formula for the monthly payment: <code>M = (Goal − P(1+i)<sup>n</sup>) × i / ((1+i)<sup>n</sup> − 1)</code>. This produces the contribution that reaches your goal exactly on schedule.</p>
+          </details>
+          <details>
+            <summary data-i18n="pages.savings.faq.q2">What rate of return should I assume?</summary>
+            <p data-i18n="pages.savings.faq.a2">For short-term cash goals, use a high-yield savings rate (~4%). For long-term stock investing, 7% is a common conservative assumption. Don't assume returns higher than what your actual portfolio can plausibly deliver.</p>
+          </details>
+          <details>
+            <summary data-i18n="pages.savings.faq.q3">What if I already have some money saved?</summary>
+            <p data-i18n="pages.savings.faq.a3">Enter the amount in "Current Savings". The calculator subtracts its projected future value from your goal and solves for the contribution needed to fill the gap.</p>
+          </details>
+          <details>
+            <summary data-i18n="pages.savings.faq.q4">Does this account for inflation?</summary>
+            <p data-i18n="pages.savings.faq.a4">No, results are in nominal dollars. To target real purchasing power, either inflate your goal upward (multiply by 1.03 per year) or use a real, inflation-adjusted return rate (try 4–5% instead of 7%).</p>
+          </details>
+          <details>
+            <summary data-i18n="pages.savings.faq.q5">Can I use this for any goal?</summary>
+            <p data-i18n="pages.savings.faq.a5">Yes — emergency funds, down payments, college, weddings, sabbatical, retirement supplements. Anywhere you have a fixed dollar target and a timeline, this is the right tool.</p>
+          </details>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="brand-mark small">$</span>
+        <span data-i18n="brand">CompoundCalc</span>
+      </div>
+      <p class="footer-note" data-i18n="footer.note">For educational purposes only. Not financial advice.</p>
+      <nav data-i18n-attr="aria-label:footer.ariaLabel" aria-label="Footer">
+        <a href="calculators.html" data-i18n="footer.calculators">Calculators</a>
+        <a href="blog.html" data-i18n="footer.blog">Blog</a>
+        <a href="about.html" data-i18n="footer.about">About</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms</a>
+        <a href="disclaimer.html" data-i18n="footer.disclaimer">Disclaimer</a>
+        <a href="contact.html" data-i18n="footer.contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/savings-goal.js"></script>
+</body>
+</html>

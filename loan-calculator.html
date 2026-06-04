@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="pages.loan.docTitle">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loan & Mortgage Calculator - Monthly Payment & Amortization</title>
+  <meta name="description" content="Free loan and mortgage calculator. Compute your monthly payment, total interest, and full amortization schedule for any fixed-rate loan. Instant results with chart." />
+  <meta name="keywords" content="loan calculator, mortgage calculator, monthly payment calculator, amortization calculator, EMI calculator" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://YOUR_DOMAIN.com/loan-calculator" />
+  <meta property="og:title" content="Loan & Mortgage Calculator" />
+  <meta property="og:description" content="Compute monthly payments, total interest, and a full amortization schedule for any fixed-rate loan." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/loan-calculator" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E%24%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Pre-paint locale: avoids English-flash before i18n.js runs -->
+  <script>
+    (function () {
+      try {
+        var v = localStorage.getItem('locale');
+        var valid = ['en','es','de','fr','ru','pt','it','zh-Hans','zh-Hant','th','ar','ja','vi','my','id','tr'];
+        if (valid.indexOf(v) === -1) v = 'en';
+        document.documentElement.lang = v;
+        document.documentElement.dir = (v === 'ar') ? 'rtl' : 'ltr';
+      } catch (_) {}
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Loan & Mortgage Calculator",
+    "url": "https://YOUR_DOMAIN.com/loan-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Compute monthly loan payments and amortization schedules for fixed-rate loans and mortgages."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"How is a monthly loan payment calculated?","acceptedAnswer":{"@type":"Answer","text":"Monthly payment = P × (i × (1 + i)^n) / ((1 + i)^n − 1), where P is the loan amount, i is the monthly rate (annual rate ÷ 12), and n is the number of monthly payments (years × 12). This produces a fixed payment that fully amortizes the loan."}},
+      {"@type":"Question","name":"What is amortization?","acceptedAnswer":{"@type":"Answer","text":"Amortization is the process of paying down a loan over time through scheduled payments. Each payment splits between interest and principal. Early payments are mostly interest; later payments are mostly principal."}},
+      {"@type":"Question","name":"Why do early loan payments go mostly to interest?","acceptedAnswer":{"@type":"Answer","text":"Interest is charged on the remaining balance. When the balance is high (early in the loan) most of the fixed payment is consumed by interest. As the balance shrinks, more of each payment goes to principal."}},
+      {"@type":"Question","name":"How do I save on interest over a mortgage's life?","acceptedAnswer":{"@type":"Answer","text":"Three reliable ways: a shorter term (e.g. 15 vs 30 years), a lower rate (refinance when rates drop), or extra principal payments (which don't change the schedule but shorten it)."}},
+      {"@type":"Question","name":"Does this calculator include taxes, insurance, or PMI?","acceptedAnswer":{"@type":"Answer","text":"No. It computes principal and interest only (P&I). Property taxes, homeowners insurance, PMI, and HOA fees vary widely and should be added separately to estimate your total monthly housing cost."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" data-i18n-attr="aria-label:nav.brandAria">
+        <span class="brand-mark">$</span>
+        <span class="brand-name">Compound<span>Calc</span></span>
+      </a>
+      <nav class="site-nav" data-i18n-attr="aria-label:nav.primaryAria" aria-label="Primary">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            <span data-i18n="nav.calculators">Calculators</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="index.html" role="menuitem"><strong data-i18n="nav.items.compound">Compound Interest</strong><span data-i18n="nav.items.compoundDesc">Investment growth with SIP</span></a>
+            <a href="simple-interest-calculator.html" role="menuitem"><strong data-i18n="nav.items.simple">Simple Interest</strong><span data-i18n="nav.items.simpleDesc">Flat-rate interest math</span></a>
+            <a href="loan-calculator.html" role="menuitem" aria-current="page"><strong data-i18n="nav.items.loan">Loan / Mortgage</strong><span data-i18n="nav.items.loanDesc">Monthly payment &amp; schedule</span></a>
+            <a href="savings-goal-calculator.html" role="menuitem"><strong data-i18n="nav.items.savings">Savings Goal</strong><span data-i18n="nav.items.savingsDesc">Plan to hit a target</span></a>
+            <a href="calculators.html" role="menuitem"><strong data-i18n="nav.items.all">All calculators →</strong><span data-i18n="nav.items.allDesc">Browse the full toolkit</span></a>
+          </div>
+        </div>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <div class="nav-dropdown lang-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" data-i18n-attr="aria-label:nav.languageAria" aria-label="Select language">
+            <span class="lang-current" data-lang-current>🇬🇧 EN</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu lang-menu" role="menu" data-lang-menu></div>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" data-i18n-attr="aria-label:nav.toggleMenuAria" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <button id="themeToggle" class="icon-btn" data-i18n-attr="aria-label:nav.themeToggleAria;title:nav.themeToggleAria" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="calculator">
+      <div class="container">
+        <div class="hero-text">
+          <h1 data-i18n="pages.loan.hero.h1">Loan &amp; Mortgage Calculator</h1>
+          <p class="lede" data-i18n="pages.loan.hero.lede">Find your monthly payment, total interest, and full amortization schedule for any fixed-rate loan.</p>
+        </div>
+
+        <div class="calc-grid">
+          <div class="card input-card">
+            <h2 class="card-title" data-i18n="pages.loan.input.cardTitle">Loan Details</h2>
+
+            <div class="field">
+              <label for="ln-amount" data-i18n="pages.loan.input.amount">Loan Amount</label>
+              <div class="input-affix">
+                <span class="affix">$</span>
+                <input type="number" id="ln-amount" min="0" step="1000" value="300000" inputmode="decimal" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="ln-rate">
+                <span data-i18n="pages.loan.input.rate">Annual Interest Rate</span>
+                <span class="value-badge"><span id="ln-rateValue">6.5</span>%</span>
+              </label>
+              <input type="range" id="ln-rate" min="0" max="20" step="0.05" value="6.5" />
+              <input type="number" id="ln-rateNumber" min="0" max="100" step="0.01" value="6.5" inputmode="decimal" />
+            </div>
+
+            <div class="field">
+              <label for="ln-years">
+                <span data-i18n="pages.loan.input.years">Loan Term</span>
+                <span class="value-badge"><span id="ln-yearsValue">30</span> <span data-i18n="pages.loan.input.yearsBadge">yrs</span></span>
+              </label>
+              <input type="range" id="ln-years" min="1" max="40" step="1" value="30" />
+              <input type="number" id="ln-yearsNumber" min="1" max="50" step="1" value="30" inputmode="numeric" />
+            </div>
+
+            <div class="actions-row">
+              <button id="ln-resetBtn" class="btn btn-ghost" type="button" data-i18n="buttons.reset">Reset</button>
+              <button id="ln-toggleTable" class="btn btn-secondary" type="button" data-i18n="pages.loan.input.viewSchedule">View Schedule</button>
+            </div>
+          </div>
+
+          <div class="card result-card">
+            <h2 class="card-title" data-i18n="pages.loan.results.cardTitle">Your Payment</h2>
+
+            <div class="result-grid">
+              <div class="result-item highlight">
+                <div class="result-label" data-i18n="pages.loan.results.monthly">Monthly Payment</div>
+                <div class="result-value"><span id="ln-monthly">0</span></div>
+              </div>
+              <div class="result-item">
+                <div class="result-label" data-i18n="pages.loan.results.totalPaid">Total Paid</div>
+                <div class="result-value"><span id="ln-totalPaid">0</span></div>
+              </div>
+              <div class="result-item">
+                <div class="result-label" data-i18n="pages.loan.results.totalInterest">Total Interest</div>
+                <div class="result-value gain"><span id="ln-totalInterest">0</span></div>
+              </div>
+              <div class="result-item">
+                <div class="result-label" data-i18n="pages.loan.results.payoff">Payoff Date</div>
+                <div class="result-value" id="ln-payoff" style="font-size:18px;">—</div>
+              </div>
+            </div>
+
+            <div class="chart-wrap">
+              <canvas id="ln-chart" data-i18n-attr="aria-label:pages.loan.results.chartAria" aria-label="Loan balance over time" role="img"></canvas>
+            </div>
+
+            <div class="legend-row">
+              <span class="legend-dot legend-contrib"></span><span data-i18n="pages.loan.results.legendBalance">Remaining Balance</span>
+              <span class="legend-dot legend-interest"></span><span data-i18n="pages.loan.results.legendInterest">Cumulative Interest</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Amortization table (collapsed by default) -->
+        <div id="ln-tableWrap" class="card" style="margin-top:24px; display:none;">
+          <h2 class="card-title" data-i18n="pages.loan.table.title">Amortization Schedule</h2>
+          <p style="color:var(--text-muted); font-size:13px; margin:0 0 16px;" data-i18n="pages.loan.table.sub">Showing one row per year. Each row is the year-end snapshot.</p>
+          <div style="overflow-x:auto;">
+            <table id="ln-table" class="amort-table">
+              <thead>
+                <tr>
+                  <th data-i18n="pages.loan.table.year">Year</th>
+                  <th style="text-align:right;" data-i18n="pages.loan.table.principal">Principal Paid</th>
+                  <th style="text-align:right;" data-i18n="pages.loan.table.interest">Interest Paid</th>
+                  <th style="text-align:right;" data-i18n="pages.loan.table.total">Total Paid</th>
+                  <th style="text-align:right;" data-i18n="pages.loan.table.balance">Balance</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container narrow">
+        <article class="prose">
+          <h2 data-i18n="pages.loan.prose.h2">How to Use a Loan Calculator</h2>
+          <p data-i18n="pages.loan.prose.pIntro">Borrowing money is one of the largest financial commitments most people ever make. Whether it's a mortgage, auto loan, or personal loan, the math behind your monthly payment is the same: a single fixed-rate formula stretches the principal over many months, with interest accruing on whatever balance remains. This calculator does that math instantly so you can compare loan offers, plan a budget, and see the full lifetime cost before signing anything.</p>
+
+          <h3 data-i18n="pages.loan.prose.h3Formula">The Loan Payment Formula</h3>
+          <p data-i18n="pages.loan.prose.pFormulaIntro">The standard fixed-rate (fully amortizing) loan payment is:</p>
+          <p class="formula" data-i18n-html="pages.loan.prose.pFormula"><strong>M = P × i (1 + i)<sup>n</sup> / ((1 + i)<sup>n</sup> − 1)</strong></p>
+          <ul>
+            <li data-i18n-html="pages.loan.prose.liM"><strong>M</strong> — your monthly payment</li>
+            <li data-i18n-html="pages.loan.prose.liP"><strong>P</strong> — the loan amount (principal)</li>
+            <li data-i18n-html="pages.loan.prose.liI"><strong>i</strong> — monthly interest rate (annual rate divided by 12)</li>
+            <li data-i18n-html="pages.loan.prose.liN"><strong>n</strong> — total number of monthly payments (loan years × 12)</li>
+          </ul>
+          <p data-i18n="pages.loan.prose.pFormulaOutro">The formula produces a payment that exactly pays off the loan over the term. The first payment is mostly interest because interest is charged on the (high) remaining balance; the final payment is mostly principal because the balance is nearly zero.</p>
+
+          <h3 data-i18n="pages.loan.prose.h3Wasted">Why Early Payments Look "Wasted"</h3>
+          <p data-i18n="pages.loan.prose.pWasted">One of the most common surprises for new homeowners is opening their first mortgage statement and seeing how little of the payment went to principal. On a 30-year mortgage at 6.5%, the very first payment is roughly 87% interest and 13% principal. By year 15 it's about 50/50. Only in the final years does the principal portion dominate. This is unavoidable arithmetic, not a trick — interest is charged on whatever balance is outstanding, and early on the balance is high.</p>
+
+          <h3 data-i18n="pages.loan.prose.h3Levers">Three Levers to Reduce Total Interest</h3>
+          <p data-i18n="pages.loan.prose.pLeversIntro">Once you've used the calculator to see how much interest a loan will cost, you have three reliable ways to reduce that number:</p>
+          <ul>
+            <li data-i18n-html="pages.loan.prose.liShorten"><strong>Shorten the term.</strong> A 15-year mortgage costs more per month but saves enormous amounts of interest. On $300,000 at 6.5%, the 30-year option costs about $382,633 in interest. The 15-year option at the same rate costs just $170,367 — less than half.</li>
+            <li data-i18n-html="pages.loan.prose.liLower"><strong>Lower the rate.</strong> Refinance when rates drop. Even a 1% reduction on a $300,000, 30-year mortgage saves roughly $70,000 over the life of the loan.</li>
+            <li data-i18n-html="pages.loan.prose.liExtra"><strong>Make extra principal payments.</strong> Adding even an extra $200/month doesn't change your scheduled payment but shortens the loan and saves substantial interest. The amortization schedule above shows year-end balances — extra payments would compress the table.</li>
+          </ul>
+
+          <h3 data-i18n="pages.loan.prose.h3Piti">Mortgages: What's Not Included Here</h3>
+          <p data-i18n-html="pages.loan.prose.pPitiIntro">This calculator computes principal and interest (P&amp;I) only. A real mortgage payment, especially in the United States, often includes additional escrowed items abbreviated as PITI:</p>
+          <ul>
+            <li data-i18n-html="pages.loan.prose.liPitiP"><strong>P</strong> — principal</li>
+            <li data-i18n-html="pages.loan.prose.liPitiI"><strong>I</strong> — interest</li>
+            <li data-i18n-html="pages.loan.prose.liPitiT"><strong>T</strong> — property taxes (typically 0.5%–2.5% of home value annually, varies by state)</li>
+            <li data-i18n-html="pages.loan.prose.liPitiI2"><strong>I</strong> — homeowners insurance (typically $1,000–$3,000/year)</li>
+            <li data-i18n-html="pages.loan.prose.liPitiPmi">Plus PMI (if down payment &lt; 20%) and HOA fees if applicable</li>
+          </ul>
+          <p data-i18n-html="pages.loan.prose.pPitiOutro">For a quick estimate, add roughly 25%–35% to the P&amp;I shown above to approximate your total monthly housing cost. For a precise figure, get a Loan Estimate from your lender.</p>
+
+          <h3 data-i18n="pages.loan.prose.h3Reading">Reading the Amortization Table</h3>
+          <p data-i18n-html="pages.loan.prose.pReading">Click <strong>View Schedule</strong> to see year-by-year breakdown. Each row shows how much principal and interest you paid that year, the cumulative total, and your remaining balance at year-end. The columns help answer questions like: "How much equity will I have in 10 years?" (Loan amount minus the year-10 balance.) Or: "What if I sell after year 7?" (Same principle: subtract the year-7 balance from the loan amount to see how much you've paid down.)</p>
+        </article>
+
+        <section class="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title" data-i18n="pages.loan.faq.title">Frequently Asked Questions</h2>
+          <details>
+            <summary data-i18n="pages.loan.faq.q1">How is a monthly loan payment calculated?</summary>
+            <p data-i18n-html="pages.loan.faq.a1">Using the fixed-rate amortization formula <code>M = P × i (1 + i)<sup>n</sup> / ((1 + i)<sup>n</sup> − 1)</code>, where <code>i</code> is the monthly rate and <code>n</code> is the total number of payments. The result is a payment that fully amortizes the loan over the term.</p>
+          </details>
+          <details>
+            <summary data-i18n="pages.loan.faq.q2">What is amortization?</summary>
+            <p data-i18n="pages.loan.faq.a2">Amortization is the gradual paydown of a loan through scheduled payments. Each payment is split between interest (charged on the remaining balance) and principal (which reduces the balance). Early payments are mostly interest; later payments are mostly principal.</p>
+          </details>
+          <details>
+            <summary data-i18n="pages.loan.faq.q3">Why do early loan payments go mostly to interest?</summary>
+            <p data-i18n="pages.loan.faq.a3">Because interest is charged on the outstanding balance. When the balance is at its highest — at the start — most of your fixed payment is consumed by interest, leaving little to chip away at principal.</p>
+          </details>
+          <details>
+            <summary data-i18n="pages.loan.faq.q4">How can I save interest over the life of a mortgage?</summary>
+            <p data-i18n="pages.loan.faq.a4">Pick a shorter term, refinance to a lower rate when possible, or make extra principal payments. Any of the three reduces the total interest paid significantly.</p>
+          </details>
+          <details>
+            <summary data-i18n="pages.loan.faq.q5">Does this include taxes, insurance, and PMI?</summary>
+            <p data-i18n="pages.loan.faq.a5">No. The calculator returns principal and interest only. Add property taxes, homeowners insurance, PMI (if applicable), and HOA fees separately to estimate your total monthly housing cost.</p>
+          </details>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="brand-mark small">$</span>
+        <span data-i18n="brand">CompoundCalc</span>
+      </div>
+      <p class="footer-note" data-i18n="footer.note">For educational purposes only. Not financial advice.</p>
+      <nav data-i18n-attr="aria-label:footer.ariaLabel" aria-label="Footer">
+        <a href="calculators.html" data-i18n="footer.calculators">Calculators</a>
+        <a href="blog.html" data-i18n="footer.blog">Blog</a>
+        <a href="about.html" data-i18n="footer.about">About</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms</a>
+        <a href="disclaimer.html" data-i18n="footer.disclaimer">Disclaimer</a>
+        <a href="contact.html" data-i18n="footer.contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/loan.js"></script>
+</body>
+</html>

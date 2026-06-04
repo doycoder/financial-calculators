@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="pages.terms.docTitle">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service - Compound Interest Calculator</title>
+  <meta name="description" content="Terms of service governing your use of the Compound Interest Calculator." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://YOUR_DOMAIN.com/terms" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E%24%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Pre-paint locale: avoids English-flash before i18n.js runs -->
+  <script>
+    (function () {
+      try {
+        var v = localStorage.getItem('locale');
+        var valid = ['en','es','de','fr','ru','pt','it','zh-Hans','zh-Hant','th','ar','ja','vi','my','id','tr'];
+        if (valid.indexOf(v) === -1) v = 'en';
+        document.documentElement.lang = v;
+        document.documentElement.dir = (v === 'ar') ? 'rtl' : 'ltr';
+      } catch (_) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" data-i18n-attr="aria-label:nav.brandAria">
+        <span class="brand-mark">$</span>
+        <span class="brand-name">Compound<span>Calc</span></span>
+      </a>
+      <nav class="site-nav" data-i18n-attr="aria-label:nav.primaryAria" aria-label="Primary">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            <span data-i18n="nav.calculators">Calculators</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="index.html" role="menuitem"><strong data-i18n="nav.items.compound">Compound Interest</strong><span data-i18n="nav.items.compoundDesc">Investment growth with SIP</span></a>
+            <a href="simple-interest-calculator.html" role="menuitem"><strong data-i18n="nav.items.simple">Simple Interest</strong><span data-i18n="nav.items.simpleDesc">Flat-rate interest math</span></a>
+            <a href="loan-calculator.html" role="menuitem"><strong data-i18n="nav.items.loan">Loan / Mortgage</strong><span data-i18n="nav.items.loanDesc">Monthly payment &amp; schedule</span></a>
+            <a href="savings-goal-calculator.html" role="menuitem"><strong data-i18n="nav.items.savings">Savings Goal</strong><span data-i18n="nav.items.savingsDesc">Plan to hit a target</span></a>
+            <a href="calculators.html" role="menuitem"><strong data-i18n="nav.items.all">All calculators →</strong><span data-i18n="nav.items.allDesc">Browse the full toolkit</span></a>
+          </div>
+        </div>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <div class="nav-dropdown lang-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" data-i18n-attr="aria-label:nav.languageAria" aria-label="Select language">
+            <span class="lang-current" data-lang-current>🇬🇧 EN</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu lang-menu" role="menu" data-lang-menu></div>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" data-i18n-attr="aria-label:nav.toggleMenuAria" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <button id="themeToggle" class="icon-btn" data-i18n-attr="aria-label:nav.themeToggleAria;title:nav.themeToggleAria" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal-page">
+    <div class="container narrow">
+      <h1 data-i18n="pages.terms.h1">Terms of Service</h1>
+      <p class="updated" data-i18n="pages.terms.updated">Last updated: 2026-05-23</p>
+
+      <p data-i18n-html="pages.terms.intro">These Terms of Service ("Terms") govern your access to and use of the CompoundCalc website at <strong>YOUR_DOMAIN.com</strong> ("the Site"). By using the Site, you agree to these Terms. If you do not agree, please do not use the Site.</p>
+
+      <h2 data-i18n="pages.terms.h2Service">1. The Service</h2>
+      <p data-i18n="pages.terms.pService">The Site provides a free online compound interest calculator and related educational content. All calculations are performed in your browser. We do not collect, transmit, or store the financial figures you enter.</p>
+
+      <h2 data-i18n="pages.terms.h2Advice">2. No Financial Advice</h2>
+      <p data-i18n-html="pages.terms.pAdvice1">The Site is for <strong>educational and informational purposes only</strong>. Nothing on the Site constitutes financial, investment, tax, legal, or accounting advice. The calculator's results are projections based on assumptions you provide and do not guarantee any actual outcome. See our <a href="disclaimer.html">Disclaimer</a> for full details.</p>
+      <p data-i18n="pages.terms.pAdvice2">Always consult a qualified, licensed professional before making financial decisions.</p>
+
+      <h2 data-i18n="pages.terms.h2Use">3. Acceptable Use</h2>
+      <p data-i18n="pages.terms.pUseIntro">You agree not to:</p>
+      <ul>
+        <li data-i18n="pages.terms.liUseLawful">Use the Site in any unlawful manner or for any unlawful purpose</li>
+        <li data-i18n="pages.terms.liUseAccess">Attempt to gain unauthorized access to any portion of the Site or its servers</li>
+        <li data-i18n="pages.terms.liUseInterf">Interfere with or disrupt the integrity or performance of the Site</li>
+        <li data-i18n="pages.terms.liUseScrape">Scrape, mirror, or systematically reproduce content without written permission</li>
+        <li data-i18n="pages.terms.liUseBots">Use automated tools (bots, crawlers) in a way that places undue load on the Site</li>
+        <li data-i18n="pages.terms.liUseRev">Reverse-engineer or attempt to extract source code beyond what is publicly served</li>
+      </ul>
+
+      <h2 data-i18n="pages.terms.h2Ip">4. Intellectual Property</h2>
+      <p data-i18n="pages.terms.pIp1">All Site content (including text, graphics, logos, code, and the calculator implementation) is the property of CompoundCalc or its licensors and is protected by copyright and other intellectual property laws. You are granted a limited, non-exclusive, non-transferable license to access and use the Site for personal, non-commercial purposes.</p>
+      <p data-i18n="pages.terms.pIp2">Open-source libraries used on the Site (such as Chart.js) are licensed under their own terms.</p>
+
+      <h2 data-i18n="pages.terms.h2ThirdLinks">5. Third-Party Links and Services</h2>
+      <p data-i18n="pages.terms.pThirdLinks">The Site may contain links to third-party websites or services. We do not control these and are not responsible for their content, privacy practices, or availability. Your interactions with third parties are solely between you and them.</p>
+
+      <h2 data-i18n="pages.terms.h2Ads">6. Advertising</h2>
+      <p data-i18n="pages.terms.pAds">The Site may display advertisements provided by third-party networks (e.g., Google AdSense). We do not endorse advertised products or services and are not responsible for any transactions you enter into with advertisers.</p>
+
+      <h2 data-i18n="pages.terms.h2Warr">7. Disclaimer of Warranties</h2>
+      <p data-i18n="pages.terms.pWarr">THE SITE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, AND NON-INFRINGEMENT. We do not warrant that the Site will be uninterrupted, error-free, or free from harmful components.</p>
+
+      <h2 data-i18n="pages.terms.h2Liab">8. Limitation of Liability</h2>
+      <p data-i18n="pages.terms.pLiab">TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL COMPOUNDCALC, ITS OPERATORS, OR ITS LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, REVENUE, DATA, OR INVESTMENT VALUE, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE SITE. Our total aggregate liability shall not exceed USD 100.</p>
+
+      <h2 data-i18n="pages.terms.h2Indem">9. Indemnification</h2>
+      <p data-i18n="pages.terms.pIndem">You agree to indemnify and hold harmless CompoundCalc and its operators from any claim or demand, including reasonable attorneys' fees, arising out of your use of the Site or your violation of these Terms.</p>
+
+      <h2 data-i18n="pages.terms.h2Changes">10. Changes to the Service and Terms</h2>
+      <p data-i18n="pages.terms.pChanges">We may modify or discontinue the Site at any time without notice. We may also revise these Terms; the "Last updated" date reflects the most recent change. Continued use of the Site after changes constitutes acceptance of the revised Terms.</p>
+
+      <h2 data-i18n="pages.terms.h2Law">11. Governing Law</h2>
+      <p data-i18n="pages.terms.pLaw">These Terms are governed by the laws applicable to the operator of the Site, without regard to conflict-of-law principles. Disputes shall be resolved in the courts having jurisdiction over the operator's location, unless mandatory consumer-protection laws of your country require otherwise.</p>
+
+      <h2 data-i18n="pages.terms.h2Contact">12. Contact</h2>
+      <p data-i18n-html="pages.terms.pContact">Questions about these Terms? See the <a href="contact.html">Contact</a> page.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="brand-mark small">$</span>
+        <span data-i18n="brand">CompoundCalc</span>
+      </div>
+      <p class="footer-note" data-i18n="footer.note">For educational purposes only. Not financial advice.</p>
+      <nav data-i18n-attr="aria-label:footer.ariaLabel" aria-label="Footer">
+        <a href="calculators.html" data-i18n="footer.calculators">Calculators</a>
+        <a href="blog.html" data-i18n="footer.blog">Blog</a>
+        <a href="about.html" data-i18n="footer.about">About</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms</a>
+        <a href="disclaimer.html" data-i18n="footer.disclaimer">Disclaimer</a>
+        <a href="contact.html" data-i18n="footer.contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+  <script src="js/i18n.js"></script>
+</body>
+</html>

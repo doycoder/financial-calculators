@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(py --version)",
+      "Bash(python -m http.server 8080)",
+      "Bash(cmd.exe *)",
+      "Bash(node deploy-config.js example.com)",
+      "Bash(node deploy-config.js example.com --revert)",
+      "Bash(grep -v \":0$\")",
+      "Bash(node deploy-config.js example.test)",
+      "Bash(node deploy-config.js example.test --revert)"
+    ]
+  }
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="pages.ruleOf72.docTitle">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Rule of 72: How to Estimate Compound Growth in Your Head</title>
+  <meta name="description" content="The Rule of 72 is a 300-year-old shortcut for mentally estimating how long it takes money to double at any compound interest rate. Here's where it comes from, when it's accurate, and how to use it." />
+  <meta name="keywords" content="rule of 72, compound interest shortcut, doubling time formula, mental math investing" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://YOUR_DOMAIN.com/blog/rule-of-72" />
+  <meta property="og:title" content="The Rule of 72: How to Estimate Compound Growth in Your Head" />
+  <meta property="og:description" content="A 300-year-old shortcut that lets you mentally compute doubling time at any compound rate. Surprisingly accurate." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/blog/rule-of-72" />
+  <meta property="article:published_time" content="2026-05-23" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E%24%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Pre-paint locale: avoids English-flash before i18n.js runs -->
+  <script>
+    (function () {
+      try {
+        var v = localStorage.getItem('locale');
+        var valid = ['en','es','de','fr','ru','pt','it','zh-Hans','zh-Hant','th','ar','ja','vi','my','id','tr'];
+        if (valid.indexOf(v) === -1) v = 'en';
+        document.documentElement.lang = v;
+        document.documentElement.dir = (v === 'ar') ? 'rtl' : 'ltr';
+      } catch (_) {}
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Rule of 72: How to Estimate Compound Growth in Your Head",
+    "datePublished": "2026-05-23",
+    "dateModified": "2026-05-23",
+    "author": { "@type": "Organization", "name": "CompoundCalc" },
+    "publisher": { "@type": "Organization", "name": "CompoundCalc" },
+    "description": "A 300-year-old shortcut for mentally estimating how long compound interest takes to double money."
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand" data-i18n-attr="aria-label:nav.brandAria">
+        <span class="brand-mark">$</span>
+        <span class="brand-name">Compound<span>Calc</span></span>
+      </a>
+      <nav class="site-nav" data-i18n-attr="aria-label:nav.primaryAria" aria-label="Primary">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            <span data-i18n="nav.calculators">Calculators</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="../index.html" role="menuitem"><strong data-i18n="nav.items.compound">Compound Interest</strong><span data-i18n="nav.items.compoundDesc">Investment growth with SIP</span></a>
+            <a href="../simple-interest-calculator.html" role="menuitem"><strong data-i18n="nav.items.simple">Simple Interest</strong><span data-i18n="nav.items.simpleDesc">Flat-rate interest math</span></a>
+            <a href="../loan-calculator.html" role="menuitem"><strong data-i18n="nav.items.loan">Loan / Mortgage</strong><span data-i18n="nav.items.loanDesc">Monthly payment &amp; schedule</span></a>
+            <a href="../savings-goal-calculator.html" role="menuitem"><strong data-i18n="nav.items.savings">Savings Goal</strong><span data-i18n="nav.items.savingsDesc">Plan to hit a target</span></a>
+            <a href="../calculators.html" role="menuitem"><strong data-i18n="nav.items.all">All calculators →</strong><span data-i18n="nav.items.allDesc">Browse the full toolkit</span></a>
+          </div>
+        </div>
+        <a href="../blog.html" aria-current="page" data-i18n="nav.blog">Blog</a>
+        <a href="../about.html" data-i18n="nav.about">About</a>
+        <div class="nav-dropdown lang-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" data-i18n-attr="aria-label:nav.languageAria" aria-label="Select language">
+            <span class="lang-current" data-lang-current>🇬🇧 EN</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu lang-menu" role="menu" data-lang-menu></div>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" data-i18n-attr="aria-label:nav.toggleMenuAria" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <button id="themeToggle" class="icon-btn" data-i18n-attr="aria-label:nav.themeToggleAria;title:nav.themeToggleAria" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="article-page">
+    <div class="container">
+      <header class="article-header">
+        <div class="meta" data-i18n="pages.ruleOf72.meta">Math · 6 min read · May 23, 2026</div>
+        <h1 data-i18n="pages.ruleOf72.h1">The Rule of 72: How to Estimate Compound Growth in Your Head</h1>
+        <p class="lede" data-i18n="pages.ruleOf72.lede">A 300-year-old shortcut that lets you mentally compute how long it takes money to double at any compound interest rate. Surprisingly accurate up to about 20%.</p>
+      </header>
+
+      <article class="article-body">
+        <p data-i18n-html="pages.ruleOf72.pIntro">If a friend asks how long it would take their savings to double at 8% per year, you don't need a calculator or a spreadsheet. You need one number: <strong>72</strong>. Divide 72 by the rate, and the answer is the doubling time. <em>Nine years.</em> That's it. The Rule of 72 is one of those rare pieces of financial folklore that's actually useful, technically defensible, and shows up in published mathematical literature dating back to 1494. It deserves a permanent spot in your mental toolkit.</p>
+
+        <h2 data-i18n="pages.ruleOf72.h2What">What the Rule Says</h2>
+        <p data-i18n="pages.ruleOf72.pWhat1">The Rule of 72 estimates how many years it takes a compounding investment to double in value:</p>
+        <p><code data-i18n="pages.ruleOf72.pWhatFormula">Doubling years ≈ 72 ÷ rate</code></p>
+        <p data-i18n="pages.ruleOf72.pWhat2">So at 6%, money doubles in about 12 years. At 9%, it doubles in 8 years. At 12%, it doubles in 6 years. The rule also works in reverse: if you know how fast something doubled, you can estimate the rate. A balance that doubled in 10 years grew at roughly 7.2% per year.</p>
+
+        <h2 data-i18n="pages.ruleOf72.h2Why">Why 72 (and Not Some Other Number)?</h2>
+        <p data-i18n="pages.ruleOf72.pWhy1">The exact answer comes from the natural logarithm:</p>
+        <p><code data-i18n="pages.ruleOf72.pWhyFormula">Doubling time = ln(2) ÷ ln(1 + r) ≈ 0.693 ÷ r when r is small.</code></p>
+        <p data-i18n-html="pages.ruleOf72.pWhy2">That gives <strong>69.3</strong>, not 72. So why 72? Two reasons:</p>
+        <ul>
+          <li data-i18n-html="pages.ruleOf72.liWhyDiv"><strong>72 has many divisors.</strong> It divides cleanly by 2, 3, 4, 6, 8, 9, 12 — exactly the rates you're most likely to encounter. 69 only divides cleanly by 3 and 23.</li>
+          <li data-i18n-html="pages.ruleOf72.liWhyAcc"><strong>72 is more accurate at common rates.</strong> The pure formula 69.3 is most accurate near 0%. As the rate rises, the cleaner approximation drifts. By a happy accident, 72 happens to be more accurate at the rates people actually use (5–10%).</li>
+        </ul>
+
+        <h2 data-i18n="pages.ruleOf72.h2Acc">How Accurate Is It, Really?</h2>
+        <p data-i18n="pages.ruleOf72.pAccIntro">Here's the rule's predictions versus the actual doubling time computed precisely:</p>
+        <table>
+          <thead>
+            <tr><th data-i18n="pages.ruleOf72.tableRate">Annual rate</th><th data-i18n="pages.ruleOf72.tableRule">Rule of 72</th><th data-i18n="pages.ruleOf72.tableActual">Actual</th><th data-i18n="pages.ruleOf72.tableError">Error</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2%</td><td>36.0 yrs</td><td>35.0 yrs</td><td>+2.9%</td></tr>
+            <tr><td>4%</td><td>18.0 yrs</td><td>17.7 yrs</td><td>+1.7%</td></tr>
+            <tr><td>6%</td><td>12.0 yrs</td><td>11.9 yrs</td><td>+0.8%</td></tr>
+            <tr><td>8%</td><td>9.00 yrs</td><td>9.01 yrs</td><td>−0.1%</td></tr>
+            <tr><td>10%</td><td>7.20 yrs</td><td>7.27 yrs</td><td>−1.0%</td></tr>
+            <tr><td>15%</td><td>4.80 yrs</td><td>4.96 yrs</td><td>−3.2%</td></tr>
+            <tr><td>20%</td><td>3.60 yrs</td><td>3.80 yrs</td><td>−5.3%</td></tr>
+          </tbody>
+        </table>
+        <p data-i18n="pages.ruleOf72.pAccOutro">Within the 4%–12% range — where most realistic investment rates live — the rule is accurate to within about 1%. That's better than the precision of any growth assumption you could plausibly make about the future, so the rule "rounds to truth" for practical purposes.</p>
+
+        <h2 data-i18n="pages.ruleOf72.h2Use">Five Ways to Use the Rule in Real Life</h2>
+
+        <h3 data-i18n="pages.ruleOf72.h3Sanity">1. Sanity-check investment claims</h3>
+        <p data-i18n="pages.ruleOf72.pSanity">An ad says "double your money in 4 years." Plug in: 72 ÷ 4 = 18% per year. Is that plausible? For an index fund? No. For a single stock or a venture-stage startup? Maybe, with significant risk. The Rule of 72 turns ad copy into a checkable claim.</p>
+
+        <h3 data-i18n="pages.ruleOf72.h3Retire">2. Plan retirement milestones</h3>
+        <p data-i18n="pages.ruleOf72.pRetire">You're 35 with $100,000 saved, expecting 7% returns. Doubling time = 72 ÷ 7 ≈ 10.3 years. So at 45 you'll have about $200K, at 55 about $400K, at 65 about $800K — all without any further contributions. That mental staircase is far more useful than staring at an exponential curve.</p>
+
+        <h3 data-i18n="pages.ruleOf72.h3Loans">3. Compare loan offers</h3>
+        <p data-i18n-html="pages.ruleOf72.pLoans">A credit card charges 24% APR. Your debt's <em>doubling time</em> is 72 ÷ 24 = 3 years. If you don't make a real dent, you're looking at the balance doubling every 3 years through interest alone. Suddenly the "minimum payment" trap looks much scarier.</p>
+
+        <h3 data-i18n="pages.ruleOf72.h3Inflation">4. Understand inflation</h3>
+        <p data-i18n="pages.ruleOf72.pInflation">Inflation runs at 3%? Prices double every 24 years. At 6% inflation? Every 12 years. This is why retirees who don't hold inflation-protected assets often see purchasing power erode in ways that surprise them.</p>
+
+        <h3 data-i18n="pages.ruleOf72.h3Halving">5. Estimate "halving" too</h3>
+        <p data-i18n="pages.ruleOf72.pHalving">The same rule works for any exponential process — including decline. A 4% annual decline halves a value in 18 years. Useful when thinking about depreciating assets or the erosion of an over-leveraged portfolio in a downturn.</p>
+
+        <h2 data-i18n="pages.ruleOf72.h2Breaks">When the Rule Breaks Down</h2>
+        <p data-i18n="pages.ruleOf72.pBreaksIntro">Three caveats worth knowing:</p>
+        <ul>
+          <li data-i18n-html="pages.ruleOf72.liBreakHigh"><strong>Above ~20%, accuracy drops.</strong> For very high rates use 76 or 78 instead. (For 25%+, just use the actual formula or a calculator.)</li>
+          <li data-i18n-html="pages.ruleOf72.liBreakCont"><strong>Continuous compounding wants 69.3.</strong> If the rate is continuously compounded rather than annual, the cleaner approximation is the right one.</li>
+          <li data-i18n-html="pages.ruleOf72.liBreakConst"><strong>It assumes constant rates.</strong> Real markets fluctuate. The rule tells you the doubling time at a constant <em>average</em> return, not at the actual sequence of yearly returns you'll experience.</li>
+        </ul>
+
+        <h2 data-i18n="pages.ruleOf72.h2Try">Try It Yourself</h2>
+        <p data-i18n-html="pages.ruleOf72.pTry">Pick a rate. Divide 72 by it. That's how many years money doubles. Now plug the same numbers into our <a href="../index.html">Compound Interest Calculator</a> to see the actual curve, and notice how close the doubling points come to your mental estimate. That moment of agreement is when the rule clicks — it stops being a memorized shortcut and becomes a way of seeing.</p>
+
+        <div class="article-cta">
+          <strong data-i18n="pages.ruleOf72.ctaTitle">See compound growth in action</strong>
+          <span data-i18n="pages.ruleOf72.ctaBody">Use the calculator to plot your investment curve and verify the Rule of 72 with your own numbers.</span>
+          <a href="../index.html" data-i18n="pages.ruleOf72.ctaLink">Open the Compound Interest Calculator</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="brand-mark small">$</span>
+        <span data-i18n="brand">CompoundCalc</span>
+      </div>
+      <p class="footer-note" data-i18n="footer.note">For educational purposes only. Not financial advice.</p>
+      <nav data-i18n-attr="aria-label:footer.ariaLabel" aria-label="Footer">
+        <a href="../calculators.html" data-i18n="footer.calculators">Calculators</a>
+        <a href="../blog.html" data-i18n="footer.blog">Blog</a>
+        <a href="../about.html" data-i18n="footer.about">About</a>
+        <a href="../privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="../terms.html" data-i18n="footer.terms">Terms</a>
+        <a href="../disclaimer.html" data-i18n="footer.disclaimer">Disclaimer</a>
+        <a href="../contact.html" data-i18n="footer.contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/site.js"></script>
+  <script src="../js/i18n.js"></script>
+</body>
+</html>

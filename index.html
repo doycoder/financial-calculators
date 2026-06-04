@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="pages.home.docTitle">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compound Interest Calculator - Calculate Investment Growth & Returns</title>
+  <meta name="description" content="Free online compound interest calculator to estimate your investment growth, SIP returns, and annual returns. Plan smarter with charts, monthly contributions, and instant results." />
+  <meta name="keywords" content="compound interest calculator, investment calculator, SIP calculator, return calculator, compound growth, monthly contribution calculator" />
+  <meta name="author" content="Compound Interest Calculator" />
+  <link rel="canonical" href="https://YOUR_DOMAIN.com/compound-interest-calculator" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Compound Interest Calculator - Calculate Investment Growth & Returns" />
+  <meta property="og:description" content="Free online compound interest calculator. Estimate investment growth, SIP returns, and annual returns instantly." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/compound-interest-calculator" />
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/og-image.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Compound Interest Calculator" />
+  <meta name="twitter:description" content="Calculate compound interest, SIP returns, and investment growth with interactive charts." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E%24%3C/text%3E%3C/svg%3E" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Structured data: WebApplication + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Compound Interest Calculator",
+    "url": "https://YOUR_DOMAIN.com/compound-interest-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Free online compound interest calculator with monthly contributions, charts, and annual return analysis."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"What is compound interest?","acceptedAnswer":{"@type":"Answer","text":"Compound interest is the interest earned on both the original principal and the accumulated interest from previous periods. It causes your money to grow exponentially over time."}},
+      {"@type":"Question","name":"How much will my investment grow?","acceptedAnswer":{"@type":"Answer","text":"Use this calculator: enter your initial investment, annual rate, years, compounding frequency, and monthly contribution to see the projected final value, total contributions, and interest earned."}},
+      {"@type":"Question","name":"What is a good annual return?","acceptedAnswer":{"@type":"Answer","text":"Historically the S&P 500 has returned around 7 to 10 percent per year on average. Bonds typically return 3 to 5 percent. Your target depends on your risk tolerance and time horizon."}},
+      {"@type":"Question","name":"How does compounding frequency affect returns?","acceptedAnswer":{"@type":"Answer","text":"More frequent compounding (monthly or daily versus annual) yields slightly higher returns because interest is reinvested sooner. The difference is small but meaningful over long periods."}},
+      {"@type":"Question","name":"What is a SIP and how is it calculated?","acceptedAnswer":{"@type":"Answer","text":"A Systematic Investment Plan (SIP) means contributing a fixed amount regularly. Each contribution earns compound interest for the time it remains invested, which this calculator handles automatically."}}
+    ]
+  }
+  </script>
+  <!-- Pre-paint locale: avoids English-flash before i18n.js runs -->
+  <script>
+    (function () {
+      try {
+        var v = localStorage.getItem('locale');
+        var valid = ['en','es','de','fr','ru','pt','it','zh-Hans','zh-Hant','th','ar','ja','vi','my','id','tr'];
+        if (valid.indexOf(v) === -1) v = 'en';
+        document.documentElement.lang = v;
+        document.documentElement.dir = (v === 'ar') ? 'rtl' : 'ltr';
+      } catch (_) {}
+    })();
+  </script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" data-i18n-attr="aria-label:nav.brandAria" aria-label="Compound Interest Calculator home">
+        <span class="brand-mark">$</span>
+        <span class="brand-name">Compound<span>Calc</span></span>
+      </a>
+      <nav class="site-nav" data-i18n-attr="aria-label:nav.primaryAria" aria-label="Primary">
+        <a href="index.html" aria-current="page" data-i18n="nav.home">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            <span data-i18n="nav.calculators">Calculators</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="index.html" role="menuitem" aria-current="page"><strong data-i18n="nav.items.compound">Compound Interest</strong><span data-i18n="nav.items.compoundDesc">Investment growth with SIP</span></a>
+            <a href="simple-interest-calculator.html" role="menuitem"><strong data-i18n="nav.items.simple">Simple Interest</strong><span data-i18n="nav.items.simpleDesc">Flat-rate interest math</span></a>
+            <a href="loan-calculator.html" role="menuitem"><strong data-i18n="nav.items.loan">Loan / Mortgage</strong><span data-i18n="nav.items.loanDesc">Monthly payment &amp; schedule</span></a>
+            <a href="savings-goal-calculator.html" role="menuitem"><strong data-i18n="nav.items.savings">Savings Goal</strong><span data-i18n="nav.items.savingsDesc">Plan to hit a target</span></a>
+            <a href="calculators.html" role="menuitem"><strong data-i18n="nav.items.all">All calculators →</strong><span data-i18n="nav.items.allDesc">Browse the full toolkit</span></a>
+          </div>
+        </div>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <div class="nav-dropdown lang-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" data-i18n-attr="aria-label:nav.languageAria" aria-label="Select language">
+            <span class="lang-current" data-lang-current>🇬🇧 EN</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu lang-menu" role="menu" data-lang-menu></div>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" data-i18n-attr="aria-label:nav.toggleMenuAria" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <button id="themeToggle" class="icon-btn" data-i18n-attr="aria-label:nav.themeToggleAria;title:nav.themeToggleAria" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO + CALCULATOR -->
+  <main>
+    <section class="hero" id="calculator">
+      <div class="container">
+        <div class="hero-text">
+          <h1 data-i18n="pages.home.hero.h1">Compound Interest Calculator</h1>
+          <p class="lede" data-i18n="pages.home.hero.lede">Calculate your investment growth, SIP returns, and annual returns online. Free, instant, and accurate.</p>
+        </div>
+
+        <div class="calc-grid">
+          <!-- INPUT CARD -->
+          <div class="card input-card">
+            <h2 class="card-title" data-i18n="pages.home.input.cardTitle">Your Investment</h2>
+
+            <div class="field">
+              <label for="principal" data-i18n="pages.home.input.principal">Initial Investment</label>
+              <div class="input-affix">
+                <span class="affix">$</span>
+                <input type="number" id="principal" min="0" step="100" value="10000" inputmode="decimal" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="rate">
+                <span data-i18n="pages.home.input.rate">Annual Interest Rate</span>
+                <span class="value-badge"><span id="rateValue">7</span>%</span>
+              </label>
+              <input type="range" id="rate" min="0" max="30" step="0.1" value="7" />
+              <input type="number" id="rateNumber" min="0" max="100" step="0.01" value="7" inputmode="decimal" />
+            </div>
+
+            <div class="field">
+              <label for="years">
+                <span data-i18n="pages.home.input.years">Investment Years</span>
+                <span class="value-badge"><span id="yearsValue">20</span> <span data-i18n="pages.home.input.yearsBadge">yrs</span></span>
+              </label>
+              <input type="range" id="years" min="1" max="60" step="1" value="20" />
+              <input type="number" id="yearsNumber" min="1" max="100" step="1" value="20" inputmode="numeric" />
+            </div>
+
+            <div class="field">
+              <label for="frequency" data-i18n="pages.home.input.frequency">Compound Frequency</label>
+              <select id="frequency">
+                <option value="1" data-i18n="pages.home.input.freqAnnually">Annually</option>
+                <option value="12" selected data-i18n="pages.home.input.freqMonthly">Monthly</option>
+                <option value="365" data-i18n="pages.home.input.freqDaily">Daily</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="contribution" data-i18n="pages.home.input.contribution">Monthly Contribution</label>
+              <div class="input-affix">
+                <span class="affix">$</span>
+                <input type="number" id="contribution" min="0" step="50" value="500" inputmode="decimal" />
+              </div>
+            </div>
+
+            <div class="actions-row">
+              <button id="resetBtn" class="btn btn-ghost" type="button" data-i18n="buttons.reset">Reset</button>
+              <button id="shareBtn" class="btn btn-secondary" type="button" data-i18n="buttons.share">Share</button>
+              <button id="exportBtn" class="btn btn-primary" type="button" data-i18n="buttons.export">Export Chart</button>
+            </div>
+          </div>
+
+          <!-- RESULTS CARD -->
+          <div class="card result-card">
+            <h2 class="card-title" data-i18n="pages.home.results.cardTitle">Projected Results</h2>
+
+            <div class="result-grid">
+              <div class="result-item highlight">
+                <div class="result-label" data-i18n="pages.home.results.finalValue">Final Value</div>
+                <div class="result-value" data-format="currency"><span id="finalValue">0</span></div>
+              </div>
+              <div class="result-item">
+                <div class="result-label" data-i18n="pages.home.results.totalContrib">Total Contributions</div>
+                <div class="result-value" data-format="currency"><span id="totalContrib">0</span></div>
+              </div>
+              <div class="result-item">
+                <div class="result-label" data-i18n="pages.home.results.totalInterest">Total Interest</div>
+                <div class="result-value gain" data-format="currency"><span id="totalInterest">0</span></div>
+              </div>
+              <div class="result-item">
+                <div class="result-label" data-i18n="pages.home.results.annualReturn">Annualized Return</div>
+                <div class="result-value"><span id="annualReturn">0</span>%</div>
+              </div>
+            </div>
+
+            <div class="chart-wrap">
+              <canvas id="growthChart" data-i18n-attr="aria-label:pages.home.results.chartAria" aria-label="Investment growth chart" role="img"></canvas>
+            </div>
+
+            <div class="legend-row">
+              <span class="legend-dot legend-contrib"></span><span data-i18n="pages.home.results.legendContrib">Contributions</span>
+              <span class="legend-dot legend-interest"></span><span data-i18n="pages.home.results.legendInterest">Interest Earned</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+        <!-- SHARE MODAL -->
+        <div id="shareModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="shareTitle" hidden>
+          <div class="modal-backdrop" data-close></div>
+          <div class="modal-card" role="document">
+            <button class="modal-close" data-close data-i18n-attr="aria-label:share.closeAria" aria-label="Close">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <h3 id="shareTitle" class="modal-title" data-i18n="share.title">Share your projection</h3>
+            <p class="modal-sub" data-i18n="share.sub">Anyone with this link will see the same calculation.</p>
+
+            <div class="share-url-row">
+              <input type="text" id="shareUrl" readonly data-i18n-attr="aria-label:share.urlAria" aria-label="Share URL" />
+              <button id="copyUrlBtn" class="btn btn-primary" type="button" data-i18n="share.copy">Copy</button>
+            </div>
+
+            <div class="share-social">
+              <a id="shareTwitter"  class="social-btn" target="_blank" rel="noopener" data-i18n-attr="aria-label:share.twitterAria" aria-label="Share on X / Twitter">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X
+              </a>
+              <a id="shareLinkedIn" class="social-btn" target="_blank" rel="noopener" data-i18n-attr="aria-label:share.linkedinAria" aria-label="Share on LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+              <a id="shareFacebook" class="social-btn" target="_blank" rel="noopener" data-i18n-attr="aria-label:share.facebookAria" aria-label="Share on Facebook">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                Facebook
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO CONTENT -->
+    <section class="content-section">
+      <div class="container narrow">
+        <article class="prose">
+          <h2 data-i18n="pages.home.prose.h2">Understanding Compound Interest: The Engine of Long-Term Wealth</h2>
+          <p data-i18n-html="pages.home.prose.p1">Compound interest is one of the most powerful concepts in personal finance. Unlike simple interest, which is calculated only on your original principal, compound interest is calculated on both the principal <em>and</em> the accumulated interest from previous periods. This creates an exponential growth curve that turns modest savings into substantial wealth, given enough time. Albert Einstein is often (apocryphally) quoted as calling it the "eighth wonder of the world." Whether or not he said it, the math behind compounding is undeniably remarkable.</p>
+
+          <h3 data-i18n="pages.home.prose.h3What">What Is Compound Interest?</h3>
+          <p data-i18n="pages.home.prose.pWhat">In plain terms, compound interest is interest earned on interest. Imagine you deposit $1,000 at a 10% annual rate. After year one you have $1,100. In year two, you earn 10% not just on the original $1,000 but on the full $1,100, giving you $1,210. By year ten, that same deposit grows to roughly $2,594 without any additional contributions. The longer your money is invested, the more dramatic the effect becomes.</p>
+
+          <h3 data-i18n="pages.home.prose.h3How">How to Calculate Compound Interest</h3>
+          <p data-i18n="pages.home.prose.pHowIntro">The standard compound interest formula is:</p>
+          <p class="formula"><strong data-i18n-html="pages.home.prose.pHowFormula">A = P (1 + r/n)<sup>nt</sup></strong></p>
+          <ul>
+            <li data-i18n-html="pages.home.prose.liA"><strong>A</strong> — the future value of the investment</li>
+            <li data-i18n-html="pages.home.prose.liP"><strong>P</strong> — the initial principal</li>
+            <li data-i18n-html="pages.home.prose.liR"><strong>r</strong> — the annual interest rate (as a decimal)</li>
+            <li data-i18n-html="pages.home.prose.liN"><strong>n</strong> — the number of compounding periods per year</li>
+            <li data-i18n-html="pages.home.prose.liT"><strong>t</strong> — the number of years</li>
+          </ul>
+          <p data-i18n="pages.home.prose.pHowOutro">If you also make regular monthly contributions (a Systematic Investment Plan, or SIP), each contribution earns compound interest for the remaining time it stays invested. This calculator combines both formulas: it grows your initial principal while adding each monthly contribution and compounding the running balance at your chosen frequency.</p>
+
+          <h3 data-i18n="pages.home.prose.h3Why">Why Compound Interest Matters</h3>
+          <p data-i18n="pages.home.prose.pWhy">Compounding rewards patience. Two investors who save the same total amount can end up with wildly different outcomes depending solely on when they started. Consider Alice and Bob: Alice invests $200 a month from age 25 to 35 and then stops, contributing a total of $24,000. Bob invests the same $200 a month from age 35 to 65, contributing $72,000 across thirty years. At a 7% annual return, Alice ends up with more money at age 65 than Bob, despite contributing one third of what he did. The reason is simple: Alice's money had ten extra years to compound.</p>
+
+          <h3 data-i18n="pages.home.prose.h3Dca">The Power of Dollar-Cost Averaging</h3>
+          <p data-i18n="pages.home.prose.pDca">Dollar-cost averaging (DCA) is the practice of investing a fixed amount on a regular schedule, regardless of market conditions. When prices are high you buy fewer shares; when prices are low you buy more. Over time this smooths out volatility and removes the emotional pressure of trying to time the market. SIP investing is dollar-cost averaging in action, and combined with compound growth, it is one of the most reliable wealth-building strategies available to ordinary investors.</p>
+
+          <h3 data-i18n="pages.home.prose.h3Example">A Real-World Example</h3>
+          <p data-i18n="pages.home.prose.pExample">Suppose you start with $10,000, contribute $500 every month, and earn an average annual return of 7% compounded monthly for 20 years. Your total contributions add up to $130,000, but the calculator will show that your final balance grows to roughly $300,000. That extra $170,000 is pure compound interest, money you did not have to earn at a job. Stretch the timeline to 30 years and the same plan grows past $660,000. This is why financial advisors stress starting early, even with small amounts.</p>
+
+          <h3 data-i18n="pages.home.prose.h3Tips">Tips to Make Compounding Work for You</h3>
+          <ul>
+            <li data-i18n-html="pages.home.prose.tipStart"><strong>Start now.</strong> Time matters more than the amount. A small contribution today beats a large one tomorrow.</li>
+            <li data-i18n-html="pages.home.prose.tipConsistent"><strong>Stay consistent.</strong> Automate monthly contributions so investing happens without willpower.</li>
+            <li data-i18n-html="pages.home.prose.tipReinvest"><strong>Reinvest dividends.</strong> Letting earnings compound is what creates the exponential curve.</li>
+            <li data-i18n-html="pages.home.prose.tipFees"><strong>Mind the fees.</strong> A 1% expense ratio sounds small, but over 30 years it can erode a quarter of your returns.</li>
+            <li data-i18n-html="pages.home.prose.tipIncrease"><strong>Increase contributions over time.</strong> Raise your monthly amount as your income grows to accelerate the curve.</li>
+          </ul>
+        </article>
+
+        <!-- FAQ -->
+        <section class="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title" data-i18n="pages.home.faq.title">Frequently Asked Questions</h2>
+
+          <details>
+            <summary data-i18n="pages.home.faq.q1">What is compound interest?</summary>
+            <p data-i18n="pages.home.faq.a1">Compound interest is the interest you earn on both your original principal and the interest that has already accumulated. Over long periods, it produces exponential rather than linear growth.</p>
+          </details>
+
+          <details>
+            <summary data-i18n="pages.home.faq.q2">How much will my investment grow?</summary>
+            <p data-i18n="pages.home.faq.a2">Enter your initial investment, expected annual return, time horizon, compounding frequency, and monthly contribution above. The calculator updates instantly with the projected final value, total contributions, total interest, and annualized return.</p>
+          </details>
+
+          <details>
+            <summary data-i18n="pages.home.faq.q3">What is a good annual return?</summary>
+            <p data-i18n="pages.home.faq.a3">Historically, the U.S. stock market has averaged around 7 to 10 percent per year after inflation. Bonds typically return 3 to 5 percent. A reasonable assumption for long-term equity investing is 7 percent, but always tailor it to your risk tolerance and asset mix.</p>
+          </details>
+
+          <details>
+            <summary data-i18n="pages.home.faq.q4">How does compounding frequency affect my returns?</summary>
+            <p data-i18n="pages.home.faq.a4">The more often interest is compounded, the faster your money grows, because earnings start earning their own returns sooner. Daily compounding produces slightly higher results than monthly, which beats annual compounding, though the difference is usually a fraction of a percent.</p>
+          </details>
+
+          <details>
+            <summary data-i18n="pages.home.faq.q5">What is a SIP and how is it calculated?</summary>
+            <p data-i18n="pages.home.faq.a5">A Systematic Investment Plan (SIP) is a fixed monthly contribution to an investment account. Each contribution earns compound interest for the remaining time it stays invested. This calculator factors in both your lump-sum principal and your recurring SIP automatically.</p>
+          </details>
+
+          <details>
+            <summary data-i18n="pages.home.faq.q6">Does this calculator account for taxes or inflation?</summary>
+            <p data-i18n="pages.home.faq.a6">No. The results are gross, pre-tax, and not adjusted for inflation. To estimate real returns, subtract your expected inflation rate (often 2 to 3 percent) from the annual rate before calculating.</p>
+          </details>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="brand-mark small">$</span>
+        <span data-i18n="brand">CompoundCalc</span>
+      </div>
+      <p class="footer-note" data-i18n="footer.note">For educational purposes only. Not financial advice.</p>
+      <nav data-i18n-attr="aria-label:footer.ariaLabel" aria-label="Footer">
+        <a href="calculators.html" data-i18n="footer.calculators">Calculators</a>
+        <a href="blog.html" data-i18n="footer.blog">Blog</a>
+        <a href="about.html" data-i18n="footer.about">About</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms</a>
+        <a href="disclaimer.html" data-i18n="footer.disclaimer">Disclaimer</a>
+        <a href="contact.html" data-i18n="footer.contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
