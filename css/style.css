@@ -1059,7 +1059,7 @@ body.modal-open { overflow: hidden; }
 /* ==========================================================================
    Language dropdown
    ========================================================================== */
-.lang-dropdown .lang-current {
+/*.lang-dropdown .lang-current {
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
@@ -1116,4 +1116,4 @@ body.modal-open { overflow: hidden; }
     width: 100%;
     min-width: 0;
   }
-}
+}*/
