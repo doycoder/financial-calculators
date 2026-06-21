@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="pages.roi.docTitle">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Interest Calculator - Calculate Flat-Rate Interest Online</title>
+  <meta name="description" content="Free simple interest calculator. Compute interest, total amount, and accrued earnings using the I = P × r × t formula. Instant results with an interactive chart." />
+  <meta name="keywords" content="simple interest calculator, flat interest calculator, principal interest calculator, I=Prt calculator" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://YOUR_DOMAIN.com/simple-interest-calculator" />
+  <meta property="og:title" content="Simple Interest Calculator" />
+  <meta property="og:description" content="Free online simple interest calculator with interactive chart." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/simple-interest-calculator" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E%24%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Pre-paint locale: avoids English-flash before i18n.js runs -->
+  <script>
+    (function () {
+      try {
+        var v = localStorage.getItem('locale');
+        var valid = ['en','es','de','fr','ru','pt','it','zh-Hans','zh-Hant','th','ar','ja','vi','my','id','tr'];
+        if (valid.indexOf(v) === -1) v = 'en';
+        document.documentElement.lang = v;
+        document.documentElement.dir = (v === 'ar') ? 'rtl' : 'ltr';
+      } catch (_) {}
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Simple Interest Calculator",
+    "url": "https://YOUR_DOMAIN.com/simple-interest-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Free simple interest calculator using I = P × r × t."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"What is simple interest?","acceptedAnswer":{"@type":"Answer","text":"Simple interest is interest calculated only on the original principal, never on accumulated interest. The formula is I = P × r × t, where P is principal, r is the annual rate as a decimal, and t is time in years."}},
+      {"@type":"Question","name":"When is simple interest used?","acceptedAnswer":{"@type":"Answer","text":"Simple interest is common for short-term loans, auto loans (in some jurisdictions), Treasury bills, and informal personal loans. Most savings accounts and investments use compound interest instead."}},
+      {"@type":"Question","name":"What is the difference between simple and compound interest?","acceptedAnswer":{"@type":"Answer","text":"Simple interest grows linearly because interest is paid out and never earns interest itself. Compound interest grows exponentially because earnings are reinvested and themselves earn interest. Over long periods compound interest produces dramatically larger totals."}},
+      {"@type":"Question","name":"How do I calculate simple interest manually?","acceptedAnswer":{"@type":"Answer","text":"Multiply principal by annual rate (as a decimal) by time in years. Example: $5,000 at 6% for 3 years gives I = 5000 × 0.06 × 3 = $900. Total amount = principal + interest = $5,900."}},
+      {"@type":"Question","name":"Can I use this for monthly or daily interest?","acceptedAnswer":{"@type":"Answer","text":"Yes. Convert your time horizon to years (months ÷ 12, days ÷ 365) and the annual rate stays the same. The calculator above accepts time in years directly."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="roi-calculator.html" class="brand" data-i18n-attr="aria-label:nav.brandAria">
+        <span class="brand-mark">$</span>
+        <span class="brand-name">ROI<span>Calc</span></span>
+      </a>
+      <nav class="site-nav" data-i18n-attr="aria-label:nav.primaryAria" aria-label="Primary">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <!--div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            <span data-i18n="nav.calculators">Calculators</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="index.html" role="menuitem"><strong data-i18n="nav.items.compound">Compound Interest</strong><span data-i18n="nav.items.compoundDesc">Investment growth with SIP</span></a>
+            <a href="simple-interest-calculator.html" role="menuitem" aria-current="page"><strong data-i18n="nav.items.roi">Simple Interest</strong><span data-i18n="nav.items.roiDesc">Flat-rate interest math</span></a>
+            <a href="loan-calculator.html" role="menuitem"><strong data-i18n="nav.items.loan">Loan / Mortgage</strong><span data-i18n="nav.items.loanDesc">Monthly payment &amp; schedule</span></a>
+            <a href="savings-goal-calculator.html" role="menuitem"><strong data-i18n="nav.items.savings">Savings Goal</strong><span data-i18n="nav.items.savingsDesc">Plan to hit a target</span></a>
+            <a href="calculators.html" role="menuitem"><strong data-i18n="nav.items.all">All calculators →</strong><span data-i18n="nav.items.allDesc">Browse the full toolkit</span></a>
+          </div>
+        </div-->
+		<a href="compound-interest-calculator.html">Compound</a>
+		<a href="loan-calculator.html">Loan</a>
+		<a href="roi-calculator.html" aria-current="page">ROI</a>
+		<a href="calculators.html">Calculators</a>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <!--div class="nav-dropdown lang-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" data-i18n-attr="aria-label:nav.languageAria" aria-label="Select language">
+            <span class="lang-current" data-lang-current>🇬🇧 EN</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-dropdown-menu lang-menu" role="menu" data-lang-menu></div>
+        </div-->
+      </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" data-i18n-attr="aria-label:nav.toggleMenuAria" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <button id="themeToggle" class="icon-btn" data-i18n-attr="aria-label:nav.themeToggleAria;title:nav.themeToggleAria" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="calculator">
+      <div class="container">
+        <div class="hero-text">
+          <h1>ROI Calculator - Return on Investment</h1>
+          <p class="lede">Calculate your return on investment (ROI) easily. Free ROI calculator to measure profit and investment performance.</p>
+        </div>
+
+        <div class="calc-grid">
+          <div class="card input-card">
+            <h2 class="card-title">Your Investment</h2>
+
+            <div class="field">
+              <label for="roi-principal" data-i18n="pages.roi.input.principal">Principal Amount</label>
+              <div class="input-affix">
+                <span class="affix">$</span>
+                <input type="number" id="roi-principal" min="0" step="100" value="5000" inputmode="decimal" />
+              </div>
+            </div>
+			
+			<div class="field">
+              <label for="roi-final">Final Value</label>
+              <div class="input-affix">
+                <span class="affix">$</span>
+                <input type="number" id="roi-final" min="0" step="50" value="500" inputmode="decimal" />
+              </div>
+            </div>
+
+            <!--div class="field">
+              <label for="roi-rate">
+                <span data-i18n="pages.roi.input.rate">Annual Interest Rate</span>
+                <span class="value-badge"><span id="roi-rateValue">6</span>%</span>
+              </label>
+              <input type="range" id="roi-rate" min="0" max="30" step="0.1" value="6" />
+              <input type="number" id="roi-rateNumber" min="0" max="100" step="0.01" value="6" inputmode="decimal" />
+            </div-->
+
+            <div class="field">
+              <label for="roi-years">
+                <span data-i18n="pages.roi.input.years">Time Period</span>
+                <span class="value-badge"><span id="roi-yearsValue">3</span> <span data-i18n="pages.roi.input.yearsBadge">yrs</span></span>
+              </label>
+              <input type="range" id="roi-years" min="0.25" max="30" step="0.25" value="3" />
+              <input type="number" id="roi-yearsNumber" min="0.01" max="100" step="0.25" value="3" inputmode="decimal" />
+            </div>
+
+            <div class="actions-row">
+              <button id="roi-resetBtn" class="btn btn-ghost" type="button" data-i18n="buttons.reset">Reset</button>
+            </div>
+          </div>
+
+          <div class="card result-card">
+            <h2 class="card-title" data-i18n="pages.roi.results.cardTitle">Results</h2>
+
+            <div class="result-grid">
+              <!--div class="result-item highlight">
+                <div class="result-label" data-i18n="pages.roi.results.total">Total Amount</div>
+                <div class="result-value"><span id="roi-total">0</span></div>
+              </div-->
+              <!--div class="result-item">
+                <div class="result-label" data-i18n="pages.roi.results.principal">Principal</div>
+                <div class="result-value"><span id="roi-principalOut">0</span></div>
+              </div-->
+              <div class="result-item">
+                <div class="result-label" data-i18n="pages.roi.results.interest">Interest Earned</div>
+                <div class="result-value gain"><span id="roi-interest">0</span></div>
+              </div>
+              <div class="result-item">
+                <div class="result-label" data-i18n="pages.roi.results.effective">Effective Annual</div>
+                <div class="result-value"><span id="roi-effective">0</span>%</div>
+              </div>
+            </div>
+
+            <div class="chart-wrap">
+              <canvas id="roi-chart" data-i18n-attr="aria-label:pages.roi.results.chartAria" aria-label="Simple interest growth chart" role="img"></canvas>
+            </div>
+
+            <div class="legend-row">
+              <span class="legend-dot legend-contrib"></span><span data-i18n="pages.roi.results.legendPrincipal">Principal</span>
+              <span class="legend-dot legend-interest"></span><span data-i18n="pages.roi.results.legendInterest">Interest</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container narrow">
+        <article class="prose">
+          <h2>What is ROI?</h2>
+          <p>Return on Investment (ROI) is a performance measure used to evaluate
+      the efficiency of an investment. It compares the profit or loss
+      relative to the initial cost.</p>
+
+          <h3>The ROI Formula</h3>
+          <p>The formula is short and memorable:</p>
+          <p><strong>r = (F / P) ^ (1 / t) - 1</strong></p>
+          <ul>
+            <li><strong>F</strong> — final value (or total amount returned)</li>
+            <li><strong>P</strong> — principal (the starting amount)</li>
+            <li><strong>r</strong> — annual interest rate, as a decimal (so 6% becomes 0.06)</li>
+            <li><strong>t</strong> — time in years</li>
+          </ul>
+          
+
+          <h3 data-i18n="pages.roi.prose.h3Example">A Worked Example</h3>
+          <p>Suppose your starting amount is $5,000, and you have $7,000 after 3 years of investment. Plugging into the formula:</p>
+          <p class="formula">r = (7000/5000)^(1/3)-1 = 11.87%</p>
+          <p >Another example: If you invest $1,000 and it grows to $1,500, your ROI is 50%.</p>
+
+          <h3 data-i18n="pages.roi.prose.h3Tips">Tips for Using This Calculator</h3>
+          <ul>
+            <li>Enter the Principal Amount greater than 0.</li>
+            <li>For sub-year periods, use a fractional year. 6 months is 0.5, 90 days is roughly 0.25.</li>
+            
+          </ul>
+        </article>
+
+        <section class="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title" data-i18n="pages.roi.faq.title">Frequently Asked Questions</h2>
+
+          <details>
+            <summary>Is ROI the same as profit?</summary>
+            <p>No, ROI is a percentage, while profit is an absolute value.</p>
+          </details>
+
+          <details>
+            <summary>What is a good ROI?</summary>
+            <p>A good ROI depends on the investment type, but generally 10%+ is considered strong.</p>
+          </details>
+
+          <details>
+            <summary>Can I use this for monthly or daily ROI?</summary>
+            <p>Yes — convert your time period to years. Six months is 0.5; 90 days is ~0.25. It should be noted that the minimum input time is 0.25.</p>
+          </details>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="brand-mark small">$</span>
+        <span data-i18n="brand">CompoundCalc</span>
+      </div>
+      <p class="footer-note" data-i18n="footer.note">For educational purposes only. Not financial advice.</p>
+      <nav data-i18n-attr="aria-label:footer.ariaLabel" aria-label="Footer">
+        <a href="calculators.html" data-i18n="footer.calculators">Calculators</a>
+        <a href="blog.html" data-i18n="footer.blog">Blog</a>
+        <a href="about.html" data-i18n="footer.about">About</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms</a>
+        <a href="disclaimer.html" data-i18n="footer.disclaimer">Disclaimer</a>
+        <a href="contact.html" data-i18n="footer.contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/roi.js"></script>
+</body>
+</html>
