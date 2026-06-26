@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" data-i18n-title="pages.roi.docTitle">
+<html lang="en" data-i18n-title="pages.CAGR.docTitle">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ROI Calculator - Return on Investment</title>
-  <meta name="description" content="Calculate your return on investment (ROI) easily. Free ROI calculator to measure profit and investment performance." />
-  <meta name="keywords" content="roi calculator, return on investment calculator, roi formula, investment return calculator, calculate roi percentage" />
+  <title>CAGR Calculator</title>
+  <meta name="description" content="Calculate compound annual growth rate (CAGR) easily with our free calculator." />
+  <meta name="keywords" content="cagr calculator, compound annual growth rate, annual return calculator" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://YOUR_DOMAIN.com/roi-calculator" />
-  <meta property="og:title" content="ROI Calculator" />
-  <meta property="og:description" content="Free online ROI calculator with interactive chart." />
+  <link rel="canonical" href="https://YOUR_DOMAIN.com/CAGR-calculator" />
+  <meta property="og:title" content="CAGR Calculator" />
+  <meta property="og:description" content="Free online CAGR calculator with interactive chart." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/roi-calculator" />
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/CAGR-calculator" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E%24%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="css/style.css" />
   <!-- Pre-paint locale: avoids English-flash before i18n.js runs -->
@@ -57,21 +57,19 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="roi-calculator.html" class="brand" data-i18n-attr="aria-label:nav.brandAria">
+      <a href="CAGR-calculator.html" class="brand" data-i18n-attr="aria-label:nav.brandAria">
         <span class="brand-mark">$</span>
-        <span class="brand-name">ROI<span>Calc</span></span>
+        <span class="brand-name">CAGR<span>Calc</span></span>
       </a>
       <nav class="site-nav" data-i18n-attr="aria-label:nav.primaryAria" aria-label="Primary">
         <a href="index.html" data-i18n="nav.home">Home</a>
-        
 		<a href="compound-interest-calculator.html">Compound</a>
 		<a href="loan-calculator.html">Loan</a>
-		<a href="roi-calculator.html" aria-current="page">ROI</a>
-		<a href="CAGR-calculator.html">CAGR</a>
+		<a href="roi-calculator.html">ROI</a>
+		<a href="CAGR-calculator.html" aria-current="page">CAGR</a>
 		<a href="calculators.html">Calculators</a>
         <a href="blog.html" data-i18n="nav.blog">Blog</a>
         <a href="about.html" data-i18n="nav.about">About</a>
-        
       </nav>
       <div class="header-actions">
         <button class="nav-toggle" data-i18n-attr="aria-label:nav.toggleMenuAria" aria-label="Toggle menu" aria-expanded="false">
@@ -88,8 +86,8 @@
     <section class="hero" id="calculator">
       <div class="container">
         <div class="hero-text">
-          <h1>ROI Calculator - Return on Investment</h1>
-          <p class="lede">Calculate your return on investment (ROI) easily. Free ROI calculator to measure profit and investment performance.</p>
+          <h1>CAGR Calculator</h1>
+          <p class="lede">Calculate compound annual growth rate (CAGR) easily with our free calculator.</p>
         </div>
 
         <div class="calc-grid">
@@ -97,53 +95,56 @@
             <h2 class="card-title">Your Investment</h2>
 
             <div class="field">
-              <label for="roi-principal" data-i18n="pages.roi.input.principal">Principal Amount</label>
+              <label for="CAGR-principal" data-i18n="pages.CAGR.input.principal">Principal Amount</label>
               <div class="input-affix">
                 <span class="affix">$</span>
-                <input type="number" id="roi-principal" min="0" step="100" value="5000" inputmode="decimal" />
+                <input type="number" id="CAGR-principal" min="0" step="100" value="5000" inputmode="decimal" />
               </div>
             </div>
-			
-			
 			
 			<div class="field">
-              <label for="roi-final">Final Value</label>
+              <label for="CAGR-final">Final Value</label>
               <div class="input-affix">
                 <span class="affix">$</span>
-                <input type="number" id="roi-final" min="0" step="50" value="7000" inputmode="decimal" />
+                <input type="number" id="CAGR-final" min="0" step="50" value="7000" inputmode="decimal" />
               </div>
             </div>
-			
+            <div class="field">
+              <label for="CAGR-years">
+                <span data-i18n="pages.CAGR.input.years">Time Period</span>
+                <span class="value-badge"><span id="CAGR-yearsValue">3</span> <span data-i18n="pages.CAGR.input.yearsBadge"> yrs</span></span>
+              </label>
+              <input type="range" id="CAGR-years" min="0.25" max="30" step="0.25" value="3" />
+              <input type="number" id="CAGR-yearsNumber" min="0.01" max="100" step="0.25" value="3" inputmode="decimal" />
+            </div>
 
             <div class="actions-row">
-              <button id="roi-resetBtn" class="btn btn-ghost" type="button" data-i18n="buttons.reset">Reset</button>
+              <button id="CAGR-resetBtn" class="btn btn-ghost" type="button" data-i18n="buttons.reset">Reset</button>
             </div>
           </div>
 
           <div class="card result-card">
-            <h2 class="card-title" data-i18n="pages.roi.results.cardTitle">Results</h2>
+            <h2 class="card-title" data-i18n="pages.CAGR.results.cardTitle">Results</h2>
 
             <div class="result-grid">
-              
               <div class="result-item">
-                <div class="result-label">Profit</div>
-                <div class="result-value gain"><span id="roi-interest">0</span></div>
+                <div class="result-label" data-i18n="pages.CAGR.results.interest">Interest Earned</div>
+                <div class="result-value gain"><span id="CAGR-interest">0</span></div>
               </div>
               <div class="result-item">
-                <div class="result-label">ROI</div>
-                <div class="result-value"><span id="roi-effective">0</span></div>
+                <div class="result-label" data-i18n="pages.CAGR.results.effective">Effective Annual</div>
+                <div class="result-value"><span id="CAGR-effective">0</span></div>
               </div>
-			  
-			  <!--div class="chart-box">
-			  <canvas id="roiPieChart"></canvas>
-			</div-->
-			  
             </div>
 
-			<div class="chart-box">
-			  <canvas id="roiPieChart"></canvas>
-			</div>
-			
+            <div class="chart-wrap">
+              <canvas id="CAGR-chart" data-i18n-attr="aria-label:pages.CAGR.results.chartAria" aria-label="Simple interest growth chart" role="img"></canvas>
+            </div>
+
+            <div class="legend-row">
+              <span class="legend-dot legend-contrib"></span><span data-i18n="pages.CAGR.results.legendPrincipal">Principal</span>
+              <span class="legend-dot legend-interest"></span><span data-i18n="pages.CAGR.results.legendInterest">Interest</span>
+            </div>
           </div>
         </div>
       </div>
@@ -152,58 +153,66 @@
     <section class="content-section">
       <div class="container narrow">
         <article class="prose">
-          <h2>What is ROI?</h2>
-          <p>Return on Investment (ROI) is a performance measure used to evaluate
-      the efficiency of an investment. It compares the profit or loss
-      relative to the initial cost.</p>
+          <h2>What is CAGR?</h2>
+          <p>CAGR (Compound Annual Growth Rate) represents the average annual growth rate
+      of an investment over a period of time.</p>
 
-          <h3>The ROI Formula</h3>
+          <h3>The CAGR Formula</h3>
           <p>The formula is short and memorable:</p>
-          <p><strong>r = (F - P)/ P</strong></p>
+          <p><strong>r = (F / P) ^ (1 / t) - 1</strong></p>
           <ul>
             <li><strong>F</strong> — final value (or total amount returned)</li>
             <li><strong>P</strong> — principal (the starting amount)</li>
-            <li><strong>r</strong> — ROI, as a decimal (so 6% becomes 0.06)</li>
+            <li><strong>r</strong> — CAGR, as a decimal (so 6% becomes 0.06)</li>
+            <li><strong>t</strong> — time in years</li>
           </ul>
           
 
-          <h3 data-i18n="pages.roi.prose.h3Example">A Worked Example</h3>
+          <h3>A Worked Example</h3>
           <p>Suppose your starting amount is $5,000, and you have $7,000 after 3 years of investment. Plugging into the formula:</p>
-          <p class="formula">r = (7000 - 5000)/5000 = 40%</p>
-          <p >Another example: If you invest $1,000 and it grows to $1,500, your ROI is 50%.</p>
+          <p class="formula">r = (7000/5000)^(1/3)-1 = 11.87%</p>
+          <p >Another example: If an investment grows from $1,000 to $2,000 in 3 years,
+      the CAGR is about 26%.</p>
 
-          <h3 data-i18n="pages.roi.prose.h3Tips">Tips for Using This Calculator</h3>
+          <h3>Tips for Using This Calculator</h3>
           <ul>
             <li>Enter the Principal Amount greater than 0.</li>
-            
+            <li>For sub-year periods, use a fractional year. 6 months is 0.5, 90 days is roughly 0.25.</li>
             
           </ul>
 		  
-		  <h3>Want Annualized ROI instead?</h3>
-          <p><a href="CAGR-calculator.html">Use our CAGR Calculator</a></p>
+		  <h3>Want total return instead?</h3>
+          <p><a href="roi-calculator.html">Use our ROI Calculator</a></p>
 		  
         </article>
+		
+		
 
         <section class="faq" aria-labelledby="faq-title">
-          <h2 id="faq-title" data-i18n="pages.roi.faq.title">Frequently Asked Questions</h2>
+          <h2 id="faq-title">Frequently Asked Questions</h2>
 
           <details>
-            <summary>Is ROI the same as profit?</summary>
-            <p>No, ROI is a percentage, while profit is an absolute value.</p>
+            <summary>Is CAGR the same as profit?</summary>
+            <p>No, CAGR is a percentage, while profit is an absolute value.</p>
           </details>
 
           <details>
-            <summary>What is a good ROI?</summary>
-            <p>A good ROI depends on the investment type, but generally 10%+ is considered strong.</p>
+            <summary>What is a good CAGR?</summary>
+            <p>A good CAGR depends on the investment type, but generally 10%+ is considered strong.</p>
           </details>
 
           <details>
-            <summary>Can I use this for Annualized ROI?</summary>
-            <p><a href="/cagr-calculator">Use our CAGR Calculator</a></p>
+            <summary>Can I use this for monthly or daily rate?</summary>
+            <p>Yes — convert your time period to years. Six months is 0.5; 90 days is ~0.25. It should be noted that the minimum input time is 0.25.</p>
           </details>
         </section>
+		
+		
+		
       </div>
     </section>
+	
+	
   </main>
 
   <footer class="site-footer">
@@ -227,7 +236,6 @@
 
   <script src="js/site.js"></script>
   <script src="js/i18n.js"></script>
-  <script src="js/roi.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/CAGR.js"></script>
 </body>
 </html>

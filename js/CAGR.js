@@ -4,107 +4,25 @@
 
   const $ = (id) => document.getElementById(id);
   const els = {
-    principal:    $('roi-principal'),
-	finalVal:        $('roi-final'),
-    //rate:         $('roi-rate'),
-    //rateNumber:   $('roi-rateNumber'),
-    //rateValue:    $('roi-rateValue'),
-    //years:        $('roi-years'),
-    //yearsNumber:  $('roi-yearsNumber'),
-    //yearsValue:   $('roi-yearsValue'),
-    //total:        $('roi-total'),
-    //principalOut: $('roi-principalOut'),
-    interest:     $('roi-interest'),
-    effective:    $('roi-effective'),
-    chart:        $('roi-chart'),
-    resetBtn:     $('roi-resetBtn'),
+    principal:    $('CAGR-principal'),
+	finalVal:        $('CAGR-final'),
+    years:        $('CAGR-years'),
+    yearsNumber:  $('CAGR-yearsNumber'),
+    yearsValue:   $('CAGR-yearsValue'),
+    interest:     $('CAGR-interest'),
+    effective:    $('CAGR-effective'),
+    chart:        $('CAGR-chart'),
+    resetBtn:     $('CAGR-resetBtn'),
   };
 
-  const DEFAULTS = { principal: 5000, finalVal:7000};
+  const DEFAULTS = { principal: 5000, finalVal:7000, years: 3 };
   const animCache = new WeakMap();
   let chart = null;
-  
-  let pieChart;
 
   const fmt = (v) => '$' + Math.round(v).toLocaleString('en-US');
-  
   const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
-  
-    const centerTextPlugin = {
-  id: 'centerText',
-  afterDraw(chart) {
-    const { ctx } = chart;
-
-    const data = chart.data.datasets[0].data;
-    const P = data[0];
-    const profit = data[1];
-
-    //const roi = P > 0 ? Math.round((profit / P) * 100) : 0;
-	const roi = P > 0 ? (profit / P) * 100 : 0;
-
-    const meta = chart.getDatasetMeta(0);
-    if (!meta.data.length) return;
-
-    const x = meta.data[0].x;
-    const y = meta.data[0].y;
-
-    ctx.save();
-    ctx.font = 'bold 20px sans-serif';
-    ctx.fillStyle = roi >= 0 ? '#333' : '#EF4444';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-
-    ctx.fillText(roi.toFixed(2) + '%', x, y);
-
-    ctx.restore();
-  }
-};
-  
-  function updatePie(P, F) {
-  const profit = F - P;
-  const isProfit = profit >= 0;
-  //const profit = Math.max(0, F - P);
-
-  const data = {
-    labels: ['Invested', 'Profit'],
-    datasets: [{
-      data: [P, profit],
-      backgroundColor: ['#6e3eea', isProfit ? '#4ecaa0' : '#EF4444'], // 蓝 + 绿
-      borderWidth: 0
-    }]
-  };
-
-  
-  const options = {
-  responsive: true,
-  cutout: '65%', // 中间空心大小
-
-  plugins: {
-    legend: {
-      position: 'right'
-    },
-
-    // ⭐ 中间文字插件
-    tooltip: { enabled: true }
-  },
-  
-};
-
-  if (pieChart) {
-    pieChart.data = data;
-    pieChart.update();
-  } else {
-    pieChart = new Chart(document.getElementById('roiPieChart'), {
-      type: 'doughnut',
-      data,
-      options,
-	  plugins: [centerTextPlugin]
-    });
-  }
-}
 
   function animate(el, target, formatter) {
-	
     const start = animCache.get(el) || 0;
     const dur = 500;
     const t0 = performance.now();
@@ -118,14 +36,12 @@
     }
     el._raf = requestAnimationFrame(tick);
   }
-  
-  
 
   function read() {
     return {
       P: Math.max(0, parseFloat(els.principal.value) || 0),
-      f: Math.max(0, parseFloat(els.finalVal.value) || 0)
-      //t: Math.max(0.01, parseFloat(els.years.value) || 0.01),
+      f: Math.max(0, parseFloat(els.finalVal.value) || 0),
+      t: Math.max(0.01, parseFloat(els.years.value) || 0.01),
     };
   }
 
@@ -152,7 +68,6 @@
       const yr = (t * i) / points;
       labels.push(yr.toFixed(yr < 1 ? 2 : 1) + ' yr');
       principalLine.push(P);
-      //totalLine.push(P + P * r * yr);
 	  totalLine.push(P + (f - P) * yr / t);
     }
 
@@ -196,27 +111,21 @@
   }
 
   function recalc() {
-    const { P, f} = read();
+    const { P, f, t } = read();
     const I = f - P;
-    const eff = P > 0?100.0*I/P:0;
-	
+    const eff = P > 0?(Math.pow((f / P), (1 / t)) - 1) * 100:0;
     animate(els.interest,     I,            fmt);
-	
 	els.interest.style.color =
   I >= 0
     ? '#10B981'
     : '#EF4444';
-	
-    //animate(els.effective,    eff,          (v) => v.toFixed(2));
-	animate(els.effective,    eff,          (v) => (v.toFixed(2).toLocaleString('en-US') +'%'));
-	
+    animate(els.effective,    eff,          (v) => (v.toFixed(2).toLocaleString('en-US') +'%'));
 	els.effective.style.color =
   eff >= 0
     ? '#10B981'
     : '#EF4444';
 
-    //buildChart(P, f, 1);
-	updatePie(P, f);
+    buildChart(P, f, t);
   }
 
   function bindPair(rangeEl, numEl, valueEl) {
@@ -241,9 +150,9 @@
     //els.rate.value = DEFAULTS.rate;
     //els.rateNumber.value = DEFAULTS.rate;
     //els.rateValue.textContent = DEFAULTS.rate;
-    //els.years.value = DEFAULTS.years;
-    //els.yearsNumber.value = DEFAULTS.years;
-    //els.yearsValue.textContent = DEFAULTS.years;
+    els.years.value = DEFAULTS.years;
+    els.yearsNumber.value = DEFAULTS.years;
+    els.yearsValue.textContent = DEFAULTS.years;
     recalc();
   }
 
@@ -251,7 +160,7 @@
     els.principal.addEventListener('input', recalc);
 	els.finalVal.addEventListener('input', recalc);
     //bindPair(els.rate, els.rateNumber, els.rateValue);
-    //bindPair(els.years, els.yearsNumber, els.yearsValue);
+    bindPair(els.years, els.yearsNumber, els.yearsValue);
     els.resetBtn.addEventListener('click', reset);
     document.addEventListener('themechange', () => { if (chart) recalc(); });
     recalc();

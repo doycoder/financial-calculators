@@ -30,23 +30,11 @@
       </a>
       <nav class="site-nav" data-i18n-attr="aria-label:nav.primaryAria" aria-label="Primary">
         <a href="index.html" data-i18n="nav.home">Home</a>
-        <!--div class="nav-dropdown">
-          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
-            <span data-i18n="nav.calculators">Calculators</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="nav-dropdown-menu" role="menu">
-            <a href="index.html" role="menuitem"><strong data-i18n="nav.items.compound">Compound Interest</strong><span data-i18n="nav.items.compoundDesc">Investment growth with SIP</span></a>
-            <a href="simple-interest-calculator.html" role="menuitem"><strong data-i18n="nav.items.simple">Simple Interest</strong><span data-i18n="nav.items.simpleDesc">Flat-rate interest math</span></a>
-            <a href="loan-calculator.html" role="menuitem"><strong data-i18n="nav.items.loan">Loan / Mortgage</strong><span data-i18n="nav.items.loanDesc">Monthly payment &amp; schedule</span></a>
-            <a href="savings-goal-calculator.html" role="menuitem"><strong data-i18n="nav.items.savings">Savings Goal</strong><span data-i18n="nav.items.savingsDesc">Plan to hit a target</span></a>
-            <a href="calculators.html" role="menuitem"><strong data-i18n="nav.items.all">All calculators →</strong><span data-i18n="nav.items.allDesc">Browse the full toolkit</span></a>
-          </div>
-        </div-->
+        
 		<a href="compound-interest-calculator.html">Compound</a>
 		<a href="loan-calculator.html">Loan</a>
 		<a href="roi-calculator.html">ROI</a>
-
+		<a href="CAGR-calculator.html">CAGR</a>
 		<a href="calculators.html">Calculators</a>
         <a href="blog.html" data-i18n="nav.blog">Blog</a>
         <a href="about.html" aria-current="page" data-i18n="nav.about">About</a>
@@ -73,8 +61,22 @@
     <section class="content-section" style="border-top:none;">
       <div class="container narrow">
         <article class="prose">
-          <h1 data-i18n="pages.about.h1">About CompoundCalc</h1>
-          <p data-i18n="pages.about.pIntro">CompoundCalc is a free, no-signup tool built to help anyone visualize how compound interest and regular contributions transform modest savings into long-term wealth. We built it because most online calculators are either too simplistic to be useful or so cluttered with ads they obscure the math underneath.</p>
+          <h1>About FnCalcs</h1>
+          <p><a href="index.html">FnCalcs</a> is a free online financial calculator platform designed to help investors, savers, students, and professionals make smarter financial decisions.
+
+Our calculators are fast, accurate, and easy to use. There is no registration required, and every calculator works directly in your browser on desktop and mobile devices.
+
+Whether you're planning investments, comparing returns, calculating loan payments, or setting financial goals, <a href="index.html#calculator">FnCalcs</a> provides reliable tools that simplify complex calculations.</p>
+			<br><br>
+			<h1>Compound Interest Calculator</h1>
+			<p>Estimate how your investments grow over time with compound interest. Calculate future value, total interest earned, and visualize growth using interactive charts.</p>
+			<h3>Best for:</h3>
+			<ul class="feature-list">
+				<li>Long-term investing</li>
+				<li>Retirement planning</li>
+				<li>SIP calculations</li>
+				<li>Wealth accumulation</li>
+			</ul>
 
           <h3 data-i18n="pages.about.h3Does">What this tool does</h3>
           <ul>
@@ -89,11 +91,80 @@
 
           <h3 data-i18n="pages.about.h3Math">How the math works</h3>
           <p data-i18n-html="pages.about.pMath">The calculator simulates growth month-by-month. Each month the monthly contribution is added to the running balance, then the balance is compounded at the rate corresponding to your chosen frequency. The closed-form formula <code>A = P(1 + r/n)<sup>nt</sup></code> covers the lump-sum case; the simulation generalizes it to handle ongoing contributions correctly.</p>
+		  <br><br>
+		  <h1>ROI Calculator</h1>
+			<p>Measure the profitability of an investment by calculating Return on Investment (ROI).</p>
+			<h3>Use it to:</h3>
+			<ul class="feature-list">
+				<li>Compare investment performance</li>
+				<li>Evaluate business projects</li>
+				<li>Analyze stock or real estate returns</li>
+				<li>Understand investment efficiency</li>
+			</ul>
+			<br><br>
+			<h1>CAGR Calculator Calculator</h1>
+			<p>Calculate the Compound Annual Growth Rate (CAGR) to measure the average annual return of an investment over multiple years.</p>
+			<h3>Perfect for:</h3>
+			<ul class="feature-list">
+				<li>Stock portfolio analysis</li>
+				<li>Mutual fund performance</li>
+				<li>Business growth evaluation</li>
+				<li>Long-term investment comparison</li>
+			</ul>
+			<br><br>
+			<h1>Loan Calculator</h1>
+			<p>Estimate monthly loan payments, total repayment, and interest costs.</p>
+			<h3>Suitable for:</h3>
+			<ul class="feature-list">
+				<li>Home mortgages</li>
+				<li>Personal loans</li>
+				<li>Auto loans</li>
+				<li>Business financing</li>
+			</ul>
+			<br><br>
+			<h1>Simple Interest Calculator</h1>
+			<p>Quickly calculate simple interest for savings, loans, and educational purposes.</p>
+			<h3>Ideal for:</h3>
+			<ul class="feature-list">
+				<li>Basic finance calculations</li>
+				<li>School assignments</li>
+				<li>Short-term lending</li>
+				<li>Interest comparisons</li>
+			</ul>
+			<br><br>
+			<h1>Savings Goal Calculator</h1>
+			<p>Find out how much you need to save regularly to reach your financial target.</p>
+			<h3>Useful for:</h3>
+			<ul class="feature-list">
+				<li>Emergency funds</li>
+				<li>Vacation savings</li>
+				<li>Education planning</li>
+				<li>Retirement savings</li>
+			</ul>
+			<br><br>
+			<h1>Why Choose FnCalcs?</h1>
+			<ul class="feature-list">
+				<li>Free forever</li>
+				<li>Mobile-friendly design</li>
+				<li>Instant calculations</li>
+				<li>Interactive charts</li>
+				<li>No registration required</li>
+				<li>Accurate financial formulas</li>
+				<li>Fast loading performance</li>
+				<li>SEO-friendly financial resources</li>
+			</ul>
+			
+			<br><br>
+			<h1>Our Mission</h1>
+			<p>Our mission is to make financial planning simple and accessible for everyone.
 
-          <h3 data-i18n="pages.about.h3Privacy">Privacy</h3>
+We continuously improve our calculators and educational content so users can better understand investing, saving, borrowing, and personal finance.</p>
+			
+			<br><br>
+          <h1 data-i18n="pages.about.h3Privacy">Privacy</h3>
           <p data-i18n="pages.about.pPrivacy">All calculations happen in your browser. No data is sent to a server. Theme preference is stored locally so the app remembers your choice between visits.</p>
 
-          <p style="margin-top:32px;"><a href="index.html#calculator" data-i18n="pages.about.back">← Back to the calculator</a></p>
+          <p style="margin-top:32px;"><a href="index.html" data-i18n="pages.about.back">← Back to the calculator</a></p>
         </article>
       </div>
     </section>

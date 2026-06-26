@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Compound Interest Calculator - Calculate Investment Growth & Returns</title>
-  <meta name="description" content="Free online compound interest calculator to estimate your investment growth, SIP returns, and annual returns. Plan smarter with charts, monthly contributions, and instant results." />
-  <meta name="keywords" content="compound interest calculator, investment calculator, SIP calculator, return calculator, compound growth, monthly contribution calculator" />
-  <meta name="author" content="Compound Interest Calculator" />
+  <title>Free Financial Calculators - ROI, CAGR, Compound Interest & More</title>
+  <meta name="description" content="Use our free online calculators to calculate ROI, CAGR,
+compound interest, and more." />
+  <meta name="keywords" content="financial calculator, investment calculator, online finance calculator" />
+  <meta name="author" content="financial calculator" />
   <link rel="canonical" href="https://YOUR_DOMAIN.com/compound-interest-calculator" />
 
   <!-- Open Graph -->
@@ -56,18 +57,7 @@
     ]
   }
   </script>
-  <!-- Pre-paint locale: avoids English-flash before i18n.js runs -->
-  <script>
-    (function () {
-      try {
-        var v = localStorage.getItem('locale');
-        var valid = ['en','es','de','fr','ru','pt','it','zh-Hans','zh-Hant','th','ar','ja','vi','my','id','tr'];
-        if (valid.indexOf(v) === -1) v = 'en';
-        document.documentElement.lang = v;
-        document.documentElement.dir = (v === 'ar') ? 'rtl' : 'ltr';
-      } catch (_) {}
-    })();
-  </script>
+
 </head>
 <body>
   <!-- HEADER -->
@@ -79,33 +69,13 @@
       </a>
       <nav class="site-nav" data-i18n-attr="aria-label:nav.primaryAria" aria-label="Primary">
         <a href="index.html" aria-current="page" data-i18n="nav.home">Home</a>
-        <!--div class="nav-dropdown">
-          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
-            <span data-i18n="nav.calculators">Calculators</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="nav-dropdown-menu" role="menu">
-            <a href="index.html" role="menuitem" aria-current="page"><strong data-i18n="nav.items.compound">Compound Interest</strong><span data-i18n="nav.items.compoundDesc">Investment growth with SIP</span></a>
-            <a href="simple-interest-calculator.html" role="menuitem"><strong data-i18n="nav.items.simple">Simple Interest</strong><span data-i18n="nav.items.simpleDesc">Flat-rate interest math</span></a>
-            <a href="loan-calculator.html" role="menuitem"><strong data-i18n="nav.items.loan">Loan / Mortgage</strong><span data-i18n="nav.items.loanDesc">Monthly payment &amp; schedule</span></a>
-            <a href="savings-goal-calculator.html" role="menuitem"><strong data-i18n="nav.items.savings">Savings Goal</strong><span data-i18n="nav.items.savingsDesc">Plan to hit a target</span></a>
-            <a href="calculators.html" role="menuitem"><strong data-i18n="nav.items.all">All calculators →</strong><span data-i18n="nav.items.allDesc">Browse the full toolkit</span></a>
-          </div>
-        </div-->
 		<a href="compound-interest-calculator.html">Compound</a>
 		<a href="loan-calculator.html">Loan</a>
 		<a href="roi-calculator.html">ROI</a>
-
+		<a href="CAGR-calculator.html">CAGR</a>
 		<a href="calculators.html">Calculators</a>
         <a href="blog.html" data-i18n="nav.blog">Blog</a>
         <a href="about.html" data-i18n="nav.about">About</a>
-        <!--div class="nav-dropdown lang-dropdown">
-          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" data-i18n-attr="aria-label:nav.languageAria" aria-label="Select language">
-            <span class="lang-current" data-lang-current>🇬🇧 EN</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          <div class="nav-dropdown-menu lang-menu" role="menu" data-lang-menu></div>
-        </div-->
       </nav>
       <div class="header-actions">
         <button class="nav-toggle" data-i18n-attr="aria-label:nav.toggleMenuAria" aria-label="Toggle menu" aria-expanded="false">
@@ -122,6 +92,13 @@
 	<section class="hero" id="calculator">
 		<div class="container">
 			<div class="hero-text">
+			
+			<div class="hero-text">
+          <h1>Free Financial Calculators</h1>
+          <p class="lede" >Use our free online calculators to calculate ROI, CAGR,
+compound interest, and more.</p>
+        </div>
+			
 			  <h2>💰Investment Calculators</h2>
 			  
 				<div class="grid">
@@ -160,6 +137,10 @@
 					<h3>ROI Calculator</h3>
 					<p>Measure investment returns</p>
 				  </a>
+				  <a href="CAGR-calculator.html" class="card">
+					<h3>CAGR Calculator</h3>
+					<p>Calculate compound annual growth rate</p>
+				  </a>
 
 				</div>
 				
@@ -173,6 +154,12 @@
 	
 	<section class="content-section">
       <div class="container narrow">
+	  <article class="prose">
+          <h2>What Are Financial Calculators?</h2>
+          <p>Financial calculators help you estimate investment returns,
+loan payments, and growth over time.</p>
+
+        </article>
         <article class="prose">
           <h2>Why Use Our Calculators?</h2>
           <p>Our financial calculators help you make smarter decisions about investing,
@@ -183,72 +170,6 @@
       </div>
     </section>
 </main>
-
-
-<!--main>
-
-  <section class="hero">
-
-		<h2>💰Investment Calculators</h2>
-
-    <div class="grid">
-
-      <a href="compound-interest-calculator.html" class="card">
-        <h3>Compound Interest</h3>
-        <p>Calculate long-term investment growth</p>
-      </a>
-
-      <a href="simple-interest-calculator.html" class="card">
-        <h3>Simple Interest</h3>
-        <p>Basic interest calculation</p>
-      </a>
-
-      <a href="savings-goal-calculator.html" class="card">
-        <h3>Savings Goal</h3>
-        <p>Plan your savings target</p>
-      </a>
-
-    </div>
-  </section>
-
-  <section class="hero">
-    <h2>🏦 Loan Calculators</h2>
-    <div class="grid">
-
-      <a href="loan-calculator.html" class="card">
-        <h3>Loan Calculator</h3>
-        <p>Monthly payments & interest</p>
-      </a>
-
-    </div>
-  </section>
-
-  <section class="hero">
-    <h2>📊 Analysis Tools</h2>
-    <div class="grid">
-
-      <a href="roi-calculator.html" class="card">
-        <h3>ROI Calculator (Coming Soon)</h3>
-        <p>Measure investment returns</p>
-      </a>
-
-    </div>
-  </section>
-
-  
-      <section class="content-section">
-      <div class="container narrow">
-        <article class="prose">
-          <h2>Why Use Our Calculators?</h2>
-          <p>Our financial calculators help you make smarter decisions about investing,
-      saving, and borrowing. Whether you're planning long-term growth or managing
-      debt, our tools provide fast and accurate results.</p>
-
-        </article>
-      </div>
-    </section>
-
-</main-->
 
   <!-- FOOTER -->
   <footer class="site-footer">

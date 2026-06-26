@@ -1086,6 +1086,13 @@ body.modal-open { overflow: hidden; }
   padding: 20px;
 }
 
+.chart-box {
+  width: 255px;
+  height: 255px;
+  margin-top: -65px;
+  margin-bottom: -65px;
+}
+
 /* ==========================================================================
    Language dropdown
    ========================================================================== */
