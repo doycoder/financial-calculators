@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="pages.aprVsApy.docTitle">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7208769549391837"
+     crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APR vs APY: The Difference That Compounds Into Real Money</title>
+  <meta name="description" content="APR is the stated rate; APY is what you actually earn or pay after compounding. Here's the formula, how big the gap gets, and how to convert between them." />
+  <meta name="keywords" content="APR vs APY, annual percentage rate, annual percentage yield, effective annual rate, nominal vs effective interest rate, compound interest" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://YOUR_DOMAIN.com/blog/apr-vs-apy" />
+  <meta property="og:title" content="APR vs APY: The Difference That Compounds Into Real Money" />
+  <meta property="og:description" content="APR is the stated rate; APY is what you actually earn or pay after compounding. Here's the formula and how big the gap gets." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/blog/apr-vs-apy" />
+  <meta property="article:published_time" content="2026-08-30" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E%24%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Pre-paint locale: avoids English-flash before i18n.js runs -->
+  <script>
+    (function () {
+      try {
+        var v = localStorage.getItem('locale');
+        var valid = ['en','es','de','fr','ru','pt','it','zh-Hans','zh-Hant','th','ar','ja','vi','my','id','tr'];
+        if (valid.indexOf(v) === -1) v = 'en';
+        document.documentElement.lang = v;
+        document.documentElement.dir = (v === 'ar') ? 'rtl' : 'ltr';
+      } catch (_) {}
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "APR vs APY: The Difference That Compounds Into Real Money",
+    "datePublished": "2026-08-30",
+    "dateModified": "2026-08-30",
+    "author": { "@type": "Organization", "name": "CompoundCalc" },
+    "publisher": { "@type": "Organization", "name": "CompoundCalc" },
+    "description": "APR is the stated rate; APY is what you actually earn or pay after compounding. Here's the formula and how big the gap gets."
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand" data-i18n-attr="aria-label:nav.brandAria">
+        <span class="brand-mark">$</span>
+        <span class="brand-name">Financial<span>Calc</span></span>
+      </a>
+      <nav class="site-nav" data-i18n-attr="aria-label:nav.primaryAria" aria-label="Primary">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+			<a href="../compound-interest-calculator.html">Compound</a>
+			<a href="../loan-calculator.html">Loan</a>
+			<a href="../roi-calculator.html">ROI</a>
+			<a href="../CAGR-calculator.html">CAGR</a>
+			<a href="../calculators.html">Calculators</a>
+        <a href="../blog.html" aria-current="page" data-i18n="nav.blog">Blog</a>
+        <a href="../about.html" data-i18n="nav.about">About</a>
+      </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" data-i18n-attr="aria-label:nav.toggleMenuAria" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <button id="themeToggle" class="icon-btn" data-i18n-attr="aria-label:nav.themeToggleAria;title:nav.themeToggleAria" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="article-page">
+    <div class="container">
+      <header class="article-header">
+        <div class="meta">Money Math · 7 min read · August 30, 2026</div>
+        <h1>APR vs APY: The Difference That Compounds Into Real Money</h1>
+        <p class="lede">One is the stated rate, the other is the rate you actually earn or pay after compounding. The gap between them grows with the square of the rate — and banks point it whichever way benefits them.</p>
+      </header>
+
+      <article class="article-body">
+        <p>If a bank quotes you 5% on a savings account and a lender quotes you 5% on a loan, are you getting the same 5%? Almost certainly not. One is an <strong>APR</strong>, the other an <strong>APY</strong>, and the difference between them is real money that compounds for you or against you every single year. APR vs APY is the most quietly expensive confusion in personal finance — and the fix is one formula you can run on the back of a napkin.</p>
+
+        <h2>What APR and APY Actually Mean</h2>
+        <p><strong>APR</strong> (Annual Percentage Rate) is the nominal, stated rate — the headline number, the one in the shop window. Its defining property is that it <em>ignores</em> compounding within the year. It treats the year as if interest were paid exactly once, at the end.</p>
+        <p><strong>APY</strong> (Annual Percentage Yield), also called the Effective Annual Rate (EAR), is the rate you <em>actually experience</em> once intra-year compounding is folded in. It answers the only question that matters: if I put $1 in today, how much extra do I have in exactly one year?</p>
+        <p>They are connected by a single formula:</p>
+        <p><strong>APY = (1 + APR ÷ n)<sup>n</sup> − 1</strong></p>
+        <p>where <strong>n</strong> is the number of compounding periods per year: 12 for monthly, 365 for daily, 4 for quarterly, 2 for semiannual. If n = 1 (interest paid once a year), APY equals APR and the two are identical. The gap only opens once money compounds more than once a year — and it's that gap banks exploit in opposite directions.</p>
+
+        <h2>The Formula That Separates Them</h2>
+        <p>The math is the same <a href="../compound-interest-calculator.html">compound interest</a> you already know, compressed into a single year:</p>
+        <p><strong>APY = (1 + r/n)<sup>n</sup> − 1</strong></p>
+        <p >At 5% compounded monthly (n = 12): APY = (1 + 0.05/12)<sup>12</sup> − 1 = <strong>5.116%</strong>. The account billed as "5%" actually pays 5.116%.</p>
+        <p >If compounding is continuous, the formula collapses to APY = e<sup>r</sup> − 1. At 5%, that's 5.127%. For practical purposes daily compounding is already within a hair of continuous — the extra frequency beyond daily buys you almost nothing.</p>
+
+        <h2 >How Big Is the Gap, Really?</h2>
+        <p >Here's the gap between the stated APR and the true APY, at monthly compounding, across common rates:</p>
+        <table>
+          <thead>
+            <tr><th >Stated APR</th><th >APY (monthly)</th><th >Gap</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1%</td><td>1.005%</td><td>0.005 pts</td></tr>
+            <tr><td>5%</td><td>5.116%</td><td>0.116 pts</td></tr>
+            <tr><td>10%</td><td>10.471%</td><td>0.471 pts</td></tr>
+            <tr><td>15%</td><td>16.075%</td><td>1.075 pts</td></tr>
+            <tr><td>20%</td><td>21.939%</td><td>1.939 pts</td></tr>
+            <tr><td>24%</td><td>26.824%</td><td>2.824 pts</td></tr>
+          </tbody>
+        </table>
+        <p >Notice the pattern: <strong>double the rate and the gap doesn't double — it roughly quadruples.</strong> The APR–APY gap grows with the <em>square</em> of the rate. At 5% it's a rounding error; at 20% it's nearly two full percentage points of real money.</p>
+        <p >The gap also depends on how often the bank compounds. At a fixed 5% APR:</p>
+        <table>
+          <thead>
+            <tr><th >Compounding</th><th >Periods / yr</th><th >APY</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Annually</td><td>1</td><td>5.000%</td></tr>
+            <tr><td>Semiannually</td><td>2</td><td>5.062%</td></tr>
+            <tr><td>Quarterly</td><td>4</td><td>5.095%</td></tr>
+            <tr><td>Monthly</td><td>12</td><td>5.116%</td></tr>
+            <tr><td>Daily</td><td>365</td><td>5.127%</td></tr>
+            <tr><td>Continuously</td><td>∞</td><td>5.127%</td></tr>
+          </tbody>
+        </table>
+        <p >The jump from annual to monthly is where most of the money is; daily versus monthly buys a fraction of a basis point. So when banks fight over "daily compounding," they're fighting over almost nothing — the <em>rate</em> itself matters far more than the frequency.</p>
+
+        <h2 >Why Banks Advertise the Opposite Number</h2>
+        <p >The same math shows up in two directions, and banks point it whichever way benefits them:</p>
+        <ul>
+          <li ><strong>On deposits, they quote APY — the higher number.</strong> A "5.00% APY" account compounded monthly is really a ~4.89% APR underneath. The APY is the honest number; the marketing just makes sure it's the biggest honest number available.</li>
+          <li ><strong>On loans, they quote APR — the lower number.</strong> A "24% APR" credit card compounded daily is actually charging ~27.1% in effective terms. The APR is a legal disclosure, but it systematically understates the cost of anything that compounds.</li>
+        </ul>
+        <p >Same rate, opposite marketing. That asymmetry is why APR vs APY is a genuine financial-literacy test: if you can convert one to the other in your head, the ads stop working on you.</p>
+
+        <h2 >Five Ways to Use This in Real Life</h2>
+
+        <h3 >1. Compare savings accounts on equal footing</h3>
+        <p >Account A offers 4.90% APY compounded monthly; account B offers 4.95% APR compounded quarterly. Which pays more? Convert B to APY: (1 + 0.0495/4)<sup>4</sup> − 1 = <strong>5.04%</strong>. B wins — and by more than the headline suggests. Never compare an APR against an APY without converting first.</p>
+
+        <h3 >2. See the true cost of credit card debt</h3>
+        <p >A 24% APR card compounds daily, so the effective annual cost is about <strong>27.1%</strong>. That's the number to hold in your head when deciding whether to carry a balance. It turns "24%" — which feels survivable — into "over a quarter of the balance, every year," which doesn't. Run the real cost through our <a href="../loan-calculator.html">Loan Calculator</a> to see it in dollars.</p>
+
+        <h3 >3. Read loan offers with the right lens</h3>
+        <p >Mortgages and car loans compound monthly, and in the US their quoted APR legally bundles in most lender fees — which makes APR a decent apples-to-apples comparison <em>for loans</em>. But for any investment or deposit, you want the APY; the APR will always undersell it.</p>
+
+        <h3 >4. Spot the "0% APR" trap</h3>
+        <p >"0% APR for 12 months" sounds free, but many store cards use deferred interest: if the balance isn't paid in full by the cutoff, you owe retroactive interest on the entire original amount at a rate that's often 25%+. The 0% was a bet, not a gift — and the terms buried in the fine print decide who wins.</p>
+
+        <h3 >5. Convert any quote to one common number</h3>
+        <p >Whenever two rates are thrown at you — one monthly, one annual, one APR, one APY — put them on the same footing before deciding. The conversion is one line of math, and it's the difference between comparing numbers and comparing realities.</p>
+
+        <h2 >When APR vs APY Still Isn't the Whole Story</h2>
+        <p >Three caveats before you start correcting people at dinner parties:</p>
+        <ul>
+          <li ><strong>Loan APR isn't a pure interest rate.</strong> In the US, mortgage and auto APR includes closing costs and origination fees, so "APR" there is a regulatory term, not just the nominal rate. The formula above assumes no fees.</li>
+          <li ><strong>Variable rates make APY a snapshot, not a promise.</strong> An APY computed today assumes the rate stays put for the year. With a floating rate, it won't.</li>
+          <li ><strong>APY captures compounding, not fees, taxes, or inflation.</strong> A 5% APY account with a monthly maintenance fee may still lose to a 4.9% APY account with none.</li>
+        </ul>
+
+        <h2 >Try It Yourself</h2>
+        <p >Take any advertised rate. If it's an APR, convert it with (1 + r/n)<sup>n</sup> − 1; if it's an APY, that's already the real number — compare everything against it. For a single year that's the whole story. For multi-year growth, remember APY is a one-year number — the right tool there is <a href="../CAGR-calculator.html">CAGR</a>. Now plug your rate into our <a href="../compound-interest-calculator.html">Compound Interest Calculator</a> and watch the gap compound into actual dollars over a decade. That moment, when a fraction of a percent turns into a visible sum, is when the difference stops being an acronym and becomes a decision.</p>
+
+        <div class="article-cta">
+          <strong >See compounding in action</strong>
+          <span >Use the calculator to turn the APR vs APY gap into real dollars over time, and verify the formula with your own rate.</span>
+          <a href="../compound-interest-calculator.html" >Open the Compound Interest Calculator</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="brand-mark small">$</span>
+        <span data-i18n="brand">CompoundCalc</span>
+      </div>
+      <p class="footer-note" data-i18n="footer.note">For educational purposes only. Not financial advice.</p>
+      <nav data-i18n-attr="aria-label:footer.ariaLabel" aria-label="Footer">
+        <a href="../calculators.html" data-i18n="footer.calculators">Calculators</a>
+        <a href="../blog.html" data-i18n="footer.blog">Blog</a>
+        <a href="../about.html" data-i18n="footer.about">About</a>
+        <a href="../privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="../terms.html" data-i18n="footer.terms">Terms</a>
+        <a href="../disclaimer.html" data-i18n="footer.disclaimer">Disclaimer</a>
+        <a href="../contact.html" data-i18n="footer.contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/site.js"></script>
+  <script src="../js/i18n.js"></script>
+</body>
+</html>
