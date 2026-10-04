@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="pages.fourPercent.docTitle">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7208769549391837"
+     crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 4% Rule: How Much You Need to Retire (and the Risk That Breaks It)</title>
+  <meta name="description" content="The 4% rule says withdraw 4% yearly, so retire with 25× your annual spending. But the real risk is sequence of returns, not average return." />
+  <meta name="keywords" content="4% rule, safe withdrawal rate, how much do I need to retire, retirement calculator, sequence of returns risk" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.fncalcs.com/blog/4-percent-rule" />
+  <meta property="og:title" content="The 4% Rule: How Much You Need to Retire (and the Risk That Breaks It)" />
+  <meta property="og:description" content="The 4% rule says withdraw 4% yearly, so retire with 25× your annual spending. The real risk is sequence of returns, not average return." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.fncalcs.com/blog/4-percent-rule" />
+  <meta property="article:published_time" content="2026-10-04" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E%24%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Pre-paint locale: avoids English-flash before i18n.js runs -->
+  <script>
+    (function () {
+      try {
+        var v = localStorage.getItem('locale');
+        var valid = ['en','es','de','fr','ru','pt','it','zh-Hans','zh-Hant','th','ar','ja','vi','my','id','tr'];
+        if (valid.indexOf(v) === -1) v = 'en';
+        document.documentElement.lang = v;
+        document.documentElement.dir = (v === 'ar') ? 'rtl' : 'ltr';
+      } catch (_) {}
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The 4% Rule: How Much You Need to Retire (and the Risk That Breaks It)",
+    "datePublished": "2026-10-04",
+    "dateModified": "2026-10-04",
+    "author": { "@type": "Organization", "name": "CompoundCalc" },
+    "publisher": { "@type": "Organization", "name": "CompoundCalc" },
+    "description": "The 4% rule says withdraw 4% yearly, so retire with 25× your annual spending. The real risk is sequence of returns, not average return."
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand" data-i18n-attr="aria-label:nav.brandAria">
+        <span class="brand-mark">$</span>
+        <span class="brand-name">Financial<span>Calc</span></span>
+      </a>
+      <nav class="site-nav" data-i18n-attr="aria-label:nav.primaryAria" aria-label="Primary">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+			<a href="../compound-interest-calculator.html">Compound</a>
+			<a href="../loan-calculator.html">Loan</a>
+			<a href="../roi-calculator.html">ROI</a>
+			<a href="../CAGR-calculator.html">CAGR</a>
+			<a href="../calculators.html">Calculators</a>
+        <a href="../blog.html" aria-current="page" data-i18n="nav.blog">Blog</a>
+        <a href="../about.html" data-i18n="nav.about">About</a>
+      </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" data-i18n-attr="aria-label:nav.toggleMenuAria" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <button id="themeToggle" class="icon-btn" data-i18n-attr="aria-label:nav.themeToggleAria;title:nav.themeToggleAria" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="article-page">
+    <div class="container">
+      <header class="article-header">
+        <div class="meta">Retirement · 7 min read · October 4, 2026</div>
+        <h1>The 4% Rule: How Much You Need to Retire (and the Risk That Breaks It)</h1>
+        <p class="lede">Retire with 25× your annual spending. That's the 4% rule in one multiplication — but the thing that actually breaks retirements isn't the average return, it's the order the returns arrive in.</p>
+      </header>
+
+      <article class="article-body">
+        <p>How much do you need to retire? Strip away the calculators and you land on a shockingly simple number: <strong>25 times your annual spending</strong>. The famous 4% rule says you can withdraw 4% of your portfolio in year one and ride it for 30 years. But the rule hides a risk most people never see: what decides whether you go broke isn't your average return — it's the order the returns arrive in.</p>
+
+        <h2>What the 4% Rule Says</h2>
+        <p>Withdraw 4% of your portfolio in year one, then increase that dollar amount every year with inflation. So $1,000,000 pays you $40,000 in year one, roughly $41,200 the next year (at 3% inflation), and so on for three decades. The rule comes from William Bengen's 1994 research and the later Trinity Study, both of which backtested withdrawal rates against US stock-and-bond history.</p>
+
+        <h2>The 25× Shortcut</h2>
+        <p>4% is the reciprocal of 25, so the whole rule collapses to one multiplication:</p>
+        <p><strong>Nest egg = annual spending × 25</strong></p>
+        <p>Spend $40,000 a year? You need about $1,000,000. Spend $60,000? $1,500,000. Spend $100,000? $2,500,000. The number feels enormous because it is — but that's the honest size of a 30-year cushion.</p>
+        <p>Want a longer or safer cushion? The math scales cleanly: a 3.5% withdrawal rate means 28.6× your spending, and 3% means 33×. Retiring at 45 instead of 65 forces the lower rate, because the money has to last longer.</p>
+
+        <h2>Where 4% Came From</h2>
+        <p>Crucial context: 4% isn't the <em>average</em> result — it's the worst-case-to-survive result. Bengen tested 30-year windows across US history and picked the withdrawal rate that survived even the ugliest one: retiring in 1966, just before the 1970s inflation spike and a long, flat market. Recognize what that means — 4% is a floor derived from the harshest stretch of American market history, not a target calibrated to a friendly one.</p>
+
+        <h2>The Risk No One Talks About: Sequence</h2>
+        <p>Now the part that should reframe how you think about retirement. Two retirees each have $1,000,000, each withdraw $40,000 a year, and each experience the <em>exact same average return of 6.6%</em>. The only difference is when the bad years land.</p>
+        <ul>
+          <li><strong>Retiree A retires into a crash</strong> — five losing years of −15% come first, then twenty good years of +12%. Same 6.6% average. A <strong>runs out of money in year 22</strong>.</li>
+          <li><strong>Retiree B retires into a boom</strong> — the twenty +12% years come first, then the five −15% years. B ends the 25 years with <strong>$2,721,760</strong>.</li>
+        </ul>
+        <p>Identical average return, identical withdrawals. One ends broke, the other is a multi-millionaire. That gap is <strong>sequence-of-returns risk</strong> — and it's why "average return" is a nearly useless number for anyone actually withdrawing money.</p>
+
+        <h2>Why the First Five Years Decide Everything</h2>
+        <p>The mechanism is what makes it so dangerous: when you're withdrawing, an early loss isn't just a paper loss. You sell shares at the bottom to fund living expenses, locking in the damage permanently, and the portfolio never recovers to its old size. A flat or down first five years is the single biggest hazard a retiree faces. This is the logic behind "bond tents" and target-date funds that turn conservative right around the retirement date.</p>
+
+        <h2>How to Actually Use the Rule</h2>
+
+        <h3>1. Compute your number</h3>
+        <p>Annual spending × 25. One multiplication, no spreadsheet required.</p>
+
+        <h3>2. Split "must" from "nice" spending</h3>
+        <p>Cutting your ongoing spending by $10,000 a year shrinks the nest egg you need by <strong>$250,000</strong>. Spending is the lever most people skip.</p>
+
+        <h3>3. Stress-test the first five years</h3>
+        <p>The danger zone is years one through five, not year twenty. Plan around the possibility of retiring into a down market.</p>
+
+        <h3>4. Treat 4% as a target, not a promise</h3>
+        <p>Build in a buffer, or plan to trim withdrawals in a bad first year. Flexibility is cheap; running out is not.</p>
+
+        <h3>5. Keep the growth engine running</h3>
+        <p>The rule assumes a sensible stock-and-bond mix, not cash. A portfolio left in low-yield cash quietly changes the math.</p>
+
+        <h2>When 4% Breaks Down</h2>
+        <p>Four caveats:</p>
+        <ul>
+          <li><strong>It's a backtest of US history.</strong> Japan and several other markets would have supported far less. The future is not obligated to repeat 1966.</li>
+          <li><strong>4% was built for ~30 years.</strong> Earlier retirement calls for 3.5% or 3%, which means a 29×–33× nest egg instead of 25×.</li>
+          <li><strong>It ignores fees and taxes.</strong> A 1% advisory fee is a full quarter of your 4% — it has to come out of your spending or your growth.</li>
+          <li><strong>"Success" is a low bar.</strong> The rule survives if you don't hit $0 in 30 years. It does not promise you keep your principal or leave an inheritance.</li>
+        </ul>
+
+        <h2>Try It Yourself</h2>
+        <p>Find your number: total up the spending you couldn't cut, multiply by 25, and that's the nest-egg target. Then see how long it'll actually take to get there — plug a monthly contribution and a growth rate into the <a href="../savings-goal-calculator.html">Savings Goal Calculator</a>. The distance from today to your 25× number is, quite literally, how much work you have left.</p>
+
+        <div class="article-cta">
+          <strong>Find your retirement number</strong>
+          <span>Multiply your annual spending by 25, then model how fast monthly savings and compounding get you there.</span>
+          <a href="../savings-goal-calculator.html">Open the Savings Goal Calculator</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="brand-mark small">$</span>
+        <span data-i18n="brand">CompoundCalc</span>
+      </div>
+      <p class="footer-note" data-i18n="footer.note">For educational purposes only. Not financial advice.</p>
+      <nav data-i18n-attr="aria-label:footer.ariaLabel" aria-label="Footer">
+        <a href="../calculators.html" data-i18n="footer.calculators">Calculators</a>
+        <a href="../blog.html" data-i18n="footer.blog">Blog</a>
+        <a href="../about.html" data-i18n="footer.about">About</a>
+        <a href="../privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="../terms.html" data-i18n="footer.terms">Terms</a>
+        <a href="../disclaimer.html" data-i18n="footer.disclaimer">Disclaimer</a>
+        <a href="../contact.html" data-i18n="footer.contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/site.js"></script>
+  <script src="../js/i18n.js"></script>
+</body>
+</html>
