@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="pages.cagrVsAvg.docTitle">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7208769549391837"
+     crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAGR vs Average Return: Why Your “10% Average” Was Really 8%</title>
+  <meta name="description" content="Average return is the arithmetic mean; CAGR is the geometric mean. Volatility drags the real return below the average. Here's the formula and how big the gap gets." />
+  <meta name="keywords" content="CAGR vs average return, compound annual growth rate, arithmetic vs geometric mean, volatility drag, average annual return" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.fncalcs.com/blog/cagr-vs-average-return" />
+  <meta property="og:title" content="CAGR vs Average Return: Why Your “10% Average” Was Really 8%" />
+  <meta property="og:description" content="Average return is the arithmetic mean; CAGR is the geometric mean. Here's the formula and how big the gap gets." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.fncalcs.com/blog/cagr-vs-average-return" />
+  <meta property="article:published_time" content="2026-10-04" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E%24%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Pre-paint locale: avoids English-flash before i18n.js runs -->
+  <script>
+    (function () {
+      try {
+        var v = localStorage.getItem('locale');
+        var valid = ['en','es','de','fr','ru','pt','it','zh-Hans','zh-Hant','th','ar','ja','vi','my','id','tr'];
+        if (valid.indexOf(v) === -1) v = 'en';
+        document.documentElement.lang = v;
+        document.documentElement.dir = (v === 'ar') ? 'rtl' : 'ltr';
+      } catch (_) {}
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "CAGR vs Average Return: Why Your “10% Average” Was Really 8%",
+    "datePublished": "2026-10-04",
+    "dateModified": "2026-10-04",
+    "author": { "@type": "Organization", "name": "CompoundCalc" },
+    "publisher": { "@type": "Organization", "name": "CompoundCalc" },
+    "description": "Average return is the arithmetic mean; CAGR is the geometric mean. Here's the formula and how big the gap gets."
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand" data-i18n-attr="aria-label:nav.brandAria">
+        <span class="brand-mark">$</span>
+        <span class="brand-name">Financial<span>Calc</span></span>
+      </a>
+      <nav class="site-nav" data-i18n-attr="aria-label:nav.primaryAria" aria-label="Primary">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+			<a href="../compound-interest-calculator.html">Compound</a>
+			<a href="../loan-calculator.html">Loan</a>
+			<a href="../roi-calculator.html">ROI</a>
+			<a href="../CAGR-calculator.html">CAGR</a>
+			<a href="../calculators.html">Calculators</a>
+        <a href="../blog.html" aria-current="page" data-i18n="nav.blog">Blog</a>
+        <a href="../about.html" data-i18n="nav.about">About</a>
+      </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" data-i18n-attr="aria-label:nav.toggleMenuAria" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <button id="themeToggle" class="icon-btn" data-i18n-attr="aria-label:nav.themeToggleAria;title:nav.themeToggleAria" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="article-page">
+    <div class="container">
+      <header class="article-header">
+        <div class="meta">Money Math · 7 min read · October 6, 2026</div>
+        <h1>CAGR vs Average Return: Why Your “10% Average” Was Really 8%</h1>
+        <p class="lede">Average return is the arithmetic mean; CAGR is the geometric mean. Volatility drags the real return below the average — and the gap grows with the square of the swings.</p>
+      </header>
+
+      <article class="article-body">
+        <p>A fund advertises a 10% "average annual return" over five years. But if you'd actually held it the whole time, you'd have earned less than 8%. Same fund, same years, two different numbers — both "true." The difference is the silent tax every volatile investment pays: <strong>volatility drag</strong>.</p>
+
+        <h2>What Average Return and CAGR Actually Measure</h2>
+        <p><strong>Average return</strong> is the arithmetic mean: add up each year's return and divide by the number of years. A +20% year and a 0% year "average" 10%.</p>
+        <p><strong>CAGR</strong> — the compound annual growth rate — is the geometric mean. It's the single constant rate that would take your actual starting balance to your actual ending balance. It's the number you actually lived through.</p>
+
+        <h2>The Formula</h2>
+        <p>One uses addition, the other uses multiplication:</p>
+        <p><strong>Average return = (r₁ + r₂ + … + rₙ) ÷ n</strong></p>
+        <p><strong>CAGR = (Ending ÷ Starting)<sup>1/n</sup> − 1</strong></p>
+        <p>They're equal only when every year's return is identical — zero volatility. The moment returns bounce around, the two part ways. It's the same <a href="../compound-interest-calculator.html">compound interest</a> you already know, applied in reverse to solve for the rate.</p>
+
+        <h2>The Gap Is Volatility</h2>
+        <p>The cleanest proof is a famous two-year trap. Your investment gains 50% in year one, then loses 50% in year two. The average return is (50 − 50) ÷ 2 = <strong>0%</strong>. Zero. Break even — right?</p>
+        <p>Wrong. $100 becomes $150, then drops to <strong>$75</strong>. You lost 25% on an investment with a 0% "average" return. The true CAGR is (75 ÷ 100)<sup>1/2</sup> − 1 = <strong>−13.4%</strong> per year. The average said nothing happened; the truth is your money shrank by a quarter.</p>
+
+        <h2>A Worked Example</h2>
+        <p>Here's a more realistic five-year run — +20%, −10%, +25%, −15%, +30%. A fund would report the average, 10% per year. Here's what actually happened to $100:</p>
+        <table>
+          <thead>
+            <tr><th>Year</th><th>Return</th><th>Value of $100</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>0</td><td>—</td><td>$100.00</td></tr>
+            <tr><td>1</td><td>+20%</td><td>$120.00</td></tr>
+            <tr><td>2</td><td>−10%</td><td>$108.00</td></tr>
+            <tr><td>3</td><td>+25%</td><td>$135.00</td></tr>
+            <tr><td>4</td><td>−15%</td><td>$114.75</td></tr>
+            <tr><td>5</td><td>+30%</td><td>$149.18</td></tr>
+          </tbody>
+        </table>
+        <p>After five years you have $149.18 — a total gain of 49.2%. The average return is 10%; the CAGR is only <strong>8.3%</strong>. That 1.7-point gap is the volatility drag, the price of the ride.</p>
+
+        <h2>Why Funds Quote the Flattering One</h2>
+        <p>A fund or app that leads with "average annual return" is quoting the arithmetic mean — always equal to or higher than the CAGR. It isn't a lie; it's just the friendlier of two truthful numbers. The annualized figure you're shown is usually the one that makes the product look best.</p>
+        <p>The rule: when in doubt, demand the <strong>CAGR</strong>. It answers the only question that matters — "what would I have actually earned per year, all in?"</p>
+
+        <h2>The Rule of Thumb: Volatility Drag</h2>
+        <p>There's a tidy approximation behind the gap: <strong>CAGR ≈ average return − (volatility² ÷ 2)</strong>. The drag scales with the square of the swings — double the volatility and you quadruple the drag.</p>
+        <p>In the extreme it's brutal. Two funds both average 10% a year; one is smooth and returns exactly 10% each year. The other bounces +50%, −30%, +60%, −40%, +10%. Same 10% average — but the bumpy one's CAGR is just <strong>2.1%</strong>. Volatility didn't just shave the return; it ate most of it.</p>
+
+        <h2>Five Ways to Use This</h2>
+
+        <h3>1. Sanity-check fund marketing</h3>
+        <p>Whenever you see "average return," convert it to a CAGR before deciding anything. The average is the ceiling; your real result lives below it.</p>
+
+        <h3>2. Compare on CAGR, not average</h3>
+        <p>Two products can share a 10% average and hide a 2% CAGR and a 10% CAGR. Always line up the geometric number, never the arithmetic one.</p>
+
+        <h3>3. Understand why losses hurt more</h3>
+        <p>A −50% year needs +100% just to break even; a −30% year needs +43%. This recovery asymmetry is where volatility drag shows up in real portfolios.</p>
+
+        <h3>4. Annualize a single investment the same way</h3>
+        <p>Scale up or down the same math: annualizing one investment's total return to a per-year rate <em>is</em> CAGR, and it's the bridge to <a href="../roi-calculator.html">ROI</a>.</p>
+
+        <h3>5. Plan withdrawals around the sequence, not the average</h3>
+        <p>The 4% retirement rule depends on the actual order of returns, not their average — down years early compound against you far harder than the same average would suggest.</p>
+
+        <h2>When CAGR Still Isn't the Whole Story</h2>
+        <p>Three caveats before you start auditing every fund sheet:</p>
+        <ul>
+          <li><strong>CAGR assumes one lump sum with no money added or withdrawn.</strong> If you contributed monthly, the right metric is IRR — a dollar-weighted return — not plain CAGR.</li>
+          <li><strong>CAGR flattens the journey.</strong> An 8% CAGR that included a brutal 40% drawdown is a very different experience from a steady 8%. Always look at the worst year too.</li>
+          <li><strong>CAGR is backward-looking.</strong> It tells you what happened, not what will. A hot five-year CAGR is a rear-view mirror, not a guarantee.</li>
+        </ul>
+
+        <h2>Try It Yourself</h2>
+        <p>Take any investment's starting value, ending value, and the number of years. Plug them into the <a href="../CAGR-calculator.html">CAGR Calculator</a> to get the honest annual rate — then compare it against the "average return" you were quoted. The gap between those two numbers is the volatility drag, in plain sight.</p>
+
+        <div class="article-cta">
+          <strong>Get the honest growth rate</strong>
+          <span>Enter a starting and ending value plus the time span to compute the real CAGR behind any "average" return.</span>
+          <a href="../CAGR-calculator.html">Open the CAGR Calculator</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="brand-mark small">$</span>
+        <span data-i18n="brand">CompoundCalc</span>
+      </div>
+      <p class="footer-note" data-i18n="footer.note">For educational purposes only. Not financial advice.</p>
+      <nav data-i18n-attr="aria-label:footer.ariaLabel" aria-label="Footer">
+        <a href="../calculators.html" data-i18n="footer.calculators">Calculators</a>
+        <a href="../blog.html" data-i18n="footer.blog">Blog</a>
+        <a href="../about.html" data-i18n="footer.about">About</a>
+        <a href="../privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="../terms.html" data-i18n="footer.terms">Terms</a>
+        <a href="../disclaimer.html" data-i18n="footer.disclaimer">Disclaimer</a>
+        <a href="../contact.html" data-i18n="footer.contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/site.js"></script>
+  <script src="../js/i18n.js"></script>
+</body>
+</html>

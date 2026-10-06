@@ -81,6 +81,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.fncalcs.com/blog/cagr-vs-average-return.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.fncalcs.com/blog/retire-by-50.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
