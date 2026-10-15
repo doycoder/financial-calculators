@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-title="pages.dcaVsLumpSum.docTitle">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7208769549391837"
+     crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dollar-Cost Averaging vs Lump Sum: The Math Says You're Being Too Careful</title>
+  <meta name="description" content="Lump-sum investing beats dollar-cost averaging roughly two-thirds of the time. Here's the math, and why spreading out is still the right call for many." />
+  <meta name="keywords" content="dollar cost averaging vs lump sum, DCA vs lump sum, should I invest all at once, lump sum investing, dollar cost averaging" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.fncalcs.com/blog/dca-vs-lump-sum" />
+  <meta property="og:title" content="Dollar-Cost Averaging vs Lump Sum: The Math Says You're Being Too Careful" />
+  <meta property="og:description" content="Lump-sum investing beats dollar-cost averaging roughly two-thirds of the time. Here's the math, and why spreading out is still the right call for many." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.fncalcs.com/blog/dca-vs-lump-sum" />
+  <meta property="article:published_time" content="2026-10-15" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E%24%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Pre-paint locale: avoids English-flash before i18n.js runs -->
+  <script>
+    (function () {
+      try {
+        var v = localStorage.getItem('locale');
+        var valid = ['en','es','de','fr','ru','pt','it','zh-Hans','zh-Hant','th','ar','ja','vi','my','id','tr'];
+        if (valid.indexOf(v) === -1) v = 'en';
+        document.documentElement.lang = v;
+        document.documentElement.dir = (v === 'ar') ? 'rtl' : 'ltr';
+      } catch (_) {}
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Dollar-Cost Averaging vs Lump Sum: The Math Says You're Being Too Careful",
+    "datePublished": "2026-10-04",
+    "dateModified": "2026-10-04",
+    "author": { "@type": "Organization", "name": "CompoundCalc" },
+    "publisher": { "@type": "Organization", "name": "CompoundCalc" },
+    "description": "Lump-sum investing beats dollar-cost averaging roughly two-thirds of the time. Here's the math, and why spreading out is still the right call for many."
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand" data-i18n-attr="aria-label:nav.brandAria">
+        <span class="brand-mark">$</span>
+        <span class="brand-name">Financial<span>Calc</span></span>
+      </a>
+      <nav class="site-nav" data-i18n-attr="aria-label:nav.primaryAria" aria-label="Primary">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+				<a href="../compound-interest-calculator.html">Compound</a>
+				<a href="../loan-calculator.html">Loan</a>
+				<a href="../roi-calculator.html">ROI</a>
+				<a href="../CAGR-calculator.html">CAGR</a>
+				<a href="../calculators.html">Calculators</a>
+        <a href="../blog.html" aria-current="page" data-i18n="nav.blog">Blog</a>
+        <a href="../about.html" data-i18n="nav.about">About</a>
+      </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" data-i18n-attr="aria-label:nav.toggleMenuAria" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <button id="themeToggle" class="icon-btn" data-i18n-attr="aria-label:nav.themeToggleAria;title:nav.themeToggleAria" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="article-page">
+    <div class="container">
+      <header class="article-header">
+        <div class="meta">Investing · 7 min read · October 15, 2026</div>
+        <h1>Dollar-Cost Averaging vs Lump Sum: The Math Says You're Being Too Careful</h1>
+        <p class="lede">Spreading a windfall out feels like prudence. The research says it loses roughly two-thirds of the time — because the caution everyone calls "DCA" is often market timing in a nicer outfit.</p>
+      </header>
+
+      <article class="article-body">
+        <p>$120,000. That's the sum sitting in your account — an inheritance, a bonus, a severance — and you have to decide: put it all in this week, or trickle it in $10,000 a month for a year? Almost everyone reaches for the slower option, because spreading it out feels like the careful thing to do. Here's the uncomfortable part: that instinct, applied to money you already have, is quietly expensive.</p>
+
+        <h2>What Dollar-Cost Averaging Actually Is</h2>
+        <p>Dollar-cost averaging is investing a fixed dollar amount on a fixed schedule, no matter what the price does — $500 into an index fund every month, rain or shine. The fixed amount is the whole trick: you buy more shares when prices are low and fewer when they're high, so your average cost per share lands somewhere below the average price you happened to pay. It's the same <a href="../compound-interest-calculator.html">compound interest</a> engine fed on autopilot.</p>
+        <p>The opposite is lump-sum investing: the entire amount goes in at once, immediately, and time in the market starts compounding from day one.</p>
+
+        <h2>The Two DCAs Most People Confuse</h2>
+        <p>This is the part almost nobody explains, and it changes the entire answer. Two completely different things both get called "dollar-cost averaging":</p>
+        <ul>
+          <li><strong>DCA from income.</strong> You get paid monthly and invest some of each paycheck. There is no lump sum to time — the money doesn't exist yet. This is just "regular investing," and it is unambiguously good.</li>
+          <li><strong>DCA from a windfall.</strong> You already have $120,000 in cash, and you choose to stretch it over months. That is a decision to keep most of your money out of the market — which is market timing wearing a seatbelt.</li>
+        </ul>
+        <p>The studies, the math, and all the horror stories concern the second one. If your "DCA" is funded by paychecks, stop worrying — there's no debate. If it's funded by cash already in your hand, keep reading.</p>
+
+        <h2>The Math: Waiting Costs Money When Markets Rise</h2>
+        <p>Longer time in the market is the entire game. So the whole debate collapses into one question: over your stretch window, does the market go up or down? Because it goes up more often than not, spreading out usually costs you. Here's the same $120,000 invested two ways over a year, assuming an 8% market return for illustration:</p>
+        <table>
+          <thead>
+            <tr><th>Approach</th><th>Invested</th><th>End balance after 1 year</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Lump sum</td><td>$120,000 immediately</td><td>$129,600</td></tr>
+            <tr><td>DCA</td><td>$10,000 / month × 12</td><td>$124,339</td></tr>
+          </tbody>
+        </table>
+        <p>The lump sum wins by <strong>$5,261</strong> — and for exactly one reason: seven of those twelve installments were still sitting in cash while the market climbed. Now reverse the year and let the market fall 8% instead:</p>
+        <table>
+          <thead>
+            <tr><th>Approach</th><th>End balance after 1 year</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Lump sum</td><td>$110,400</td></tr>
+            <tr><td>DCA</td><td>$115,534</td></tr>
+          </tbody>
+        </table>
+        <p>DCA wins by <strong>$5,134</strong> — but only because the falling prices you kept buying turned out to be a genuine dip. So the trade is nearly symmetric in size, yet the coin is loaded: markets rise more years than they fall. Bet on the down year and you win now and then; bet on the up year and the edge compounds for decades.</p>
+
+        <h2>What the Research Keeps Finding</h2>
+        <p>Every serious study that has backtested this — across US stocks, international stocks, and bonds — keeps printing the same headline: invest the whole sum immediately and you come out ahead roughly <strong>two-thirds of the time</strong>. The reason is simple once you say it out loud: markets drift upward, so money held back in cash is, on average, missing growth. Dollar-cost averaging a windfall is a bet that a decline will arrive inside your specific twelve-month window. History says that bet loses more than it wins.</p>
+
+        <h2>Then Why Does Anyone Dollar-Cost Average?</h2>
+        <p>Because returns aren't the only thing at stake — regret is. Picture the two ways this can go wrong:</p>
+        <ul>
+          <li>You lump-sum $120,000 and the market drops 20% next quarter. You feel like you lit the money on fire, and a single decision is to blame.</li>
+          <li>You DCA and the market climbs all year. You left about $5,000 on the table — but no one decision caused it, and the loss is quiet.</li>
+        </ul>
+        <p>The second failure hurts far less. Dollar-cost averaging's real product isn't higher returns — it's <strong>regret minimization</strong>. It converts one terrifying all-or-nothing decision into twelve small ones, and for an investor who would otherwise freeze up or panic-sell at the first dip, that's worth every dollar of the "cost." The worst outcome isn't the missed $5,000 of the DCA'd windfall; it's the lump-sum investor who panics during a dip and sells at the bottom, turning a paper loss into a permanent one.</p>
+
+        <h2>How to Actually Decide</h2>
+
+        <h3>1. Is the money already sitting in cash?</h3>
+        <p>If it's still arriving as paychecks, you're already doing the good kind of DCA — just automate it and move on.</p>
+
+        <h3>2. Could you sleep on a lump sum?</h3>
+        <p>If a 20% drop right after you invest would make you sell or lose a year of sleep, splitting it absorbs the sting. Your plan surviving matters more than a couple thousand dollars.</p>
+
+        <h3>3. Is the horizon long?</h3>
+        <p>Over 20+ years, the lump-vs-DCA decision is a rounding error compared with simply being invested. The longer the horizon, the more the answer is "get in sooner."</p>
+
+        <h3>4. Is the sum life-changing?</h3>
+        <p>A mortgage-sized windfall deserves more care than a $2,000 bonus. The bigger the sum relative to your net worth, the stronger the regret-minimization case for DCA becomes.</p>
+
+        <h2>When the DCA Story Breaks Down</h2>
+        <p>Four caveats:</p>
+        <ul>
+          <li><strong>It's an average, not a guarantee.</strong> Two-thirds isn't certainty. In a genuinely down stretch, DCA wins outright — and those stretches cluster around the hardest times to be brave.</li>
+          <li><strong>The risk reduction is temporary.</strong> The moment your final installment lands, you're 100% exposed like everyone else. All DCA bought you was a gentler entrance, not protection.</li>
+          <li><strong>It assumes the market you're entering.</strong> DCA into a low-yield cash account for a year is just a slow bleed. The whole premise leans on stocks' long-term upward drift.</li>
+          <li><strong>It's no substitute for asset allocation.</strong> DCA doesn't fix being 100% in one volatile stock. What you own matters far more than the order you buy it in.</li>
+        </ul>
+
+        <h2>Try It Yourself</h2>
+        <p>Model the actual cost: take your windfall, assume a plausible annual return, and compare "all in on day one" against "spread over N months" with the idle cash earning roughly 0%. The gap you see is the price of the gentler entrance — then decide whether the peace of mind is worth it. Plug the result into the <a href="../compound-interest-calculator.html">Compound Interest Calculator</a> to see what a lump sum actually grows to, or use <a href="../CAGR-calculator.html">CAGR</a> to check the real, volatility-adjusted rate you'd be getting either way.</p>
+
+        <div class="article-cta">
+          <strong>See what your windfall grows to</strong>
+          <span>Compare one lump sum against spreading it out — enter the amount, rate, and horizon to watch time in the market do the heavy lifting.</span>
+          <a href="../compound-interest-calculator.html">Open the Compound Interest Calculator</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="brand-mark small">$</span>
+        <span data-i18n="brand">CompoundCalc</span>
+      </div>
+      <p class="footer-note" data-i18n="footer.note">For educational purposes only. Not financial advice.</p>
+      <nav data-i18n-attr="aria-label:footer.ariaLabel" aria-label="Footer">
+        <a href="../calculators.html" data-i18n="footer.calculators">Calculators</a>
+        <a href="../blog.html" data-i18n="footer.blog">Blog</a>
+        <a href="../about.html" data-i18n="footer.about">About</a>
+        <a href="../privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="../terms.html" data-i18n="footer.terms">Terms</a>
+        <a href="../disclaimer.html" data-i18n="footer.disclaimer">Disclaimer</a>
+        <a href="../contact.html" data-i18n="footer.contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/site.js"></script>
+  <script src="../js/i18n.js"></script>
+</body>
+</html>
