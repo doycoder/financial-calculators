@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /privacy.html
+Disallow: /terms.html
+Disallow: /disclaimer.html
 
-Sitemap: https://YOUR_DOMAIN.com/sitemap.xml
+Sitemap: https://www.fncalcs.com/sitemap.xml
