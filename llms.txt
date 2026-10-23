@@ -1,0 +1,18 @@
+# FnCalcs
+
+> A collection of free online financial calculators for investment growth, loans, and analysis with interactive charts.
+
+## Investment Calculators
+- [Compound Interest](https://fncalcs.com/compound-interest-calculator.html): Calculate long-term investment growth.
+- [Simple Interest](https://fncalcs.com/simple-interest-calculator.html): Basic interest calculation tool.
+- [Savings Goal](https://fncalcs.com/savings-goal-calculator.html): Plan your savings target over time.
+
+## Loan Calculators
+- [Loan Calculator](https://fncalcs.com/loan-calculator.html): Determine monthly payments and interest costs.
+
+## Analysis Tools
+- [ROI Calculator](https://fncalcs.com/roi-calculator.html): Measure investment returns.
+- [CAGR Calculator](https://fncalcs.com/CAGR-calculator.html): Calculate compound annual growth rate.
+
+## Optional
+- [Privacy Policy](https://fncalcs.com/privacy.html): Details on data use and privacy practices.
