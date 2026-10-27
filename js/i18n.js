@@ -110,7 +110,7 @@
 
       pages: {
         home: {
-          docTitle: 'Compound Interest Calculator - Calculate Investment Growth & Returns',
+          docTitle: 'Free Financial Calculators - Compound Interest, Loan, Savings & More',
           hero: {
             h1: 'Compound Interest Calculator',
             lede: 'Calculate your investment growth, SIP returns, and annual returns online. Free, instant, and accurate.',
@@ -428,7 +428,7 @@
         },
 		
 		roi: {
-          docTitle: 'Simple Interest Calculator - Calculate Flat-Rate Interest Online',
+          docTitle: 'ROI Calculator - Return On Investment',
           hero: {
             h1: 'Simple Interest Calculator',
             lede: 'Compute flat-rate interest using the classic <code>I = P × r × t</code> formula. Instant, accurate, and free.',
@@ -499,7 +499,7 @@
         },
 		
 		CAGR: {
-          docTitle: 'Simple Interest Calculator - Calculate Flat-Rate Interest Online',
+          docTitle: 'CAGR Calculator - Compound Annual Growth Rate',
           hero: {
             h1: 'Simple Interest Calculator',
             lede: 'Compute flat-rate interest using the classic <code>I = P × r × t</code> formula. Instant, accurate, and free.',
@@ -589,7 +589,7 @@
         },
 
         about: {
-          docTitle: 'About - Compound Interest Calculator',
+          docTitle: 'About - FnCalcs',
           h1: 'About CompoundCalc',
           pIntro: 'CompoundCalc is a free, no-signup tool built to help anyone visualize how compound interest and regular contributions transform modest savings into long-term wealth. We built it because most online calculators are either too simplistic to be useful or so cluttered with ads they obscure the math underneath.',
           h3Does: 'What this tool does',
@@ -607,7 +607,7 @@
         },
 
         contact: {
-          docTitle: 'Contact - Compound Interest Calculator',
+          docTitle: 'Contact - FnCalcs',
           h1: 'Contact',
           updated: 'We\'d love to hear from you.',
           intro: 'Whether you\'ve found a bug, have feedback on the calculator, want to suggest a new feature, or have a partnership inquiry, the fastest way to reach us is by email.',
@@ -635,7 +635,7 @@
         },
 
         privacy: {
-          docTitle: 'Privacy Policy - Compound Interest Calculator',
+          docTitle: 'Privacy Policy - FnCalcs',
           h1: 'Privacy Policy',
           updated: 'Last updated: 2026-05-23',
           intro: 'This Privacy Policy explains how CompoundCalc ("we", "us", "our") collects, uses, and shares information when you visit our website at <strong>fncalcs.com</strong> ("the Site"). By using the Site you agree to the practices described here.',
@@ -687,7 +687,7 @@
         },
 
         terms: {
-          docTitle: 'Terms of Service - Compound Interest Calculator',
+          docTitle: 'Terms of Service - FnCalcs',
           h1: 'Terms of Service',
           updated: 'Last updated: 2026-05-23',
           intro: 'These Terms of Service ("Terms") govern your access to and use of the CompoundCalc website at <strong>fncalcs.com</strong> ("the Site"). By using the Site, you agree to these Terms. If you do not agree, please do not use the Site.',
@@ -726,7 +726,7 @@
         },
 
         disclaimer: {
-          docTitle: 'Disclaimer - Compound Interest Calculator',
+          docTitle: 'Disclaimer - FnCalcs',
           h1: 'Disclaimer',
           updated: 'Last updated: 2026-05-23',
           h2Edu: '1. Educational Purpose Only',
